@@ -79,6 +79,7 @@ function renderTable() {
 }
 
 function loadLeads() {
+    // 1. Populate initial data from localStorage
     const local = getLocalLeads();
     local.forEach(item => {
         allLeads[item.id] = {
@@ -88,6 +89,7 @@ function loadLeads() {
     });
     renderTable();
 
+    // 2. Listen to Firestore real-time updates with robust fallback
     try {
         if (typeof db !== 'undefined') {
             db.collection('leads').orderBy('createdAt', 'desc').onSnapshot(snapshot => {
@@ -100,12 +102,13 @@ function loadLeads() {
                 });
                 renderTable();
             }, error => {
-                console.warn("Firestore snapshot listener failed, showing local leads:", error);
+                console.warn("Fehler beim Laden. Firestore-Regeln überprüfen!", error);
+                // Fallback automatically to displaying leads from localStorage
                 renderTable();
             });
         }
     } catch(err) {
-        console.warn("Firestore not initialized, relying on local storage:", err);
+        console.warn("Firestore access error, relying on localStorage leads:", err);
         renderTable();
     }
 }
