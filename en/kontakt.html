@@ -191,25 +191,40 @@
                     console.warn('Firestore lead save skipped:', fsErr);
                 }
 
-                // 3. Send Email via FormSubmit API to sgi.cosmin@gmail.com
+                // 3. Send Email Notification (Web3Forms & FormSubmit multi-provider to bypass ISP DNS blocks)
+                const emailPayload = {
+                    access_key: window.WEB3FORMS_KEY || "YOUR_WEB3FORMS_KEY",
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    service: service,
+                    message: message,
+                    subject: `Neue AnonymCreator Kontaktanfrage (EN): ${name}`,
+                    _subject: `Neue AnonymCreator Kontaktanfrage (EN): ${name}`
+                };
+
+                // Try sending via Web3Forms (not blocked by Austrian ISPs)
+                if (window.WEB3FORMS_KEY && window.WEB3FORMS_KEY !== "YOUR_WEB3FORMS_KEY") {
+                    try {
+                        await fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                            body: JSON.stringify(emailPayload)
+                        });
+                    } catch (w3Err) {
+                        console.warn("Web3Forms send failed:", w3Err);
+                    }
+                }
+
+                // Try FormSubmit as secondary provider
                 try {
                     await fetch("https://formsubmit.co/ajax/sgi.cosmin@gmail.com", {
                         method: "POST",
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            name: name,
-                            email: email,
-                            phone: phone,
-                            service: service,
-                            message: message,
-                            _subject: `Neue AnonymCreator Kontaktanfrage (EN): ${name}`
-                        })
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(emailPayload)
                     });
-                } catch (error) {
-                    console.warn("FormSubmit email notification skipped/failed:", error);
+                } catch (fsErr) {
+                    console.warn("FormSubmit send failed (ISP DNS block):", fsErr);
                 }
 
                 // Always show success UI since lead is saved to CRM Dashboard
