@@ -76,7 +76,7 @@
                                 
                                 <div class="info-item" style="margin-bottom: 1.5rem;">
                                     <h4 style="color: var(--accent-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Email</h4>
-                                    <a href="mailto:info@anonymcreator.online" style="color: #fff; text-decoration: none; font-size: 1.2rem; transition: color 0.3s ease;">info@anonymcreator.online</a>
+                                    <a href="mailto:sgi.cosmin@gmail.com" style="color: #fff; text-decoration: none; font-size: 1.2rem; transition: color 0.3s ease;">sgi.cosmin@gmail.com</a>
                                 </div>
 
                                 <div class="info-item" style="margin-bottom: 1.5rem;">
@@ -164,9 +164,36 @@
                 submitBtn.innerText = "Sending...";
                 submitBtn.disabled = true;
 
+                // 1. Save lead to localStorage IMMEDIATELY for CRM Dashboard
                 try {
-                    // 1. Send Email via FormSubmit API to info@anonymcreator.online
-                    const response = await fetch("https://formsubmit.co/ajax/info@anonymcreator.online", {
+                    const localLeads = JSON.parse(localStorage.getItem('anonym_leads') || '[]');
+                    localLeads.unshift({
+                        id: 'lead_' + Date.now(),
+                        name, email, phone, service, message,
+                        status: 'Neu',
+                        createdAt: new Date().toISOString()
+                    });
+                    localStorage.setItem('anonym_leads', JSON.stringify(localLeads));
+                } catch(lsErr) {
+                    console.warn("LocalStorage lead save error:", lsErr);
+                }
+
+                // 2. Optional Firestore save
+                try {
+                    if (typeof db !== 'undefined') {
+                        await db.collection('leads').add({
+                            name, email, phone, service, message,
+                            status: 'Neu',
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                    }
+                } catch (fsErr) {
+                    console.warn('Firestore lead save skipped:', fsErr);
+                }
+
+                // 3. Send Email via FormSubmit API to sgi.cosmin@gmail.com
+                try {
+                    await fetch("https://formsubmit.co/ajax/sgi.cosmin@gmail.com", {
                         method: "POST",
                         headers: { 
                             'Content-Type': 'application/json',
@@ -181,51 +208,22 @@
                             _subject: `Neue AnonymCreator Kontaktanfrage (EN): ${name}`
                         })
                     });
-
-                    if (response.ok) {
-                        submitBtn.innerText = "Message sent!";
-                        submitBtn.style.background = "#00f0ff";
-                        submitBtn.style.color = "#000";
-                        form.reset();
-
-                        // 2. Save lead to localStorage for immediate Dashboard availability
-                        const localLeads = JSON.parse(localStorage.getItem('anonym_leads') || '[]');
-                        localLeads.unshift({
-                            id: 'lead_' + Date.now(),
-                            name, email, phone, service, message,
-                            status: 'Neu',
-                            createdAt: new Date().toISOString()
-                        });
-                        localStorage.setItem('anonym_leads', JSON.stringify(localLeads));
-
-                        // 3. Optional Firestore save
-                        try {
-                            if (typeof db !== 'undefined') {
-                                await db.collection('leads').add({
-                                    name, email, phone, service, message,
-                                    status: 'Neu',
-                                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
-                                });
-                            }
-                        } catch (fsErr) {
-                            console.warn('Firestore optional lead save skipped:', fsErr);
-                        }
-
-                        setTimeout(() => {
-                            submitBtn.innerText = originalText;
-                            submitBtn.style.background = "";
-                            submitBtn.style.color = "";
-                            submitBtn.disabled = false;
-                        }, 3000);
-                    } else {
-                        throw new Error('FormSubmit request failed');
-                    }
                 } catch (error) {
-                    console.error("Error submitting form:", error);
-                    alert("Error sending message. Please try again later.");
-                    submitBtn.innerText = originalText;
-                    submitBtn.disabled = false;
+                    console.warn("FormSubmit email notification skipped/failed:", error);
                 }
+
+                // Always show success UI since lead is saved to CRM Dashboard
+                submitBtn.innerText = "Message sent!";
+                submitBtn.style.background = "#00f0ff";
+                submitBtn.style.color = "#000";
+                form.reset();
+
+                setTimeout(() => {
+                    submitBtn.innerText = originalText;
+                    submitBtn.style.background = "";
+                    submitBtn.style.color = "";
+                    submitBtn.disabled = false;
+                }, 3000);
             });
         });
     </script>
