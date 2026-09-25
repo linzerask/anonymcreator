@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard | AnonymCreator</title>
+        <link rel="stylesheet" href="style.css?v=2">
+    <style>
+        body { background: #080a0d; }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .dashboard-container {
+            padding: 3rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-color);
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        th { background: rgba(255,255,255,0.05); color: #fff; font-weight: 500; }
+        tr:hover { background: rgba(255,255,255,0.03); }
+        .action-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { background: rgba(255,255,255,0.1); }
+        .btn-delete { border-color: #ff4b4b; color: #ff4b4b; }
+        .btn-delete:hover { background: rgba(255,75,75,0.1); }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #0d0f12;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .close-modal { float: right; cursor: pointer; color: #fff; font-size: 1.5rem; }
+    </style>
+
+    
+    <!-- Core SEO -->
+    <meta name="description" content="Digitale Exzellenz für Ihr Unternehmen: Skalierbare Software, Web-Plattformen & IT-Automatisierung aus Linz-Land, Österreich.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anonymcreator.com/">
+    <meta property="og:title" content="AnonymCreator | Digitalstudio">
+    <meta property="og:description" content="Digitale Exzellenz für Ihr Unternehmen: Skalierbare Software, Web-Plattformen & IT-Automatisierung aus Linz-Land.">
+    <meta property="og:image" content="Assets/header-screenshot.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://anonymcreator.com/">
+    <meta name="twitter:title" content="AnonymCreator | Digitalstudio">
+    <meta name="twitter:description" content="Digitale Exzellenz für Ihr Unternehmen. Web-Plattformen, UI/UX Design, Web3 und Automatisierung.">
+    <meta name="twitter:image" content="Assets/header-screenshot.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="Assets/2.png" type="image/png">
+    <link rel="apple-touch-icon" href="Assets/2.png">
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AnonymCreator - Digitalstudio",
+      "image": "https://anonymcreator.com/Assets/header-screenshot.png",
+      "description": "Digitale Werbeagentur aus Linz-Land, Österreich. Webdesign, UI/UX, individuelle Software.",
+      "url": "https://anonymcreator.com/",
+      "telephone": "+43000000000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carl-Anton-Carlone-Straße 7, Tür 6",
+        "addressLocality": "Ansfelden",
+        "postalCode": "4052",
+        "addressCountry": "AT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "48.2081",
+        "longitude": "14.2882"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body style="display: none;" id="body-content">
+    <header class="dashboard-header">
+        <img src="Assets/2.webp" alt="Logo" style="height: 30px;">
+        <button id="logout-btn" class="action-btn">Abmelden</button>
+    </header>
+
+    <div class="dashboard-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1 style="color: #fff;">Leads & Anfragen</h1>
+            <button id="add-lead-btn" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">+ Neuer Lead</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Name</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody id="leads-table-body">
+                <tr><td colspan="5" style="text-align:center;">Lade Daten...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal for Edit/Add -->
+    <div class="modal-overlay" id="lead-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2 id="modal-title" style="color: #fff; margin-bottom: 2rem;">Lead bearbeiten</h2>
+            
+            <form id="lead-form">
+                <input type="hidden" id="lead-id">
+                <div class="form-row">
+                    <div class="form-group"><label>Name</label><input type="text" id="m-name" class="glass-input" required></div>
+                    <div class="form-group"><label>E-Mail</label><input type="email" id="m-email" class="glass-input"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Telefon</label><input type="text" id="m-phone" class="glass-input"></div>
+                    <div class="form-group"><label>Website</label><input type="text" id="m-website" class="glass-input"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Service</label>
+                        <select id="m-service" class="glass-input">
+                            <option value="webdesign">Webdesign & Entwicklung</option>
+                            <option value="software">Individuelle Software / Plattform</option>
+                            <option value="branding">Branding & Corporate Design</option>
+                            <option value="automation">Prozessautomatisierung</option>
+                            <option value="other">Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="m-status" class="glass-input">
+                            <option value="Neu">Neu</option>
+                            <option value="In Kontakt">In Kontakt</option>
+                            <option value="Angebot gesendet">Angebot gesendet</option>
+                            <option value="Abgeschlossen">Abgeschlossen</option>
+                            <option value="Absage">Absage</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Nachricht (vom Kunden)</label>
+                    <textarea id="m-message" class="glass-input" rows="3" readonly style="opacity: 0.7;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Interne Notizen</label>
+                    <textarea id="m-notes" class="glass-input" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Speichern</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase Compat Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

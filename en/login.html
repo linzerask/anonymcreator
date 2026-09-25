@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AnonymCreator</title>
+        <link rel="stylesheet" href="style.css?v=2">
+    <style>
+        .login-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            padding: 3rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .error-message {
+            color: #ff4b4b;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+
+    
+    <!-- Core SEO -->
+    <meta name="description" content="Digitale Exzellenz für Ihr Unternehmen: Skalierbare Software, Web-Plattformen & IT-Automatisierung aus Linz-Land, Österreich.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anonymcreator.com/">
+    <meta property="og:title" content="AnonymCreator | Digitalstudio">
+    <meta property="og:description" content="Digitale Exzellenz für Ihr Unternehmen: Skalierbare Software, Web-Plattformen & IT-Automatisierung aus Linz-Land.">
+    <meta property="og:image" content="Assets/header-screenshot.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://anonymcreator.com/">
+    <meta name="twitter:title" content="AnonymCreator | Digitalstudio">
+    <meta name="twitter:description" content="Digitale Exzellenz für Ihr Unternehmen. Web-Plattformen, UI/UX Design, Web3 und Automatisierung.">
+    <meta name="twitter:image" content="Assets/header-screenshot.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="Assets/2.png" type="image/png">
+    <link rel="apple-touch-icon" href="Assets/2.png">
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AnonymCreator - Digitalstudio",
+      "image": "https://anonymcreator.com/Assets/header-screenshot.png",
+      "description": "Digitale Werbeagentur aus Linz-Land, Österreich. Webdesign, UI/UX, individuelle Software.",
+      "url": "https://anonymcreator.com/",
+      "telephone": "+43000000000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carl-Anton-Carlone-Straße 7, Tür 6",
+        "addressLocality": "Ansfelden",
+        "postalCode": "4052",
+        "addressCountry": "AT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "48.2081",
+        "longitude": "14.2882"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <img src="Assets/2.webp" alt="Logo" style="height: 40px; margin-bottom: 2rem;">
+            <h2 style="color: #fff; margin-bottom: 2rem;">CRM Login</h2>
+            <div id="error-msg" class="error-message">Falsche Anmeldedaten.</div>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="email" id="email" class="glass-input" placeholder="Admin E-Mail" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <input type="password" id="password" class="glass-input" placeholder="Passwort" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Anmelden</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase Compat Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+            const btn = e.target.querySelector('button');
+            
+            btn.innerText = "Bitte warten...";
+            errorMsg.style.display = 'none';
+
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                window.location.href = 'dashboard.html';
+            } catch (error) {
+                console.error(error);
+                errorMsg.style.display = 'block';
+                errorMsg.innerText = "Fehler: " + error.message;
+                btn.innerText = "Anmelden";
+            }
+        });
+
+        // Check if already logged in
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>

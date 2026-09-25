@@ -1,0 +1,62 @@
+[
+  {
+    "id": "starter-webdesign",
+    "title": "Starter Webdesign",
+    "price": 249,
+    "mode": "payment"
+  },
+  {
+    "id": "business-plattform",
+    "title": "Business Plattform",
+    "price": 599,
+    "mode": "payment"
+  },
+  {
+    "id": "premium-ecommerce",
+    "title": "Premium E-Commerce",
+    "price": 999,
+    "mode": "payment"
+  },
+  {
+    "id": "simple-care-monthly",
+    "title": "Simple Care (Monatlich)",
+    "price": 39,
+    "mode": "subscription",
+    "interval": "month"
+  },
+  {
+    "id": "simple-care-yearly",
+    "title": "Simple Care (Jährlich)",
+    "price": 421.20,
+    "mode": "subscription",
+    "interval": "year"
+  },
+  {
+    "id": "company-care-monthly",
+    "title": "Company Care (Monatlich)",
+    "price": 69,
+    "mode": "subscription",
+    "interval": "month"
+  },
+  {
+    "id": "company-care-yearly",
+    "title": "Company Care (Jährlich)",
+    "price": 621.00,
+    "mode": "subscription",
+    "interval": "year"
+  },
+  {
+    "id": "advanced-care-monthly",
+    "title": "Advanced Care (Monatlich)",
+    "price": 129,
+    "mode": "subscription",
+    "interval": "month"
+  },
+  {
+    "id": "advanced-care-yearly",
+    "title": "Advanced Care (Jährlich)",
+    "price": 1006.20,
+    "mode": "subscription",
+    "interval": "year"
+  }
+]

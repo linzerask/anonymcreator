@@ -1,0 +1,22 @@
+﻿                <p class="hero-subtitle">For over 10 years, as an IT service provider in Linz-Land, we have been developing scalable software, high-performance web platforms, and secure automations. You focus on your business � we scale your technology.</p>
+        "streetAddress": "Carl-Anton-Carlone-Stra�e 7, T�r 6",
+                <p class="hero-subtitle">De peste 10 ani, ca furnizor de servicii IT �n Linz-Land, dezvoltam software scalabil, platforme web performante ?i automatizari sigure. Tu te concentrezi pe afacerea ta � noi �?i scalam tehnologia.</p>
+                        <p>Eficien?a prin cod. Economise?te resurse valoroase automatiz�nd procesele predispuse la erori.</p>
+                        <p>Solu?ii blockchain de ultima genera?ie. Integram contracte inteligente ?i re?ele descentralizate �n proiectul tau.</p>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; margin-bottom: 2rem; color: #fff;">Descopera �ntregul nostru portofoliu</h2>
+                <p style="color: var(--accent-color); font-size: 1.2rem; font-weight: 500; margin-bottom: 1rem;">�n cur�nd!</p>
+                        <img src="../Assets/alpen1.png" alt="Restaurant Alpengl�ck" class="project-img loop-img loop-alpen-1">
+                        <img src="../Assets/alpen2.png" alt="Restaurant Alpengl�ck" class="project-img loop-img loop-alpen-2">
+                        <img src="../Assets/alpen3.png" alt="Restaurant Alpengl�ck" class="project-img loop-img loop-alpen-3">
+                        <img src="../Assets/alpen.gif" alt="Restaurant Alpengl�ck" class="project-img loop-img loop-alpen-4">
+                        <h3 class="project-name">Restaurant Alpengl�ck</h3>
+                    <p class="agentur-text">Acasa �n Austria, conecta?i la nivel global.<br>De la sediul nostru din Linz-Land, deservim clien?i interna?ionali.</p>
+                <p class="benefits-text" style="font-size: 1.2rem; line-height: 1.6; font-weight: 500; color: #fff;">Abordarea noastra? Ne ocupam de tot ceea ce este necesar pentru ca proiectul tau sa aiba succes, �n timp ce tu te po?i concentra pe ceea ce faci cel mai bine.</p>
+                    <p class="benefit-text">Viziunea noastra, experien?a ?i know-how-ul cuprinzator �?i vor transforma proiectul �ntr-un succes.</p>
+                    <h3 class="benefit-heading">�?i simplificam lucrurile</h3>
+                    <p class="benefit-text">Peste 10 ani de experien?a �n dezvoltare software ?i web, automatizare IT ?i design.</p>
+                    <p class="benefit-text">Ne respectam cuv�ntul dat. Parteneriatele noastre de lunga durata sunt cea mai buna dovada a modului nostru de lucru.</p>
+                <h1 class="section-title reveal-on-scroll" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">�ncepe un <span class="accent">proiect</span>.</h1>
+                                <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1rem;">Hai sa cream ceva mare? �mpreuna.</h3>
+                                <p style="color: var(--text-color); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">Spune-ne despre proiectul tau. Fie ca este vorba despre o platforma complet noua sau un rebranding � suntem partenerul potrivit.</p>
+                    alert("Eroare la trimiterea mesajului. Te rugam sa �ncerci din nou mai t�rziu.");

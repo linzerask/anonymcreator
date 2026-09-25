@@ -1,0 +1,11 @@
+.env
+*.env
+functions/.env
+node_modules/
+functions/node_modules/
+__pycache__/
+*.pyc
+scratch/
+Website_BACKUP/
+.DS_Store
+Thumbs.db
