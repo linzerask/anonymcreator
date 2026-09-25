@@ -193,22 +193,22 @@
                 }
 
                 // 3. Send Email Notification via Web3Forms (Key: cf64eb50-fb03-43e9-bb38-9a480b0c5783)
-                const emailPayload = {
-                    access_key: "cf64eb50-fb03-43e9-bb38-9a480b0c5783",
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    service: service,
-                    message: message,
-                    subject: `Neue AnonymCreator Kontaktanfrage (RO): ${name}`
-                };
-
                 try {
-                    await fetch("https://api.web3forms.com/submit", {
+                    const formData = new FormData();
+                    formData.append("access_key", "cf64eb50-fb03-43e9-bb38-9a480b0c5783");
+                    formData.append("name", name);
+                    formData.append("email", email);
+                    formData.append("phone", phone);
+                    formData.append("service", service);
+                    formData.append("message", message);
+                    formData.append("subject", `Neue AnonymCreator Kontaktanfrage (RO): ${name}`);
+
+                    const res = await fetch("https://api.web3forms.com/submit", {
                         method: "POST",
-                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                        body: JSON.stringify(emailPayload)
+                        body: formData
                     });
+                    const resJson = await res.json();
+                    console.log("Web3Forms Result:", resJson);
                 } catch (w3Err) {
                     console.warn("Web3Forms send failed:", w3Err);
                 }
