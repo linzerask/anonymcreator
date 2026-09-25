@@ -191,40 +191,25 @@
                     console.warn('Firestore lead save skipped:', fsErr);
                 }
 
-                // 3. Send Email Notification (Web3Forms & FormSubmit multi-provider to bypass ISP DNS blocks)
+                // 3. Send Email Notification via Web3Forms (Key: cf64eb50-fb03-43e9-bb38-9a480b0c5783)
                 const emailPayload = {
-                    access_key: window.WEB3FORMS_KEY || "YOUR_WEB3FORMS_KEY",
+                    access_key: "cf64eb50-fb03-43e9-bb38-9a480b0c5783",
                     name: name,
                     email: email,
                     phone: phone,
                     service: service,
                     message: message,
-                    subject: `Neue AnonymCreator Kontaktanfrage: ${name}`,
-                    _subject: `Neue AnonymCreator Kontaktanfrage: ${name}`
+                    subject: `Neue AnonymCreator Kontaktanfrage: ${name}`
                 };
 
-                // Try sending via Web3Forms (not blocked by Austrian ISPs)
-                if (window.WEB3FORMS_KEY && window.WEB3FORMS_KEY !== "YOUR_WEB3FORMS_KEY") {
-                    try {
-                        await fetch("https://api.web3forms.com/submit", {
-                            method: "POST",
-                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                            body: JSON.stringify(emailPayload)
-                        });
-                    } catch (w3Err) {
-                        console.warn("Web3Forms send failed:", w3Err);
-                    }
-                }
-
-                // Try FormSubmit as secondary provider
                 try {
-                    await fetch("https://formsubmit.co/ajax/sgi.cosmin@gmail.com", {
+                    await fetch("https://api.web3forms.com/submit", {
                         method: "POST",
                         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                         body: JSON.stringify(emailPayload)
                     });
-                } catch (fsErr) {
-                    console.warn("FormSubmit send failed (ISP DNS block):", fsErr);
+                } catch (w3Err) {
+                    console.warn("Web3Forms send failed:", w3Err);
                 }
 
                 // Always show success UI since lead is saved to CRM Dashboard
