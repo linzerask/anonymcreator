@@ -930,6 +930,65 @@ button, input, select {
   padding: 1.5rem;
 }
 
+/* Court Diagram in Pitch Green Section */
+.court-diagram {
+  position: absolute;
+  inset: 16px;
+  border: 1.5px solid rgba(255, 245, 224, 0.35);
+  border-radius: 4px;
+}
+
+.court-half-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1.5px;
+  height: 100%;
+  background: rgba(255, 245, 224, 0.35);
+}
+
+.court-center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid rgba(255, 245, 224, 0.35);
+  border-radius: 50%;
+}
+
+.court-penalty-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 60px;
+  border: 1.5px solid rgba(255, 245, 224, 0.35);
+}
+
+.court-penalty-box.box-left {
+  left: 0;
+  border-left: none;
+}
+
+.court-penalty-box.box-right {
+  right: 0;
+  border-right: none;
+}
+
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.transit-icon {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 0.35rem;
+  color: var(--c-mahogany);
+}
+
 .radar-target {
   position: absolute;
   font-family: var(--font-mono);

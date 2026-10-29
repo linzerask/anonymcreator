@@ -1,12 +1,12 @@
 /**
- * BOLZWERK — Social Football & Craft Club
- * Sixes-Engineered Interactivity & Sound Architecture
+ * BOLZWERK — Hallenfußball & Sportbar Österreich
+ * Interactivity & Audio Synthesis (Zero Emojis, Pure SVG & Text)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initDrawer();
   initBookingBar();
-  initModesTerminal();
+  initCourtsTerminal();
   initVenuesButtons();
   initScoreboardTicker();
   initSoundEngine();
@@ -47,7 +47,7 @@ function initDrawer() {
 }
 
 /* ==========================================================================
-   2. Horizontal Booking Bar (Sixes Signature)
+   2. Horizontal Booking Bar (Classic Hallenfußball)
    ========================================================================== */
 function initBookingBar() {
   const tabs = document.querySelectorAll('.booking-type-tab');
@@ -70,7 +70,7 @@ function initBookingBar() {
     });
   });
 
-  // Date default to today
+  // Set default date to today
   const dateInput = document.getElementById('bookDate');
   if (dateInput) {
     const today = new Date().toISOString().split('T')[0];
@@ -78,8 +78,8 @@ function initBookingBar() {
     dateInput.min = today;
   }
 
-  // Stepper logic
-  let playerCount = 6;
+  // Stepper logic (5v5 = 10 Spieler default)
+  let playerCount = 10;
   const minusBtn = document.getElementById('stepMinus');
   const plusBtn = document.getElementById('stepPlus');
   const display = document.getElementById('playerCountDisplay');
@@ -87,21 +87,23 @@ function initBookingBar() {
   const perPlayerDisplay = document.getElementById('barPerPlayer');
 
   function updatePrice() {
-    // 90 Min standard cage: 99€ up to 8 players, +6€ per additional player
-    let total = 99;
-    if (playerCount > 8) {
-      total += (playerCount - 8) * 6;
-    }
+    // 90 Min Hallenplatz standard = 90,00 €
+    const total = 90;
     const perPlayer = (total / playerCount).toFixed(2).replace('.', ',');
-    if (display) display.textContent = `${playerCount} Spieler`;
+    if (display) {
+      if (playerCount === 10) display.textContent = '10 Spieler (5v5)';
+      else if (playerCount === 8) display.textContent = '8 Spieler (4v4)';
+      else if (playerCount === 12) display.textContent = '12 Spieler (6v6)';
+      else display.textContent = `${playerCount} Spieler`;
+    }
     if (priceDisplay) priceDisplay.textContent = `${total.toFixed(2).replace('.', ',')} €`;
-    if (perPlayerDisplay) perPlayerDisplay.textContent = `(${perPlayer} € / Kicker)`;
+    if (perPlayerDisplay) perPlayerDisplay.textContent = `(${perPlayer} € / Kicker für 90 Min.)`;
   }
 
   if (minusBtn && plusBtn) {
     minusBtn.addEventListener('click', () => {
-      if (playerCount > 2) {
-        playerCount--;
+      if (playerCount > 6) {
+        playerCount -= 2;
         updatePrice();
         playClickSound();
       }
@@ -109,7 +111,7 @@ function initBookingBar() {
 
     plusBtn.addEventListener('click', () => {
       if (playerCount < 16) {
-        playerCount++;
+        playerCount += 2;
         updatePrice();
         playClickSound();
       }
@@ -118,7 +120,7 @@ function initBookingBar() {
 
   updatePrice();
 
-  // Submission actions
+  // Submission actions (ZERO EMOJIS)
   const submitQuick = document.getElementById('submitQuick');
   if (submitQuick) {
     submitQuick.addEventListener('click', () => {
@@ -126,7 +128,7 @@ function initBookingBar() {
       const loc = document.getElementById('bookVenue').value;
       const date = document.getElementById('bookDate').value;
       const time = document.getElementById('bookTime').value;
-      alert(`⚽ Leiwand! Dein Käfig in ${loc.toUpperCase()} am ${date} um ${time} Uhr für ${playerCount} Kicker ist vorgemerkt.\n\n(Showcase-Demonstration: Buchungssystem voll einsatzbereit)`);
+      alert(`Servus! Dein Hallenplatz in ${loc.toUpperCase()} am ${date} um ${time} Uhr für ${playerCount} Kicker ist vorgemerkt.\n\n(Showcase-Demonstration: Buchungssystem voll einsatzbereit)`);
     });
   }
 
@@ -139,42 +141,42 @@ function initBookingBar() {
         alert('Bitte gib eine gültige E-Mail-Adresse ein.');
         return;
       }
-      alert(`🎉 Vielen Dank! Dein Gruppenangebot wurde an ${email} versendet.`);
+      alert(`Vielen Dank! Dein Firmenturnier-Angebot wurde an ${email} versendet.`);
     });
   }
 }
 
 /* ==========================================================================
-   3. Interactive Modes Terminal
+   3. Interactive Courts Terminal (Hallenplätze Details)
    ========================================================================== */
-const modeTerminalData = {
-  speedball: {
-    title: 'Radar Speedball',
-    desc: 'Jeder Spieler hat 5 Schüsse auf das Tor. Unser Doppler-Radar erfasst Anlauf, Schusswinkel und Geschwindigkeit auf die Dezimale genau. Wer holt den Tagessieg an der Bar?',
-    speed: '104 KM/H',
-    event: 'VOLLTREFFER! RECHTES KREUZ'
+const courtTerminalData = {
+  standard: {
+    title: 'Court 5 vs 5 (Standard)',
+    desc: 'Ideal für 10 bis 12 Spieler. Die Rundumbande und Fangnetze bis unter die Hallendecke sorgen dafür, dass der Ball permanent im Spiel bleibt. Höchste Intensität ohne Pause.',
+    dim: '30 x 15 M',
+    sub: '4G KUNSTRASEN • 1,20M RUNDUMBANDE'
   },
-  precision: {
-    title: 'Kreuz-Präzision',
-    desc: 'Auf der Torwand leuchten digitale Ziele in den vier Ecken auf. Wer trifft die Winkel, während die Uhr rückwärts tickt? Präzision schlägt reine Hufkraft.',
-    speed: '82 KM/H',
-    event: 'KREUZECK OBEN LINKS! +750 PKT'
+  pro: {
+    title: 'Court 7 vs 7 (Großfeld)',
+    desc: 'Perfekt für größere Teams und Vereine. Ausreichend Raum für taktische Kombinationen, weite Pässe und schnelle Konter. Gelenkschonend gefedert.',
+    dim: '42 x 22 M',
+    sub: 'GROSSFELD-COURT • OFFIZIELLE HALLENFUSSBALL-TORE'
   },
-  penalty: {
-    title: 'Elfer-Krimi',
-    desc: 'Simuliertes Elfmeterschießen unter vollem Stadionlärm. Eine reaktive Torwand versucht deinen Schuss zu parieren. Verwandle oder trage den Spott deiner Freunde.',
-    speed: '96 KM/H',
-    event: 'TOR! FLACH INS ECK'
+  turnier: {
+    title: 'Turnier-Modus',
+    desc: 'Bucht zwei oder drei Courts parallel mit zentraler Spielzeituhr, Hallensprecher-Anlage und Live-Ergebnisanzeige in der Sportbar.',
+    dim: 'BIS ZU 4 COURTS',
+    sub: 'PARALLEL-SPIELBETRIEB FÜR FIRMEN & VEREINE'
   },
-  team: {
-    title: 'Team-Staffel',
-    desc: 'Zwei Teams treten im direkten Stafetten-Modus an. Bälle müssen mit Direktabnahmen in vorgegebene Zonen gekickt werden. Tempo und Absprache entscheiden.',
-    speed: '68 KM/H',
-    event: 'TEAM ROT IN FÜHRUNG!'
+  ausruestung: {
+    title: 'Schuhe, Leibchen & Bälle',
+    desc: 'Zu jeder Platzbuchung stellen wir frische Leibchen in zwei Teamfarben und offizielle Hallenfußbälle bereit. Schuhe: Hallensohle oder Multinocken (TF).',
+    dim: 'INKLUSIVE',
+    sub: 'LEIBCHEN, BÄLLE & DUSCHEN IM PREIS ENTHALTEN'
   }
 };
 
-function initModesTerminal() {
+function initCourtsTerminal() {
   const tabs = document.querySelectorAll('.mode-tab-item');
   const title = document.getElementById('terminalTitle');
   const desc = document.getElementById('terminalDesc');
@@ -186,18 +188,12 @@ function initModesTerminal() {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      const data = modeTerminalData[tab.dataset.modename];
+      const data = courtTerminalData[tab.dataset.modename];
       if (data) {
         if (title) title.textContent = data.title;
         if (desc) desc.textContent = data.desc;
-        if (speed) speed.textContent = data.speed;
-        if (eventText) eventText.textContent = data.event;
-
-        // Toggle random active target
-        const targets = document.querySelectorAll('.radar-target');
-        targets.forEach(t => t.classList.remove('active'));
-        const pick = targets[Math.floor(Math.random() * targets.length)];
-        if (pick) pick.classList.add('active');
+        if (speed) speed.textContent = data.dim;
+        if (eventText) eventText.textContent = data.sub;
 
         playKickSound();
       }
@@ -236,7 +232,6 @@ function initScoreboardTicker() {
   if (!digits.length) return;
 
   setInterval(() => {
-    // Occasionally bump the last digit
     const last = digits[digits.length - 1];
     let val = parseInt(last.textContent, 10) || 0;
     val = (val + 1) % 10;
@@ -252,13 +247,20 @@ let soundOn = true;
 
 function initSoundEngine() {
   const toggle = document.getElementById('soundToggle');
-  const icon = document.getElementById('soundIcon');
+  const iconOn = document.getElementById('soundIconOn');
+  const iconOff = document.getElementById('soundIconOff');
 
-  if (toggle && icon) {
+  if (toggle && iconOn && iconOff) {
     toggle.addEventListener('click', () => {
       soundOn = !soundOn;
-      icon.textContent = soundOn ? '🔊' : '🔇';
-      if (soundOn) playClickSound();
+      if (soundOn) {
+        iconOn.style.display = 'inline-block';
+        iconOff.style.display = 'none';
+        playClickSound();
+      } else {
+        iconOn.style.display = 'none';
+        iconOff.style.display = 'inline-block';
+      }
     });
   }
 }
@@ -383,8 +385,8 @@ function initModals() {
     linkImp.addEventListener('click', (e) => {
       e.preventDefault();
       show('Impressum & Offenlegung (§ 5 ECG)', `
-        <p><strong>BOLZWERK Österreich Entertainment GmbH</strong><br>Waldsteingartenstraße 135, 1020 Wien</p>
-        <p><strong>Firmenbuch:</strong> FN 582194 x | Handelsgericht Wien<br><strong>UID:</strong> ATU78923412<br><strong>Kammer:</strong> WKO Wien (Gastronomie & Freizeit)</p>
+        <p><strong>BOLZWERK Österreich Hallenfußball GmbH</strong><br>Waldsteingartenstraße 135, 1020 Wien</p>
+        <p><strong>Firmenbuch:</strong> FN 582194 x | Handelsgericht Wien<br><strong>UID:</strong> ATU78923412<br><strong>Kammer:</strong> WKO Wien (Sport- & Freizeitbetriebe)</p>
         <p><strong>Showcase:</strong> Demonstration des Digitalstudios AnonymCreator.</p>
       `);
     });
@@ -394,7 +396,7 @@ function initModals() {
     linkDat.addEventListener('click', (e) => {
       e.preventDefault();
       show('Datenschutzerklärung (DSGVO)', `
-        <p>Wir verarbeiten deine Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2021). Bei Reservierungen werden Daten ausschließlich zur Terminkoordination genutzt.</p>
+        <p>Wir verarbeiten deine Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2021). Bei Platzbuchungen werden Daten ausschließlich zur Spielkoordination gespeichert.</p>
       `);
     });
   }
@@ -402,23 +404,24 @@ function initModals() {
   if (linkAgb) {
     linkAgb.addEventListener('click', (e) => {
       e.preventDefault();
-      show('Hausordnung & Spielregeln', `
-        <p>1. Schuhe: Nur normale Turnschuhe oder Sneaker. Stollen- und Nockenschuhe sind verboten.</p>
-        <p>2. Stornierung: Kostenfrei bis 24 Stunden vor Spielbeginn.</p>
+      show('Hallenordnung & Spielregeln', `
+        <p>1. Schuhwerk: Nur flache Hallenschuhe, Tausendfüßler (TF) oder normale Turnschuhe. Stollen- und feste FG-Nockenschuhe sind auf dem Kunstrasen verboten.</p>
+        <p>2. Stornierung: Kostenlos bis 24 Stunden vor Spielbeginn online möglich.</p>
       `);
     });
   }
 
   if (btnMenu) {
     btnMenu.addEventListener('click', () => {
-      show('Speise- & Getränkekarte (Auszug)', `
+      show('Sportbar Speisekarte (Auszug)', `
         <h4>Burger & Schmankerl</h4>
-        <p>• <strong>Der Bolzer Smash Burger:</strong> Bio-Rind, Vorarlberger Bergkäse, Haus-Sauce — 14,90 €</p>
-        <p>• <strong>Schnitzel-Bites im Korb:</strong> Kaisersemmel-Panier, Preiselbeeren & Steirischer Kren — 9,90 €</p>
-        <p>• <strong>Kross-Erdäpfel Wedges:</strong> Rosmarin-Salz & Schnittlauch-Sauerrahm — 6,80 €</p>
-        <h4 style="margin-top:1rem;">Bier & Spritzer</h4>
-        <p>• <strong>Gezapftes Stiegl / Trumer (Krügerl 0,5l):</strong> 4,90 €</p>
-        <p>• <strong>Kaiserspritzer (0,5l):</strong> Grüner Veltliner, Holler, Soda — 5,40 €</p>
+        <p>• <strong>Wiener Schnitzel vom Schwein:</strong> Mit Zitrone, Preiselbeeren & Pommes frites — 13,80 €</p>
+        <p>• <strong>Der Bolzer Smash Burger:</strong> Bio-Rind, Vorarlberger Bergkäse, geschmorte Zwiebeln & Pommes — 14,90 €</p>
+        <p>• <strong>Kross-Erdäpfel Wedges:</strong> Mit Rosmarin-Salz & Schnittlauch-Dip — 6,50 €</p>
+        <h4 style="margin-top:1rem;">Bier vom Fass & Spritzer</h4>
+        <p>• <strong>Gezapftes Stiegl Goldbräu (Krügerl 0,5l):</strong> 4,90 €</p>
+        <p>• <strong>Trumer Pils / Ottakringer Zwickl (Krügerl 0,5l):</strong> 4,90 €</p>
+        <p>• <strong>Kaiserspritzer (0,5l):</strong> Grüner Veltliner, Holler & Soda — 5,40 €</p>
       `);
     });
   }

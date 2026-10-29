@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOLZWERK | Social Football & Craft Club Österreich</title>
-  <meta name="description" content="High-Tech Kicken im Radar-Käfig, feine Smash Burger und kühles Bier. Die Social Sports Bar in Wien, Linz und Graz.">
+  <title>BOLZWERK | Hallenfußball & Sportbar Österreich</title>
+  <meta name="description" content="Klassischer Hallenfußball auf modernstem 4G Kunstrasen, Flutlicht, Rundumbande und Sportbar in Wien, Linz und Graz. Jetzt Platz reservieren.">
   
-  <!-- Fonts: Space Mono / JetBrains Mono & Plus Jakarta Sans / Inter -->
+  <!-- Fonts: Space Mono & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,25 +19,25 @@
   <aside class="top-ticker bg-pomegranate">
     <div class="ticker-wrap">
       <div class="ticker-move">
-        <span>KEINE VEREINSERFAHRUNG NÖTIG</span>
+        <span>KLASSISCHER HALLENFUSSBALL AUF 4G KUNSTRASEN</span>
         <span class="ticker-dot">•</span>
-        <span>RADAR-MESSUNG AUF DEN KM/H GENAU</span>
+        <span>RUNDUMBANDE &amp; FLUTLICHT INKLUSIVE</span>
         <span class="ticker-dot">•</span>
-        <span>SMASH BURGER &amp; KRÜGERL VOM FASS</span>
+        <span>SMASH BURGER &amp; GEZAPFTES BIER IN DER SPORTBAR</span>
         <span class="ticker-dot">•</span>
-        <span>POLTERABENDE &amp; BÜRO-TURNIERE</span>
+        <span>POLTERABENDE &amp; FIRMENTURNIERE</span>
         <span class="ticker-dot">•</span>
         <span>WIEN PRATER • LINZ TABAKFABRIK • GRAZ SMART CITY</span>
         <span class="ticker-dot">•</span>
       </div>
       <div class="ticker-move" aria-hidden="true">
-        <span>KEINE VEREINSERFAHRUNG NÖTIG</span>
+        <span>KLASSISCHER HALLENFUSSBALL AUF 4G KUNSTRASEN</span>
         <span class="ticker-dot">•</span>
-        <span>RADAR-MESSUNG AUF DEN KM/H GENAU</span>
+        <span>RUNDUMBANDE &amp; FLUTLICHT INKLUSIVE</span>
         <span class="ticker-dot">•</span>
-        <span>SMASH BURGER &amp; KRÜGERL VOM FASS</span>
+        <span>SMASH BURGER &amp; GEZAPFTES BIER IN DER SPORTBAR</span>
         <span class="ticker-dot">•</span>
-        <span>POLTERABENDE &amp; BÜRO-TURNIERE</span>
+        <span>POLTERABENDE &amp; FIRMENTURNIERE</span>
         <span class="ticker-dot">•</span>
         <span>WIEN PRATER • LINZ TABAKFABRIK • GRAZ SMART CITY</span>
         <span class="ticker-dot">•</span>
@@ -57,26 +57,34 @@
         </button>
 
         <nav class="desktop-menu" aria-label="Hauptnavigation">
-          <a href="#standorte" class="menu-link">Standorte</a>
-          <a href="#der-kick" class="menu-link">Der Kick</a>
+          <a href="#standorte" class="menu-link">Hallen &amp; Standorte</a>
+          <a href="#hallenkick" class="menu-link">Der Hallenkick</a>
           <a href="#speis-trank" class="menu-link">Speis &amp; Trank</a>
           <a href="#anlaesse" class="menu-link">Firmen &amp; Poltern</a>
-          <a href="#spielmodi" class="menu-link">Spielmodi</a>
+          <a href="#plaetze" class="menu-link">Die Courts</a>
         </nav>
       </div>
 
       <!-- Center: Bold Typographic Brand Logo -->
       <a href="#" class="masthead-brand" aria-label="Bolzwerk Startseite">
         <span class="brand-text">BOLZWERK</span>
-        <span class="brand-sub">CLUB • AUSTRIA</span>
+        <span class="brand-sub">HALLENFUSSBALL • ÖSTERREICH</span>
       </a>
 
       <!-- Right: Sound Toggle + Hot Pink CTA -->
       <div class="masthead-right">
-        <button id="soundToggle" class="btn-sound-pill" title="Stadionsound ein/aus">
-          <span id="soundIcon">🔊</span>
+        <button id="soundToggle" class="btn-sound-pill" title="Stadionsound ein/aus" aria-label="Audio umschalten">
+          <svg class="svg-icon" id="soundIconOn" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="svg-icon" id="soundIconOff" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
         </button>
-        <a href="#booking" class="btn-pill btn-hotpink">Jetzt Buchen</a>
+        <a href="#booking" class="btn-pill btn-hotpink">Platz Buchen</a>
       </div>
     </div>
   </header>
@@ -89,45 +97,54 @@
       <button class="drawer-close" id="drawerClose" aria-label="Schließen">&times;</button>
     </div>
     <nav class="drawer-nav">
-      <a href="#standorte" class="drawer-item">Standorte (Wien, Linz, Graz)</a>
-      <a href="#der-kick" class="drawer-item">Der Kick &amp; High-Tech Cages</a>
-      <a href="#speis-trank" class="drawer-item">Speis &amp; Trank (Burger &amp; Bier)</a>
-      <a href="#anlaesse" class="drawer-item">Firmen, Teamevents &amp; Poltern</a>
-      <a href="#spielmodi" class="drawer-item">Die Spielmodi im Überblick</a>
+      <a href="#standorte" class="drawer-item">Hallen (Wien, Linz, Graz)</a>
+      <a href="#hallenkick" class="drawer-item">Klassischer Hallenkick &amp; Courts</a>
+      <a href="#speis-trank" class="drawer-item">Speis &amp; Trank (Burger &amp; Krügerl)</a>
+      <a href="#anlaesse" class="drawer-item">Firmen, Turniere &amp; Poltern</a>
+      <a href="#plaetze" class="drawer-item">Platz-Übersicht &amp; Maße</a>
       <a href="#faq" class="drawer-item">Häufige Fragen</a>
     </nav>
     <div class="drawer-bottom">
-      <a href="#booking" class="btn-pill btn-hotpink btn-drawer-cta">Käfig Reservieren</a>
+      <a href="#booking" class="btn-pill btn-hotpink btn-drawer-cta">Hallenplatz Reservieren</a>
       <p class="drawer-contact">Servus-Telefon: <a href="tel:+4318900744">+43 (0) 1 890 07 44</a></p>
     </div>
   </aside>
 
   <main>
-    <!-- HERO SECTION (SIXES MATCH: MASSIVE STACKED MONO HEADLINE + VIDEO DRAWER + ROTATING STAMP) -->
+    <!-- HERO SECTION (SIXES MATCH: STACKED MONOSPACE HEADLINE + ASYMMETRIC MEDIA + ROTATING SEAL) -->
     <section class="hero-sixes bg-mahogany text-wool">
       <!-- Background SVG pattern -->
       <div class="hero-stripes-bg" aria-hidden="true"></div>
 
-      <!-- Rotating Round Badge / Seal -->
+      <!-- Rotating Round Badge / Seal with SVG Ball -->
       <div class="rotating-seal">
         <svg viewBox="0 0 160 160" class="seal-svg">
           <path id="sealPath" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
-          <text font-size="11.5" font-family="'Space Mono', monospace" font-weight="700" fill="#FFF5E0" letter-spacing="2">
+          <text font-size="11" font-family="'Space Mono', monospace" font-weight="700" fill="#FFF5E0" letter-spacing="2">
             <textPath href="#sealPath" startOffset="0%">
-              • BOLZWERK AUSTRIA • SOCIAL FOOTBALL CLUB •
+              • BOLZWERK AUSTRIA • HALLENFUSSBALL CLUB •
             </textPath>
           </text>
         </svg>
-        <div class="seal-center">⚽</div>
+        <div class="seal-center">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FFF5E0" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="12 7 15 9.5 14 13.5 10 13.5 9 9.5 12 7" fill="#FFF5E0"></polygon>
+            <line x1="12" y1="2" x2="12" y2="7"></line>
+            <line x1="19.5" y1="7" x2="15" y2="9.5"></line>
+            <line x1="17.5" y1="18" x2="14" y2="13.5"></line>
+            <line x1="6.5" y1="18" x2="10" y2="13.5"></line>
+            <line x1="4.5" y1="7" x2="9" y2="9.5"></line>
+          </svg>
+        </div>
       </div>
 
       <div class="hero-layout">
-        <!-- Left Side: Hero Media Drawer -->
+        <!-- Left Side: Hero Media Drawer with real indoor turf photo -->
         <div class="hero-media-box">
           <div class="media-inner">
-            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80" 
-                 alt="Kicker im Bolzwerk High-Tech Käfig" class="hero-img">
-            <div class="media-tag">HIGH-TECH RADAR CAGE 01</div>
+            <img src="assets/hall_hero.jpg" alt="Indoor Kunstrasen Hallenfußballplatz" class="hero-img">
+            <div class="media-tag">COURT 01 • 4G KUNSTRASEN &amp; BANDE</div>
           </div>
         </div>
 
@@ -140,13 +157,13 @@
             <span class="text-hotpink">INS KREUZ</span>
           </h1>
           <p class="hero-subtext">
-            Das Social-Game des Jahres in Österreich. Interaktive Kameras, Radarmessung auf den km/h, feine Smash Burger und kühles Fassbier am Stehtisch.
+            Echter Hallenfußball im Trockenen. Premium 4G-Kunstrasen, gelenkschonende Dämpfung, Rundumbande ohne Ausball und ein kaltes Bier am Stammtisch nach dem Schlusspfiff.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- FLOATING HORIZONTAL BOOKING BAR (STRADDLES MAHOGANY & CORNFLOWER/WOOL SECTIONS) -->
+    <!-- FLOATING HORIZONTAL BOOKING BAR (STRADDLES MAHOGANY & WOOL) -->
     <section class="booking-split-section" id="booking">
       <div class="booking-split-bg-top bg-mahogany"></div>
       <div class="booking-split-bg-bot bg-wool"></div>
@@ -155,53 +172,53 @@
         <div class="booking-bar-card">
           <!-- Top Tabs -->
           <div class="booking-bar-tabs">
-            <button class="booking-type-tab active" data-type="quick">Schnelle Runde (2–16 Kicker)</button>
-            <button class="booking-type-tab" data-type="event">Großes Event &amp; Firmen (16+)</button>
+            <button class="booking-type-tab active" data-type="quick">Hallenplatz Buchen (5 vs 5 / 4 vs 4)</button>
+            <button class="booking-type-tab" data-type="event">Firmenturnier &amp; Dauermiete</button>
           </div>
 
           <!-- Quick Booking Horizontal Form -->
           <form id="quickForm" class="booking-horizontal-form" onsubmit="return false;">
             <div class="input-cell">
-              <label for="bookVenue">1. Standort</label>
+              <label for="bookVenue">1. Halle / Standort</label>
               <select id="bookVenue" class="bar-select">
-                <option value="wien">Wien Prater (U2 Krieau)</option>
-                <option value="linz">Linz Tabakfabrik</option>
-                <option value="graz">Graz Smart City</option>
+                <option value="wien">Wien Prater (Halle 1–4)</option>
+                <option value="linz">Linz Tabakfabrik (Halle 1–3)</option>
+                <option value="graz">Graz Smart City (Halle 1–3)</option>
               </select>
             </div>
 
             <div class="input-cell">
-              <label for="bookDate">2. Datum</label>
+              <label for="bookDate">2. Spieltag</label>
               <input type="date" id="bookDate" class="bar-input">
             </div>
 
             <div class="input-cell">
-              <label for="bookTime">3. Startzeit</label>
+              <label for="bookTime">3. Anstoßzeit</label>
               <select id="bookTime" class="bar-select">
-                <option value="16:00">16:00 Uhr</option>
-                <option value="17:30">17:30 Uhr</option>
-                <option value="19:00" selected>19:00 Uhr (Beliebt)</option>
-                <option value="20:30">20:30 Uhr</option>
-                <option value="22:00">22:00 Uhr</option>
+                <option value="16:00">16:00 – 17:30</option>
+                <option value="17:30">17:30 – 19:00</option>
+                <option value="19:00" selected>19:00 – 20:30 (Flutlicht)</option>
+                <option value="20:30">20:30 – 22:00</option>
+                <option value="22:00">22:00 – 23:30 (Spätkick)</option>
               </select>
             </div>
 
             <div class="input-cell">
               <label for="bookPlayers">4. Kicker</label>
               <div class="bar-stepper">
-                <button type="button" class="btn-step" id="stepMinus">-</button>
-                <span id="playerCountDisplay">6 Spieler</span>
-                <button type="button" class="btn-step" id="stepPlus">+</button>
+                <button type="button" class="btn-step" id="stepMinus" aria-label="Weniger Kicker">-</button>
+                <span id="playerCountDisplay">10 Spieler (5v5)</span>
+                <button type="button" class="btn-step" id="stepPlus" aria-label="Mehr Kicker">+</button>
               </div>
             </div>
 
             <div class="action-cell">
               <div class="price-pill-tag">
-                <span class="price-val" id="barPrice">99,00 €</span>
-                <span class="price-sub" id="barPerPlayer">(16,50 € / Kicker)</span>
+                <span class="price-val" id="barPrice">90,00 €</span>
+                <span class="price-sub" id="barPerPlayer">(9,00 € / Kicker für 90 Min.)</span>
               </div>
               <button type="button" class="btn-pill btn-hotpink btn-bar-submit" id="submitQuick">
-                Käfig Reservieren
+                Platz Reservieren
               </button>
             </div>
           </form>
@@ -210,24 +227,24 @@
           <form id="eventForm" class="booking-event-form" style="display: none;" onsubmit="return false;">
             <div class="event-form-grid">
               <div class="input-cell">
-                <label for="eventVenue">Standort</label>
+                <label for="eventVenue">Hallen-Standort</label>
                 <select id="eventVenue" class="bar-select">
-                  <option value="wien">Wien Prater (bis 180 Personen)</option>
-                  <option value="linz">Linz Tabakfabrik (bis 140 Personen)</option>
-                  <option value="graz">Graz Smart City (bis 120 Personen)</option>
+                  <option value="wien">Wien Prater (bis zu 4 Plätze parallel)</option>
+                  <option value="linz">Linz Tabakfabrik (bis zu 3 Plätze parallel)</option>
+                  <option value="graz">Graz Smart City (bis zu 3 Plätze parallel)</option>
                 </select>
               </div>
               <div class="input-cell">
-                <label for="eventCount">Personenanzahl</label>
-                <input type="number" id="eventCount" class="bar-input" value="25" min="16">
+                <label for="eventCount">Teams / Personen</label>
+                <input type="number" id="eventCount" class="bar-input" value="30" min="16">
               </div>
               <div class="input-cell">
-                <label for="eventEmail">Firmen E-Mail</label>
-                <input type="email" id="eventEmail" class="bar-input" placeholder="name@firma.at">
+                <label for="eventEmail">Kontakt E-Mail</label>
+                <input type="email" id="eventEmail" class="bar-input" placeholder="kontakt@firma.at">
               </div>
               <div class="action-cell">
                 <button type="button" class="btn-pill btn-hotpink" id="submitEvent">
-                  Paket-Angebot Anfordern
+                  Turnier-Angebot Anfordern
                 </button>
               </div>
             </div>
@@ -237,158 +254,156 @@
     </section>
 
     <!-- 3 GIANT FEATURE PILLARS ("SWING YOUR HEART OUT" MATCH) -->
-    <section class="pillars-section bg-wool text-mahogany" id="der-kick">
+    <section class="pillars-section bg-wool text-mahogany" id="hallenkick">
       <div class="container-sixes">
         <div class="section-title-wrap text-center">
-          <span class="sub-pill">DER SOCIAL FOOTBALL CLUB</span>
+          <span class="sub-pill">DIE HALLENFUSSBALL-ERFAHRUNG</span>
           <h2 class="title-oversize">VOLLE POWER AM BALL</h2>
         </div>
 
         <div class="pillars-grid">
-          <!-- Pillar 1: Der Kick -->
+          <!-- Pillar 1: Der Hallenkick -->
           <article class="pillar-card">
             <div class="pillar-img-frame">
-              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
-                   alt="Radar-Käfig Action" class="pillar-img">
-              <div class="pillar-tag-top">HIGH-TECH KÄFIG</div>
+              <img src="assets/hall_action.jpg" alt="5 gegen 5 Hallenfußball Spiel" class="pillar-img">
+              <div class="pillar-tag-top">4G KUNSTRASEN</div>
             </div>
             <div class="pillar-body">
               <h3 class="pillar-heading">DER KICK</h3>
               <p class="pillar-copy">
-                Du betrittst den Netzkäfig, wählst dein Spiel am Touchscreen und feuerst los. 
-                Hochpräzises Radar misst Geschwindigkeit, Flugkurve und Treffgenauigkeit.
+                Kein Betonboden, keine schmerzenden Knie. Auf unseren gelenkschonenden 4G-Kunstrasen-Courts mit Rundumbande rollt der Ball nonstop. 90 Minuten purer Hallensport.
               </p>
-              <a href="#spielmodi" class="pillar-btn">Zu den Spielmodi &rarr;</a>
+              <a href="#plaetze" class="pillar-btn">Platz-Details ansehen &rarr;</a>
             </div>
           </article>
 
           <!-- Pillar 2: Die Gaudi -->
           <article class="pillar-card">
             <div class="pillar-img-frame">
-              <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80" 
-                   alt="Freunde feiern an der Bar" class="pillar-img">
-              <div class="pillar-tag-top">PARTY &amp; STIMMUNG</div>
+              <img src="assets/hall_party.jpg" alt="Gemeinsam anstoßen in der Sportbar" class="pillar-img">
+              <div class="pillar-tag-top">STAMMTISCH &amp; BAR</div>
             </div>
             <div class="pillar-body">
-              <h3 class="pillar-heading">DIE GAUDI</h3>
+              <h3 class="pillar-heading">DIE 3. HALBZEIT</h3>
               <p class="pillar-copy">
-                Ob Polterabend, Geburtstagsrunde oder Firmenfeier: Bei uns steht die gemeinsame Zeit im Mittelpunkt. Kein Druck, keine Vereinsmeierei — 100% Unterhaltung.
+                Nach dem Schlusspfiff geht es direkt an die Vereinsbar: Kaltes Bier vom Fass, Live-Übertragungen auf Großleinwänden und frische Schmankerl für hungrige Teams.
               </p>
-              <a href="#anlaesse" class="pillar-btn">Events entdecken &rarr;</a>
+              <a href="#speis-trank" class="pillar-btn">Zur Sportbar-Karte &rarr;</a>
             </div>
           </article>
 
           <!-- Pillar 3: Speis & Trank -->
           <article class="pillar-card">
             <div class="pillar-img-frame">
-              <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" 
-                   alt="Gourmet Smash Burger und Bier" class="pillar-img">
+              <img src="assets/burger.jpg" alt="Gourmet Burger nach dem Match" class="pillar-img">
               <div class="pillar-tag-top">SPEIS &amp; TRANK</div>
             </div>
             <div class="pillar-body">
               <h3 class="pillar-heading">DIE SCHMANKERL</h3>
               <p class="pillar-copy">
-                Heimisches Rindfleisch, kross gesmashte Patties, Vorarlberger Bergkäse, krosse Schnitzel-Bites und eiskaltes Stiegl, Trumer &amp; Ottakringer vom Fass.
+                Echtes Wiener Schnitzel mit Zitrone und Pommes frites, saftige Smash Burger aus heimischem Rind und frisch gezapftes Stiegl, Trumer &amp; Ottakringer.
               </p>
-              <a href="#speis-trank" class="pillar-btn">Zur Speisekarte &rarr;</a>
+              <a href="#speis-trank" class="pillar-btn">Schmankerl entdecken &rarr;</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- FOOD & DRINK EDITORIAL SECTION (SIXES MATCH: SPLIT HERO + MASONRY COLLAGE) -->
+    <!-- FOOD & DRINK EDITORIAL SECTION (AUTHENTIC WIENER SCHNITZEL, BURGER, BEER) -->
     <section class="food-editorial-section bg-wool text-mahogany" id="speis-trank">
       <div class="container-sixes">
         <div class="food-editorial-layout">
           <!-- Left: Big Editorial Narrative -->
           <div class="food-narrative">
-            <span class="sub-pill">BAR &amp; KÜCHE</span>
+            <span class="sub-pill">SPORTBAR &amp; GASTGARTEN</span>
             <h2 class="title-oversize">SPEIS &amp; TRANK</h2>
             <p class="food-lead">
-              Genauso wie in jedem echten Clubhaus dreht sich bei Bolzwerk die halbe Miete um die Gastfreundschaft. 
+              Ein gescheiter Hallenkick verlangt nach einer ordentlichen Stärkung.
             </p>
             <p class="food-desc">
-              Wir servieren kein fettiges Aufwärm-Essen, sondern handgemachte Smash Burger mit regionalem Bio-Rind, knusprige Erdäpfel-Wedges, Wiener Schnitzel-Bites im Korb und frisch gezapfte Biere heimischer Traditionsbrauereien.
+              In unserer Sportbar gibt es keine zähen Tiefkühl-Snacks: Wir panieren echtes Wiener Schnitzel frisch heraus, servieren krosse Smash Burger mit Vorarlberger Bergkäse und zapfen kühles Krügerl-Bier direkt von österreichischen Traditionsbrauereien.
             </p>
             <div class="food-actions">
-              <button class="btn-pill btn-mahogany" id="openMenuModal">Komplette Karte Ansehen</button>
-              <a href="#booking" class="food-text-link">Speisen-Paket für Gruppen reservieren &rarr;</a>
+              <button class="btn-pill btn-mahogany" id="openMenuModal">Speisekarte Öffnen</button>
+              <a href="#booking" class="food-text-link">Menü-Pauschale für Gruppen anfragen &rarr;</a>
             </div>
           </div>
 
-          <!-- Right: 3-Image Editorial Collage -->
+          <!-- Right: 3-Image Editorial Collage (Verified Burger, Beer, Schnitzel) -->
           <div class="food-collage">
             <div class="collage-item item-main">
-              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80" alt="Der Bolzer Smash Burger" class="collage-img">
+              <img src="assets/burger.jpg" alt="Saftiger Smash Burger" class="collage-img">
               <div class="collage-caption">DER BOLZER SMASH BURGER</div>
             </div>
             <div class="collage-item item-secondary">
-              <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=500&q=80" alt="Frisch gezapftes Krügerl" class="collage-img">
-              <div class="collage-caption">FRISCH GEZAPFT (0,5L)</div>
+              <img src="assets/beer.jpg" alt="Frisch gezapftes Krügerl mit Schaum" class="collage-img">
+              <div class="collage-caption">FRISCH GEZAPFT (KRÜGERL 0,5L)</div>
             </div>
             <div class="collage-item item-tertiary">
-              <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=500&q=80" alt="Krustige Schnitzel Bites" class="collage-img">
-              <div class="collage-caption">SCHNITZEL-BITES MIT KREN</div>
+              <img src="assets/schnitzel.jpg" alt="Echtes Wiener Schnitzel mit Pommes" class="collage-img">
+              <div class="collage-caption">WIENER SCHNITZEL MIT ZITRONE</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LIVE PITCH RADAR GAME MODES INTERACTIVE SHOWCASE -->
-    <section class="modes-interactive-section bg-pitchGreen text-wool" id="spielmodi">
+    <!-- INDOOR COURTS & PLATZ-DETAILS ("DIE COURTS") -->
+    <section class="modes-interactive-section bg-pitchGreen text-wool" id="plaetze">
       <div class="container-sixes">
         <div class="section-title-wrap text-center">
-          <span class="sub-pill pill-cream">TOUCHSCREEN-MODI</span>
-          <h2 class="title-oversize text-wool">WIE DAS KICKEN BEI UNS LÄUFT</h2>
+          <span class="sub-pill pill-cream">AUSSTATTUNG &amp; MAßE</span>
+          <h2 class="title-oversize text-wool">UNSERE HALLENPLÄTZE IM DETAIL</h2>
         </div>
 
         <div class="mode-terminal-box">
           <!-- Terminal Tabs -->
           <div class="mode-terminal-nav">
-            <button class="mode-tab-item active" data-modename="speedball">
+            <button class="mode-tab-item active" data-modename="standard">
               <span class="mode-num">01</span>
-              <span>Radar Speedball</span>
+              <span>Court 5 vs 5 (Standard)</span>
             </button>
-            <button class="mode-tab-item" data-modename="precision">
+            <button class="mode-tab-item" data-modename="pro">
               <span class="mode-num">02</span>
-              <span>Kreuz-Präzision</span>
+              <span>Court 7 vs 7 (Großfeld)</span>
             </button>
-            <button class="mode-tab-item" data-modename="penalty">
+            <button class="mode-tab-item" data-modename="turnier">
               <span class="mode-num">03</span>
-              <span>Elfer-Krimi</span>
+              <span>Turnier-Modus</span>
             </button>
-            <button class="mode-tab-item" data-modename="team">
+            <button class="mode-tab-item" data-modename="ausruestung">
               <span class="mode-num">04</span>
-              <span>Team-Staffel</span>
+              <span>Schuhe &amp; Bälle</span>
             </button>
           </div>
 
           <!-- Terminal Content View -->
           <div class="mode-terminal-content">
             <div class="terminal-radar-display">
-              <div class="radar-crosshair"></div>
-              <div class="radar-target target-1 active">500 PKT</div>
-              <div class="radar-target target-2">750 PKT</div>
-              <div class="radar-target target-3">250 PKT</div>
+              <div class="court-diagram">
+                <div class="court-center-circle"></div>
+                <div class="court-half-line"></div>
+                <div class="court-penalty-box box-left"></div>
+                <div class="court-penalty-box box-right"></div>
+              </div>
               <div class="radar-stat-box">
-                <span class="radar-speed-num" id="radarSpeed">104 KM/H</span>
-                <span class="radar-event-name" id="radarEvent">VOLLTREFFER! RECHTES KREUZ</span>
+                <span class="radar-speed-num" id="radarSpeed">30 x 15 M</span>
+                <span class="radar-event-name" id="radarEvent">4G KUNSTRASEN • 1,20M RUNDUMBANDE</span>
               </div>
             </div>
 
             <div class="terminal-details">
-              <h3 class="terminal-title" id="terminalTitle">Radar Speedball</h3>
+              <h3 class="terminal-title" id="terminalTitle">Court 5 vs 5 (Standard)</h3>
               <p class="terminal-desc" id="terminalDesc">
-                Jeder Spieler hat 5 Versuche auf das Tor. Das Doppler-Radar erfasst Anlauf, Schusswinkel und Geschwindigkeit auf die Dezimale genau. Wer holt den Tagessieg an der Bar?
+                Ideal für 10 bis 12 Spieler. Die Rundumbande und Fangnetze bis unter die Hallendecke sorgen dafür, dass der Ball permanent im Spiel bleibt. Höchste Intensität ohne Pause.
               </p>
               <div class="terminal-meta">
-                <div><strong>Dauer:</strong> 10–15 Min. pro Durchgang</div>
-                <div><strong>Niveau:</strong> Für jeden Kicker machbar</div>
-                <div><strong>Highlight:</strong> Sofortige Wiederholung am Screen</div>
+                <div><strong>Bodenbelag:</strong> FIFA-zertifizierter 4G Kunstrasen mit Korkgranulat</div>
+                <div><strong>Licht:</strong> Blendfreies 600-Lux Sport-Flutlicht</div>
+                <div><strong>Inklusive:</strong> Umkleiden, Warmwasserduschen &amp; Spinde</div>
               </div>
-              <a href="#booking" class="btn-pill btn-hotpink">Modus Ausprobieren</a>
+              <a href="#booking" class="btn-pill btn-hotpink">Platz Reservieren</a>
             </div>
           </div>
         </div>
@@ -399,151 +414,166 @@
     <section class="reviews-sixes bg-wool text-mahogany">
       <div class="container-sixes">
         <div class="section-title-wrap text-center">
-          <span class="sub-pill">ECHTE STIMMEN</span>
-          <h2 class="title-oversize">TOR DES MONATS!</h2>
-          <p class="reviews-sub">Das sagen unsere Gäste nach dem Schlusspfiff</p>
+          <span class="sub-pill">ECHTE KICKER-STIMMEN</span>
+          <h2 class="title-oversize">NACH DEM SCHLUSSPFIFF</h2>
+          <p class="reviews-sub">Das sagen Mannschaften und Stammtische über unsere Hallen</p>
         </div>
 
         <div class="review-pills-filter">
-          <span class="filter-pill active">POLTERABEND</span>
-          <span class="filter-pill">BÜRO-FEIER</span>
-          <span class="filter-pill">STAMMTISCH</span>
-          <span class="filter-pill">GEBURTSTAG</span>
+          <span class="filter-pill active">STAMMTISCH</span>
+          <span class="filter-pill">FIRMENTEAM</span>
+          <span class="filter-pill">POLTERABEND</span>
+          <span class="filter-pill">BETRIEBSLIGA</span>
         </div>
 
         <div class="review-feature-card">
           <div class="review-score-badge">10 / 10</div>
           <blockquote class="review-quote-text">
-            „Wir haben den Junggesellenabschied unseres besten Kumpels hier gefeiert. Erst 90 Minuten gnadenloser Wettkampf im Radar-Käfig mit Live-Leaderboard, danach Burger und Krügerl. Niemand von uns spielt aktiv im Verein, aber der Ehrgeiz hat sofort jeden gepackt. Absolute Empfehlung für Wien!“
+            „Wir kicken jeden zweiten Mittwoch im Winter hier. Der Kunstrasen ist um Welten besser als die alten harten Hallenböden, die man sonst aus Schulturnhallen kennt. Und dass man nach dem Spiel direkt an der Bar ein kühles Bier und Schnitzel bekommt, macht die Runde perfekt.“
           </blockquote>
           <cite class="review-author-cite">
-            <strong>Stefan H.</strong> • Mödling (Polter-Runde mit 12 Freunden)
+            <strong>Florian T.</strong> • Wien (Stammtisch-Kicker seit 3 Jahren)
           </cite>
         </div>
       </div>
     </section>
 
-    <!-- VENUES GRID ("OUR VENUES ACROSS THE UK" MATCH) -->
+    <!-- VENUES GRID (REAL FOOTBALL HALL PITCHES) -->
     <section class="venues-sixes bg-wool text-mahogany" id="standorte">
       <div class="container-sixes">
         <div class="section-title-wrap text-center">
-          <span class="sub-pill">ÖSTERREICHWEIT</span>
-          <h2 class="title-oversize">UNSERE STANDORTE</h2>
-          <p class="venues-sub">Wähle deinen Club und reserviere deinen Käfig</p>
+          <span class="sub-pill">3 STANDORTE IN ÖSTERREICH</span>
+          <h2 class="title-oversize">UNSERE FUSSBALLHALLEN</h2>
+          <p class="venues-sub">Wähle deinen Standort und sichere dir deinen Spielplatz</p>
         </div>
 
         <div class="venues-cards-grid">
           <!-- Venue 1: Wien -->
           <div class="venue-tile">
             <div class="tile-img-box">
-              <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=700&q=80" 
-                   alt="Bolzwerk Wien Prater" class="tile-img">
+              <img src="assets/hall_wien.jpg" alt="Fußballhalle Wien Prater" class="tile-img">
               <div class="tile-badge-round">WIEN PRATER</div>
             </div>
             <div class="tile-info">
-              <h4>Wien Prater Flagship</h4>
+              <h4>Hallenfußball Wien Prater</h4>
               <p>Waldsteingartenstraße 135, 1020 Wien</p>
-              <div class="tile-transit">🚇 U2 Krieau / Messe (4 Min.)</div>
-              <a href="#booking" class="btn-tile-book" data-venue="wien">Käfig Buchen &rarr;</a>
+              <div class="tile-transit">
+                <svg class="transit-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="3" width="16" height="16" rx="2"></rect>
+                  <path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3"></path>
+                </svg>
+                U2 Krieau / Messe (4 Min. Fußweg)
+              </div>
+              <a href="#booking" class="btn-tile-book" data-venue="wien">Platz Auswählen &rarr;</a>
             </div>
           </div>
 
           <!-- Venue 2: Linz -->
           <div class="venue-tile">
             <div class="tile-img-box">
-              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80" 
-                   alt="Bolzwerk Linz Tabakfabrik" class="tile-img">
+              <img src="assets/hall_linz.jpg" alt="Fußballhalle Linz Tabakfabrik" class="tile-img">
               <div class="tile-badge-round">LINZ TABAKFABRIK</div>
             </div>
             <div class="tile-info">
-              <h4>Linz Tabakfabrik</h4>
+              <h4>Hallenfußball Linz Tabakfabrik</h4>
               <p>Peter-Behrens-Platz 8, 4020 Linz</p>
-              <div class="tile-transit">🚋 Straßenbahn Linien 1 &amp; 2</div>
-              <a href="#booking" class="btn-tile-book" data-venue="linz">Käfig Buchen &rarr;</a>
+              <div class="tile-transit">
+                <svg class="transit-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="3" width="16" height="16" rx="2"></rect>
+                  <path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3"></path>
+                </svg>
+                Straßenbahn Linien 1 &amp; 2 (Lüfteneggerstraße)
+              </div>
+              <a href="#booking" class="btn-tile-book" data-venue="linz">Platz Auswählen &rarr;</a>
             </div>
           </div>
 
           <!-- Venue 3: Graz -->
           <div class="venue-tile">
             <div class="tile-img-box">
-              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" 
-                   alt="Bolzwerk Graz Smart City" class="tile-img">
+              <img src="assets/hall_graz.jpg" alt="Fußballhalle Graz Smart City" class="tile-img">
               <div class="tile-badge-round">GRAZ SMART CITY</div>
             </div>
             <div class="tile-info">
-              <h4>Graz Smart City</h4>
+              <h4>Hallenfußball Graz Smart City</h4>
               <p>Waagner-Biro-Straße 110, 8020 Graz</p>
-              <div class="tile-transit">🚊 Tram 6 (Smart City Mitte)</div>
-              <a href="#booking" class="btn-tile-book" data-venue="graz">Käfig Buchen &rarr;</a>
+              <div class="tile-transit">
+                <svg class="transit-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="3" width="16" height="16" rx="2"></rect>
+                  <path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3"></path>
+                </svg>
+                Tram Linie 6 (Smart City Mitte)
+              </div>
+              <a href="#booking" class="btn-tile-book" data-venue="graz">Platz Auswählen &rarr;</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- OCCASIONS SECTION ("EVERY OCCASION" MATCH) -->
+    <!-- OCCASIONS SECTION -->
     <section class="occasions-sixes bg-mahogany text-wool" id="anlaesse">
       <div class="container-sixes">
         <div class="section-title-wrap text-center">
-          <span class="sub-pill pill-gold">FÜR JEDE GELEGENHEIT</span>
-          <h2 class="title-oversize text-wool">KEINE AUSREDEN, NUR GAUDI</h2>
+          <span class="sub-pill pill-gold">FÜR JEDES TEAM</span>
+          <h2 class="title-oversize text-wool">EGAL OB HOBBY ODER FIRMA</h2>
         </div>
 
         <div class="occasions-row-grid">
           <div class="occ-box">
             <div class="occ-tag">LEGENDÄR</div>
-            <h3>Polterabende &amp; Junggesellen</h3>
-            <p>Schuss-Turnier um die nächste Runde Schnaps, Siegerehrung und Burger-Platte am Stehtisch.</p>
-            <a href="#booking" class="occ-link">Polter-Paket Anfragen &rarr;</a>
+            <h3>Polterabende &amp; Freunde</h3>
+            <p>Hallenkick mit den Spezis, danach Schnitzel und Bier am reservierten Stehtisch.</p>
+            <a href="#booking" class="occ-link">Polter-Kick Buchen &rarr;</a>
           </div>
 
           <div class="occ-box highlight-occ">
             <div class="occ-tag tag-pink">FÜR FIRMEN</div>
-            <h3>Büro-Turnier &amp; Teamevent</h3>
-            <p>Keine peinlichen Seminare: Bringt die Abteilung zusammen. Wer schießt schärfer als der Chef?</p>
+            <h3>Firmenturnier &amp; Betriebssport</h3>
+            <p>Mietet mehrere Plätze parallel für euer Firmenturnier inklusive Schiedsrichter und Catering.</p>
             <a href="#booking" class="occ-link">Firmenangebot anfordern &rarr;</a>
           </div>
 
           <div class="occ-box">
-            <div class="occ-tag">FEIERN</div>
-            <h3>Geburtstage &amp; Kumpelabende</h3>
-            <p>Freitagabend mit den Spezis, Kicken und bis spät in die Nacht anstoßen.</p>
-            <a href="#booking" class="occ-link">Runde reservieren &rarr;</a>
+            <div class="occ-tag">ABO</div>
+            <h3>Regelmäßiger Stammtisch-Kick</h3>
+            <p>Sichert euch euren festen Wochentag für die gesamte Wintersaison mit Stamm-Rabatt.</p>
+            <a href="#booking" class="occ-link">Saison-Abo anfragen &rarr;</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SCOREBOARD DIGITS SECTION ("0 0 0 0 0 0 0 SIXES HIT" MATCH) -->
+    <!-- SCOREBOARD DIGITS SECTION -->
     <section class="scoreboard-section bg-wool text-mahogany">
       <div class="container-sixes text-center">
-        <span class="sub-pill">LIVE BESTENLISTE</span>
-        <h2 class="scoreboard-title">TREFFER AUF DIE ANZEIGETAFEL</h2>
+        <span class="sub-pill">SAISON-STATISTIK</span>
+        <h2 class="scoreboard-title">GESPIELTE MATCHES IN ÖSTERREICH</h2>
         <div class="scoreboard-digits" id="scoreboardDigits">
           <div class="digit-box">0</div>
-          <div class="digit-box">3</div>
           <div class="digit-box">1</div>
-          <div class="digit-box">8</div>
           <div class="digit-box">4</div>
+          <div class="digit-box">8</div>
+          <div class="digit-box">9</div>
           <div class="digit-box">2</div>
           <div class="digit-box">0</div>
         </div>
         <p class="scoreboard-caption">
-          Hast du das Zeug dazu, deinen Schuss in unsere Österreich-Bestenliste einzutragen?
+          Über 14.000 gespielte Hallenpartien seit Saisonbeginn in Wien, Linz und Graz.
         </p>
       </div>
     </section>
 
-    <!-- BIG GROUP BOOKING BANNER (BOTTOM SPLIT) -->
+    <!-- BIG GROUP BANNER -->
     <section class="big-group-banner bg-pomegranate text-wool">
       <div class="container-sixes">
         <div class="banner-flex">
           <div class="banner-text">
-            <h2>PLANST DU EIN GROSSES EVENT?</h2>
-            <p>Ab 20 Personen organisieren wir komplette Turnierpläne, Moderation, Getränke- und Burgerpauschalen.</p>
+            <h2>PLANST DU EIN GROSSES TURNIER?</h2>
+            <p>Ab 4 Teams organisieren wir den kompletten Spielplan, Hallensprecher und Verpflegungspakete.</p>
           </div>
           <div class="banner-action">
-            <a href="#booking" class="btn-pill btn-wool">Event Jetzt Planen</a>
+            <a href="#booking" class="btn-pill btn-wool">Turnier Jetzt Anfragen</a>
           </div>
         </div>
       </div>
@@ -559,30 +589,30 @@
 
         <div class="faq-accordion-list">
           <details class="faq-details" open>
-            <summary class="faq-summary">Welches Schuhwerk braucht man?</summary>
+            <summary class="faq-summary">Welche Fußballschuhe sind auf dem Kunstrasen erlaubt?</summary>
             <div class="faq-content">
-              Ganz normale Straßenschuhe, Sneaker oder flache Hallenschuhe reichen völlig. Stollen- und Nockenschuhe sind auf dem Kunstrasen verboten.
+              Erlaubt sind normale Hallenschuhe (flache Sohle), Tausendfüßler (TF-Sohle / Multinocken) oder saubere Turnschuhe/Sneaker. Eisenstollen und feste FG-Nocken sind auf dem Kunstrasen streng verboten.
             </div>
           </details>
 
           <details class="faq-details">
-            <summary class="faq-summary">Können auch Leute mitspielen, die nie im Verein gekickt haben?</summary>
+            <summary class="faq-summary">Werden Bälle und Leibchen zur Verfügung gestellt?</summary>
             <div class="faq-content">
-              Ja, absolut! Das System passt sich dem Können an. Es geht um Geschicklichkeit, Spaß und Gaudi. Jeder trifft Punkte.
+              Ja! Zu jeder Platzbuchung bekommt ihr kostenlos Trainingsleibchen in zwei Farben sowie offizielle Hallenbälle an der Rezeption ausgehändigt.
             </div>
           </details>
 
           <details class="faq-details">
-            <summary class="faq-summary">Wie funktioniert die Stornierung?</summary>
+            <summary class="faq-summary">Gibt es Umkleiden und Duschen?</summary>
             <div class="faq-content">
-              Bis 24 Stunden vor deinem Termin kannst du kostenlos online stornieren oder verschieben.
+              Selbstverständlich. Jeder Standort verfügt über geräumige Damen- und Herrenumkleiden mit kostenlosen Warmwasserduschen und absperrbaren Spinden.
             </div>
           </details>
 
           <details class="faq-details">
-            <summary class="faq-summary">Darf man auch nur auf ein Bier und Burger vorbeikommen?</summary>
+            <summary class="faq-summary">Wie kann man buchen und stornieren?</summary>
             <div class="faq-content">
-              Freilich! Unsere Bar, die Großbildschirme für Live-Spiele und der Schanigarten sind öffentlich zugänglich.
+              Ihr bucht euren Termin einfach online. Bis 24 Stunden vor dem gebuchten Anstoß könnt ihr kostenfrei stornieren oder verschieben.
             </div>
           </details>
         </div>
@@ -590,13 +620,13 @@
     </section>
   </main>
 
-  <!-- FOOTER (SIXES COMPACT RETRO FOOTER) -->
+  <!-- FOOTER -->
   <footer class="footer-sixes bg-mahogany text-wool">
     <div class="container-sixes footer-grid">
       <div class="footer-left">
         <div class="footer-brand">BOLZWERK</div>
         <p class="footer-tagline">
-          Social Football &amp; Craft Bar Österreich.<br>
+          Hallenfußball &amp; Sportbar Österreich.<br>
           Wien • Linz • Graz
         </p>
         <p class="footer-agency">
@@ -606,28 +636,28 @@
 
       <div class="footer-links-col">
         <h5>Navigation</h5>
-        <a href="#standorte">Standorte</a>
-        <a href="#der-kick">Der Kick</a>
-        <a href="#speis-trank">Speis &amp; Trank</a>
-        <a href="#spielmodi">Spielmodi</a>
+        <a href="#standorte">Hallen &amp; Standorte</a>
+        <a href="#hallenkick">Der Hallenkick</a>
+        <a href="#speis-trank">Sportbar &amp; Speisen</a>
+        <a href="#plaetze">Platz-Übersicht</a>
       </div>
 
       <div class="footer-links-col">
-        <h5>Öffnungszeiten</h5>
-        <span>Mo – Do: 15:00 – 23:00</span>
-        <span>Fr – Sa: 14:00 – 01:00</span>
-        <span>Sonntag: 12:00 – 22:00</span>
+        <h5>Hallen-Öffnungszeiten</h5>
+        <span>Mo – Fr: 14:00 – 23:30</span>
+        <span>Samstag: 09:00 – 00:00</span>
+        <span>Sonntag: 09:00 – 22:00</span>
       </div>
 
       <div class="footer-links-col">
         <h5>Rechtliches</h5>
         <a href="#impressum" id="linkImpressum">Impressum (§ 5 ECG)</a>
         <a href="#datenschutz" id="linkDatenschutz">Datenschutz</a>
-        <a href="#agb" id="linkAgb">Hausordnung</a>
+        <a href="#agb" id="linkAgb">Hallenordnung</a>
       </div>
     </div>
     <div class="footer-bar-bottom">
-      <span>© 2026 BOLZWERK Entertainment GmbH • Alle Rechte vorbehalten.</span>
+      <span>© 2026 BOLZWERK Hallenfußball GmbH • Alle Rechte vorbehalten.</span>
     </div>
   </footer>
 
@@ -639,10 +669,10 @@
         <button class="btn-modal-close" id="modalClose">&times;</button>
       </div>
       <div class="modal-content-scroll" id="modalContentArea">
-        <p><strong>BOLZWERK Österreich Entertainment GmbH</strong><br>
+        <p><strong>BOLZWERK Österreich Hallenfußball GmbH</strong><br>
         Waldsteingartenstraße 135, 1020 Wien</p>
         <p><strong>Firmenbuch:</strong> FN 582194 x | Handelsgericht Wien<br>
-        <strong>UID:</strong> ATU78923412 | WKO Wien Fachgruppe Gastronomie &amp; Freizeit</p>
+        <strong>UID:</strong> ATU78923412 | WKO Wien Fachgruppe Sport- und Freizeitbetriebe</p>
         <p><strong>Showcase-Hinweis:</strong> Portfolio-Showcase-Seite des Digitalstudios AnonymCreator.</p>
       </div>
     </div>
