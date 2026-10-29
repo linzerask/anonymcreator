@@ -4,14 +4,20 @@
    ========================================================================== */
 
 :root {
-  /* Exact Sixes Cricket Palette */
+  /* Exact Sixes Architecture adapted for BOLZWERK Austrian Athletic */
   --c-mahogany: #590707;
   --c-mahogany-light: #731313;
   --c-wool: #FFF5E0;
   --c-wool-dark: #E8DEC9;
   --c-pomegranate: #F42E0E;
-  --c-hotpink: #FF00B8;
-  --c-pitchgreen: #224832;
+  
+  /* Modern High-Impact Pitch Green Palette (Replaced former Pink) */
+  --c-green-pitch: #00E676;         /* Electric Turf Green for dark backgrounds, buttons, dots, glow */
+  --c-green-accent: #00C853;        /* Vivid Sports Green */
+  --c-green-dark: #007A3D;          /* Deep Austrian Pitch Green (high-contrast text & links on wool) */
+  --c-hotpink: var(--c-green-pitch);/* Backwards compatibility alias */
+  
+  --c-pitchgreen: #007A3D;
   --c-cornflower: #243D75;
   
   --font-mono: 'Space Mono', monospace;
@@ -68,7 +74,14 @@ button, input, select {
 
 .text-mahogany { color: var(--c-mahogany); }
 .text-wool { color: var(--c-wool); }
-.text-hotpink { color: var(--c-hotpink); }
+.text-hotpink,
+.text-green { 
+  color: var(--c-green-pitch); 
+}
+
+.text-green-dark {
+  color: var(--c-green-dark);
+}
 
 .container-sixes {
   width: 100%;
@@ -131,15 +144,31 @@ button, input, select {
   min-height: 44px;
 }
 
-.btn-hotpink {
-  background-color: var(--c-hotpink);
-  color: var(--c-wool);
-  box-shadow: 0 4px 15px rgba(255, 0, 184, 0.3);
+.btn-hotpink,
+.btn-pitchgreen,
+.btn-green {
+  background-color: var(--c-green-pitch);
+  color: var(--c-mahogany);
+  border: 2px solid var(--c-green-pitch);
+  box-shadow: 0 4px 15px rgba(0, 230, 118, 0.35);
+  font-weight: 800;
 }
 
-.btn-hotpink:hover {
+.btn-hotpink:hover,
+.btn-pitchgreen:hover,
+.btn-green:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 0, 184, 0.45);
+  background-color: transparent;
+  color: var(--c-green-pitch);
+  box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5);
+}
+
+.booking-bar .btn-hotpink:hover,
+.booking-bar .btn-pitchgreen:hover,
+.booking-bar .btn-green:hover {
+  background-color: var(--c-mahogany);
+  color: var(--c-green-pitch);
+  border-color: var(--c-mahogany);
 }
 
 .btn-mahogany {
@@ -587,8 +616,8 @@ button, input, select {
 }
 
 .booking-type-tab.active {
-  border-color: var(--c-hotpink);
-  color: var(--c-hotpink);
+  border-color: var(--c-green-dark);
+  color: var(--c-green-dark);
 }
 
 .booking-horizontal-form {
@@ -769,9 +798,14 @@ button, input, select {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--c-hotpink);
+  color: var(--c-green-dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.pillar-btn:hover {
+  color: var(--c-green-accent);
 }
 
 /* ==========================================================================
@@ -819,8 +853,13 @@ button, input, select {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--c-hotpink);
+  color: var(--c-green-dark);
   text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.food-text-link:hover {
+  color: var(--c-green-accent);
 }
 
 .food-collage {
@@ -1159,14 +1198,15 @@ button, input, select {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: var(--c-hotpink);
-  color: var(--c-wool);
+  background: var(--c-green-pitch);
+  color: var(--c-mahogany);
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.1em;
   padding: 0.4rem 0.8rem;
   border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0, 230, 118, 0.35);
 }
 
 .tile-info {
@@ -1195,8 +1235,13 @@ button, input, select {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--c-hotpink);
+  color: var(--c-green-dark);
   text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-tile-book:hover {
+  color: var(--c-green-accent);
 }
 
 /* ==========================================================================
@@ -1223,7 +1268,7 @@ button, input, select {
 }
 
 .occ-box.highlight-occ {
-  border-color: var(--c-hotpink);
+  border-color: var(--c-green-pitch);
 }
 
 .occ-tag {
@@ -1233,8 +1278,9 @@ button, input, select {
   color: #f59e0b;
 }
 
-.occ-tag.tag-pink {
-  color: var(--c-hotpink);
+.occ-tag.tag-pink,
+.occ-tag.tag-green {
+  color: var(--c-green-pitch);
 }
 
 .occ-box h3 {
@@ -1252,8 +1298,13 @@ button, input, select {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--c-hotpink);
+  color: var(--c-green-pitch);
   margin-top: auto;
+  transition: var(--transition);
+}
+
+.occ-link:hover {
+  color: #fff;
 }
 
 /* ==========================================================================
@@ -1375,7 +1426,7 @@ button, input, select {
 .faq-summary::after {
   content: '+';
   font-size: 1.4rem;
-  color: var(--c-hotpink);
+  color: var(--c-green-dark);
 }
 
 .faq-details[open] .faq-summary::after {
@@ -1419,7 +1470,7 @@ button, input, select {
 }
 
 .footer-agency a {
-  color: var(--c-hotpink);
+  color: var(--c-green-pitch);
   font-weight: 700;
 }
 
@@ -1442,7 +1493,7 @@ button, input, select {
 }
 
 .footer-links-col a:hover {
-  color: var(--c-hotpink);
+  color: var(--c-green-pitch);
 }
 
 .footer-bar-bottom {
