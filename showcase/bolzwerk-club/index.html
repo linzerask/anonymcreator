@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOLZWERK — Social Football & Craft Club Österreich</title>
+  <meta name="description" content="High-Tech Kicken mit Radar-Messung, frische Smash Burger und kaltes Bier. Die neue Social Sports Bar in Wien, Linz & Graz. Jetzt Käfig reservieren.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar">
+    <div class="announcement-content">
+      <span class="badge-live">LIVE</span>
+      <span>Jetzt neu in Wien-Prater & Linz-Tabakfabrik: Käfige für Herbst & Winter sichern!</span>
+      <a href="#booking" class="announcement-link">Zum Buchungskalender &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Main Navigation -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#" class="brand-logo" aria-label="Bolzwerk Startseite">
+        <span class="logo-mark">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="#00E676" fill-opacity="0.15" stroke="#00E676" stroke-width="2"/>
+            <circle cx="20" cy="20" r="10" stroke="#00E676" stroke-width="2" stroke-dasharray="3 3"/>
+            <path d="M20 10V30M10 20H30" stroke="#00E676" stroke-width="2"/>
+            <circle cx="20" cy="20" r="3.5" fill="#00E676"/>
+          </svg>
+        </span>
+        <span class="logo-text">BOLZ<span class="accent-text">WERK</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="#game-modes" class="nav-link">Die Käfige</a></li>
+          <li><a href="#speis-trank" class="nav-link">Speis & Trank</a></li>
+          <li><a href="#anlaesse" class="nav-link">Firmen & Poltern</a></li>
+          <li><a href="#standorte" class="nav-link">Standorte</a></li>
+          <li><a href="#preise" class="nav-link">Preise</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="soundToggle" class="btn-sound" title="Stadion-Soundeffekte ein/aus" aria-label="Soundeffekte umschalten">
+          <span class="sound-icon">🔊</span>
+          <span class="sound-label">Audio</span>
+        </button>
+        <a href="#booking" class="btn btn-primary btn-header">Käfig Buchen</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">BOLZ<span class="accent-text">WERK</span></span>
+      <button class="drawer-close" id="drawerCloseBtn" aria-label="Menü schließen">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#game-modes" class="drawer-link">Die Käfige & Modi</a></li>
+      <li><a href="#speis-trank" class="drawer-link">Speis & Trank</a></li>
+      <li><a href="#anlaesse" class="drawer-link">Firmen, Teamevents & Poltern</a></li>
+      <li><a href="#standorte" class="drawer-link">Standorte (Wien, Linz, Graz)</a></li>
+      <li><a href="#preise" class="drawer-link">Preise & Pakete</a></li>
+      <li><a href="#booking" class="drawer-link drawer-cta">Sofort Reservieren</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <p class="drawer-note">📍 Wien Prater • Linz Tabakfabrik • Graz Smart City</p>
+      <p class="drawer-phone">Servus-Hotline: <a href="tel:+4318900744">+43 (0) 1 890 07 44</a></p>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-container">
+        
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>HIGH-TECH SOCIAL FOOTBALL CLUB</span>
+          </div>
+          <h1 class="hero-title">
+            BALLERN.<br>
+            ANSTOSSEN.<br>
+            <span class="text-highlight">MITEINANDER GAUDI HABEN.</span>
+          </h1>
+          <p class="hero-description">
+            Vergiss kalte Soccer-Hallen und muffige Kabinen. Bei Bolzwerk warten interaktive High-Tech-Shooting-Cages mit Radar-Messung, heiße Smash Burger und eiskaltes Bier an der Bar. Keine Vereinsbindung, null Druck — einfach reinkommen und draufhalten.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#booking" class="btn btn-primary btn-large">Käfig jetzt reservieren</a>
+            <a href="#game-modes" class="btn btn-secondary btn-large">Spielmodi ansehen</a>
+          </div>
+
+          <div class="hero-perks">
+            <div class="perk-item">
+              <span class="perk-icon">⚡</span>
+              <span>100% Wetterfest</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">👟</span>
+              <span>Normale Straßenschuhe reichen</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">🍺</span>
+              <span>Bar & Gastgarten direkt am Platz</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO QUICK BOOKING ENGINE -->
+        <div class="booking-widget-wrapper" id="booking">
+          <div class="booking-card">
+            <div class="booking-card-header">
+              <h2 class="widget-heading">KÄFIG RESERVIEREN</h2>
+              <div class="booking-tabs" role="tablist">
+                <button class="booking-tab active" data-tab="quick" role="tab" aria-selected="true">Freunde & Runden (2–12)</button>
+                <button class="booking-tab" data-tab="group" role="tab" aria-selected="false">Firmen & Poltern (12+)</button>
+              </div>
+            </div>
+
+            <!-- Tab 1: Quick Booking Form -->
+            <form id="quickBookingForm" class="booking-form active" onsubmit="return false;">
+              <div class="form-group">
+                <label for="bookLocation">Standort auswählen</label>
+                <select id="bookLocation" class="form-control" required>
+                  <option value="wien">Wien Prater (Krieau / U2)</option>
+                  <option value="linz">Linz Tabakfabrik (Peter-Behrens-Platz)</option>
+                  <option value="graz">Graz Smart City (Waagner-Biro-Str.)</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-half">
+                  <label for="bookDate">Datum</label>
+                  <input type="date" id="bookDate" class="form-control" required>
+                </div>
+                <div class="form-group col-half">
+                  <label for="bookTime">Startzeit</label>
+                  <select id="bookTime" class="form-control" required>
+                    <option value="16:00">16:00 Uhr</option>
+                    <option value="17:00">17:00 Uhr</option>
+                    <option value="18:00" selected>18:00 Uhr</option>
+                    <option value="19:00">19:00 Uhr</option>
+                    <option value="20:00">20:00 Uhr</option>
+                    <option value="21:00">21:00 Uhr</option>
+                    <option value="22:00">22:00 Uhr</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-half">
+                  <label for="bookPlayers">Kicker / Personen</label>
+                  <div class="stepper-input">
+                    <button type="button" class="btn-step" id="decPlayers" aria-label="Spieler verringern">-</button>
+                    <input type="number" id="bookPlayers" value="6" min="2" max="16" readonly>
+                    <button type="button" class="btn-step" id="incPlayers" aria-label="Spieler erhöhen">+</button>
+                  </div>
+                </div>
+                <div class="form-group col-half">
+                  <label for="bookDuration">Spieldauer</label>
+                  <select id="bookDuration" class="form-control">
+                    <option value="60">60 Min (Klassisch)</option>
+                    <option value="90" selected>90 Min (Empfohlen)</option>
+                    <option value="120">120 Min (Volle Gaudi)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="price-calculation-box">
+                <div class="calc-row">
+                  <span class="calc-label">Geschätzter Gesamtpreis:</span>
+                  <span class="calc-value" id="totalPriceDisplay">99,00 €</span>
+                </div>
+                <div class="calc-subtext">
+                  <span id="perPlayerDisplay">Nur 16,50 € pro Kicker</span> • Inklusive Bälle & High-Tech Tracking
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block btn-book-action" id="submitQuickBook">
+                Freie Käfige Prüfen
+              </button>
+              <div class="booking-guarantee">
+                🔒 Kostenlose Stornierung bis 24 Stunden vor Anstoß
+              </div>
+            </form>
+
+            <!-- Tab 2: Group & Corporate Inquiry -->
+            <form id="groupBookingForm" class="booking-form" onsubmit="return false;">
+              <p class="form-intro-note">
+                Für Firmenfeiern, Polterabende, Geburtstage und Vereinsrunden ab 12 Personen schnüren wir komplette Pakete mit Käfigen, Speisen & Getränken.
+              </p>
+              
+              <div class="form-group">
+                <label for="groupLocation">Wunsch-Standort</label>
+                <select id="groupLocation" class="form-control">
+                  <option value="wien">Wien Prater (bis 180 Personen)</option>
+                  <option value="linz">Linz Tabakfabrik (bis 140 Personen)</option>
+                  <option value="graz">Graz Smart City (bis 120 Personen)</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-half">
+                  <label for="groupSize">Personenanzahl</label>
+                  <input type="number" id="groupSize" class="form-control" placeholder="z.B. 25" min="12" value="20">
+                </div>
+                <div class="form-group col-half">
+                  <label for="groupOccasion">Art der Feier</label>
+                  <select id="groupOccasion" class="form-control">
+                    <option value="firma">Büro-Runde / Teambuilding</option>
+                    <option value="poltern">Polterabend</option>
+                    <option value="geburtstag">Runder Geburtstag</option>
+                    <option value="exklusiv">Komplette Exklusivmiete</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="groupEmail">E-Mail für unverbindliches Angebot</label>
+                <input type="email" id="groupEmail" class="form-control" placeholder="dein.name@firma.at" required>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block" id="submitGroupBook">
+                Unverbindliches Angebot Anfordern
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIVE MARQUEE TICKER -->
+    <section class="ticker-section" aria-label="Live Ticker Highlights">
+      <div class="ticker-track">
+        <div class="ticker-content">
+          <span>⚡ KEINE VEREINSERFAHRUNG NÖTIG</span>
+          <span class="ticker-sep">•</span>
+          <span>🎯 DIGITALES RADAR-TRACKING BIS AUF DEN KM/H</span>
+          <span class="ticker-sep">•</span>
+          <span>🍔 SMASH BURGER AUS REGIONALEM BIO-RINDFLEISCH</span>
+          <span class="ticker-sep">•</span>
+          <span>🍺 GEZAPFTES STIEGL, TRUMER & OTTAKRINGER</span>
+          <span class="ticker-sep">•</span>
+          <span>🏆 LIVE-HIGHSCORES & BESTENLISTEN</span>
+          <span class="ticker-sep">•</span>
+          <span>🎉 POLTERABENDE & FIRMENFEIERN</span>
+          <span class="ticker-sep">•</span>
+        </div>
+        <!-- Duplicated for seamless loop -->
+        <div class="ticker-content" aria-hidden="true">
+          <span>⚡ KEINE VEREINSERFAHRUNG NÖTIG</span>
+          <span class="ticker-sep">•</span>
+          <span>🎯 DIGITALES RADAR-TRACKING BIS AUF DEN KM/H</span>
+          <span class="ticker-sep">•</span>
+          <span>🍔 SMASH BURGER AUS REGIONALEM BIO-RINDFLEISCH</span>
+          <span class="ticker-sep">•</span>
+          <span>🍺 GEZAPFTES STIEGL, TRUMER & OTTAKRINGER</span>
+          <span class="ticker-sep">•</span>
+          <span>🏆 LIVE-HIGHSCORES & BESTENLISTEN</span>
+          <span class="ticker-sep">•</span>
+          <span>🎉 POLTERABENDE & FIRMENFEIERN</span>
+          <span class="ticker-sep">•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS / LIVE LEADERBOARD COUNTER -->
+    <section class="stats-counter-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num" id="counterShots">318.420</div>
+            <div class="stat-label">Torschüsse registriert</div>
+          </div>
+          <div class="stat-card highlight-card">
+            <div class="stat-num">124 <span class="stat-unit">km/h</span></div>
+            <div class="stat-label">Härtester Schuss der Woche</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4.9 / 5</div>
+            <div class="stat-label">Google Bewertungen (680+ Kicker)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Standorte in Österreich</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME MODES / DIE KÄFIGE -->
+    <section class="game-modes-section" id="game-modes">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">INTERAKTIVE SPIELMODI</span>
+          <h2 class="section-title">WIE DAS KICKEN BEI UNS LÄUFT</h2>
+          <p class="section-subtitle">
+            Du betrittst den Hightech-Käfig, wählst deinen Spielmodus am Touchscreen und hältst drauf. Unser Kamerasystem und Radarsensoren werten jeden Schuss in Echtzeit aus.
+          </p>
+        </div>
+
+        <!-- Interactive Mode Switcher -->
+        <div class="modes-interactive-wrapper">
+          <div class="modes-nav">
+            <button class="mode-nav-btn active" data-mode="radar">
+              <span class="mode-icon">🚀</span>
+              <span class="mode-nav-text">
+                <strong>Radar Speedball</strong>
+                <small>Wer hat den härtesten Huf?</small>
+              </span>
+            </button>
+            <button class="mode-nav-btn" data-mode="precision">
+              <span class="mode-icon">🎯</span>
+              <span class="mode-nav-text">
+                <strong>Kreuz-Präzision</strong>
+                <small>Digitale Zielscheiben treffen</small>
+              </span>
+            </button>
+            <button class="mode-nav-btn" data-mode="penalty">
+              <span class="mode-icon">🧤</span>
+              <span class="mode-nav-text">
+                <strong>Elfer-Krimi</strong>
+                <small>Nervenschlacht gegen den Torwart</small>
+              </span>
+            </button>
+            <button class="mode-nav-btn" data-mode="team">
+              <span class="mode-icon">⚡</span>
+              <span class="mode-nav-text">
+                <strong>Team-Staffel</strong>
+                <small>Jeder Ballkontakt zählt</small>
+              </span>
+            </button>
+          </div>
+
+          <div class="mode-display-card">
+            <div class="mode-visual">
+              <div class="pitch-mockup">
+                <div class="radar-scan-line"></div>
+                <div class="goal-target target-top-left active">500 Pkt</div>
+                <div class="goal-target target-top-right">750 Pkt</div>
+                <div class="goal-target target-bottom-left">250 Pkt</div>
+                <div class="goal-target target-bottom-right">250 Pkt</div>
+                <div class="radar-display-hud">
+                  <div class="hud-speed" id="hudSpeedVal">98 KM/H</div>
+                  <div class="hud-status" id="hudStatusVal">VOLLEY-TREFFER!</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mode-details" id="modeDetails">
+              <span class="badge-mode" id="modeTag">BELIEBTESTER MODUS</span>
+              <h3 class="mode-title" id="modeTitle">Radar Speedball</h3>
+              <p class="mode-desc" id="modeDesc">
+                Jeder Spieler hat 5 Versuche. Hochpräzise Doppler-Radarsensoren messen Abschlagwinkel und Schussgeschwindigkeit auf den Zehntelkilometer genau. Am Ende kürt das System den Scharfschützen der Runde.
+              </p>
+              <ul class="mode-specs" id="modeSpecs">
+                <li><span>Schwierigkeitsgrad:</span> Für jeden machbar — reine Schusskraft</li>
+                <li><span>Spieldauer:</span> ca. 10–15 Minuten pro Durchgang</li>
+                <li><span>Highlight:</span> Slow-Motion-Wiederholung auf dem Monitor</li>
+              </ul>
+              <div class="mode-action">
+                <a href="#booking" class="btn btn-primary">Diesen Modus buchen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOD & DRINKS (SPEIS & TRANK) -->
+    <section class="speis-trank-section" id="speis-trank">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">BAR & KÜCHE</span>
+          <h2 class="section-title">KEIN FETTIGER HALBEN-FRAß, SONDERN GESCHEITE SCHMANKERL</h2>
+          <p class="section-subtitle">
+            Kicken macht hungrig und durstig. Unsere Bar serviert frisch gezapfte österreichische Biere, handgemachte Smash Burger und knusprige Happen zum Teilen am Stehtisch.
+          </p>
+        </div>
+
+        <div class="menu-tabs">
+          <button class="menu-tab-btn active" data-cat="burger">Smash Burger & Fries</button>
+          <button class="menu-tab-btn" data-cat="bites">Happen zum Teilen</button>
+          <button class="menu-tab-btn" data-cat="drinks">Bier vom Fass & Spritzer</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <!-- Item 1 -->
+          <div class="menu-card" data-category="burger">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Der Bolzer Smash Burger" loading="lazy">
+              <span class="menu-badge">Bestseller</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Der Bolzer Burger</h4>
+                <span class="menu-price">14,90 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Doppelter Bio-Rindfleisch-Patty kross gesmasht, geschmolzener Vorarlberger Bergkäse, geschmorte Zwiebeln, Haus-Sauce & Brioche-Semmel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="menu-card" data-category="burger">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Burger" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Der Almsprinter (Huhn)</h4>
+                <span class="menu-price">14,20 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Knusprig paniertes Hühnerfilet aus Österreich, knackiger Krautsalat, hausgemachte Knoblauch-Mayonnaise & Schnittlauch.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="menu-card" data-category="burger">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80" alt="Plant-Based Smash Burger" loading="lazy">
+              <span class="menu-badge veg">Vegetarisch</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Grüner Zauber (Veggie)</h4>
+                <span class="menu-price">13,90 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Pflanzlicher Patty mit geräuchertem Scamorza-Käse, eingelegten roten Zwiebeln, Rucola & Trüffel-Mayo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4: Bites -->
+          <div class="menu-card" data-category="bites">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80" alt="Knusprige Erdäpfel Wedges" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Kross-Erdäpfel Wedges</h4>
+                <span class="menu-price">6,80 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Frittierte heimische Erdäpfel-Spalten mit Rosmarin-Salz, dazu Schnittlauch-Sauerrahm und Paprika-Dip.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5: Bites -->
+          <div class="menu-card" data-category="bites">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Knusprige Schnitzel Bites" loading="lazy">
+              <span class="menu-badge">Heimisch</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Schnitzel-Bites im Korb</h4>
+                <span class="menu-price">9,90 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Häppchen vom zarten Schweinefilet in Kaisersemmel-Panier, gereicht mit steirischem Kren und Wild-Preiselbeeren.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6: Drinks -->
+          <div class="menu-card" data-category="drinks">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=600&q=80" alt="Kühles Bier vom Fass" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Frisch Gezapftes (Krügerl 0,5l)</h4>
+                <span class="menu-price">4,90 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Stiegl Goldbräu, Trumer Pils oder Ottakringer Rotes Zwickl frisch aus der Leitung. Seiterl (0,3l) um 3,90 €.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 7: Drinks -->
+          <div class="menu-card" data-category="drinks">
+            <div class="menu-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Kaiserspritzer und Drinks" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-title-row">
+                <h4>Kaiserspritzer & Highballs</h4>
+                <span class="menu-price">ab 5,40 €</span>
+              </div>
+              <p class="menu-ingredients">
+                Grüner Veltliner mit Holunderblütensirup und Sodawasser. Dazu Gin Tonics mit heimischem Alpenschnaps.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-download-box">
+          <span>Du planst eine Feier mit Menü-Pauschale?</span>
+          <a href="#booking" class="btn btn-secondary">Speisen-Pakete für Gruppen anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OCCASIONS (ANLÄSSE) -->
+    <section class="anlaesse-section" id="anlaesse">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">GRUPPEN & EVENTS</span>
+          <h2 class="section-title">FÜR JEDE GELEGENHEIT DIE RICHTIGE RUNDE</h2>
+          <p class="section-subtitle">
+            Ob Poltern vor der Hochzeit, die jährliche Büro-Feier oder einfach ein runder Geburtstag: Bei uns steht der Spaß im Vordergrund, ohne peinliche Pflicht-Spiele.
+          </p>
+        </div>
+
+        <div class="occasions-grid">
+          <!-- Card 1 -->
+          <article class="occasion-card">
+            <div class="occ-img">
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Polterabend bei Bolzwerk" loading="lazy">
+              <div class="occ-badge">Legendär</div>
+            </div>
+            <div class="occ-body">
+              <h3>Polterabend & Junggesellenrunde</h3>
+              <p>
+                Gebt der Braut oder dem Bräutigam die Ehre im Radar-Käfig. Inklusive Willkommens-Shot, reserviertem Stehtisch und Schuss-Turnier mit Medaille für den Sieger.
+              </p>
+              <ul class="occ-list">
+                <li>90 Minuten reservierter Exklusiv-Käfig</li>
+                <li>Begrüßungsrunde Schnaps für alle</li>
+                <li>Smash Burger & Pommes nach dem Kick</li>
+              </ul>
+              <a href="#booking" class="btn btn-outline">Polter-Paket Anfragen</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="occasion-card highlight-border">
+            <div class="occ-img">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Büro-Runde und Teamevent" loading="lazy">
+              <div class="occ-badge corporate">Für Firmen</div>
+            </div>
+            <div class="occ-body">
+              <h3>Büro-Turnier & Teamevent</h3>
+              <p>
+                Keine steifen Vorträge, sondern gesunder Ehrgeiz und lockeres Zusammensitzen. Bring die Kolleginnen und Kollegen zusammen — vom Praktikanten bis zur Geschäftsführung.
+              </p>
+              <ul class="occ-list">
+                <li>Eigene Turnierleitung & Moderation möglich</li>
+                <li>Getränkepauschalen (Bier, Wein, Softdrinks)</li>
+                <li>Separate Lounge-Bereiche für Präsentationen</li>
+              </ul>
+              <a href="#booking" class="btn btn-primary">Firmenangebot anfordern</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="occasion-card">
+            <div class="occ-img">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Geburtstage und Kumpelrunden" loading="lazy">
+              <div class="occ-badge">Gaudi</div>
+            </div>
+            <div class="occ-body">
+              <h3>Geburtstag & Kumpelabend</h3>
+              <p>
+                Runder Geburtstag oder einfach Freitagabend mit Freunden? Schnappt euch einen Käfig, wetten um die nächste Runde Bier und genießt die Stimmung bis spät in die Nacht.
+              </p>
+              <ul class="occ-list">
+                <li>Flexible Zeiten nach Absprache</li>
+                <li>Kombinierbar mit Burger-Platten</li>
+                <li>Spontane Buchungen online möglich</li>
+              </ul>
+              <a href="#booking" class="btn btn-outline">Runde Planen</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STANDORTE (VENUES IN AUSTRIA) -->
+    <section class="standorte-section" id="standorte">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">ÖSTERREICHWEIT</span>
+          <h2 class="section-title">UNSERE CLUBS IN DEINER NÄHE</h2>
+          <p class="section-subtitle">
+            Zentral gelegen, optimal an die Öffis angebunden und mit ausreichend Parkplätzen vor der Tür.
+          </p>
+        </div>
+
+        <div class="standorte-grid">
+          <!-- Wien -->
+          <div class="standort-card active" data-city="wien">
+            <div class="standort-header">
+              <div class="city-title">
+                <h3>Wien Prater</h3>
+                <span class="city-tag">Flagship Club</span>
+              </div>
+              <span class="open-status">Heute geöffnet bis 01:00</span>
+            </div>
+            <div class="standort-body">
+              <p class="standort-address">
+                📍 Waldsteingartenstraße 135, 1020 Wien<br>
+                🚇 U-Bahn: U2 Krieau / Messe Prater (4 Min Fußweg)
+              </p>
+              <div class="standort-stats">
+                <div><strong>6</strong> High-Tech Käfige</div>
+                <div><strong>180</strong> Plätze Bar & Schanigarten</div>
+              </div>
+              <a href="#booking" class="btn btn-primary btn-block">In Wien Reservieren</a>
+            </div>
+          </div>
+
+          <!-- Linz -->
+          <div class="standort-card" data-city="linz">
+            <div class="standort-header">
+              <div class="city-title">
+                <h3>Linz Tabakfabrik</h3>
+                <span class="city-tag">Industrie-Charme</span>
+              </div>
+              <span class="open-status">Heute geöffnet bis 00:00</span>
+            </div>
+            <div class="standort-body">
+              <p class="standort-address">
+                📍 Peter-Behrens-Platz 8, 4020 Linz<br>
+                🚋 Bim Linien 1 & 2 (Haltestelle Lüfteneggerstraße)
+              </p>
+              <div class="standort-stats">
+                <div><strong>4</strong> High-Tech Käfige</div>
+                <div><strong>130</strong> Plätze Clublounge</div>
+              </div>
+              <a href="#booking" class="btn btn-primary btn-block">In Linz Reservieren</a>
+            </div>
+          </div>
+
+          <!-- Graz -->
+          <div class="standort-card" data-city="graz">
+            <div class="standort-header">
+              <div class="city-title">
+                <h3>Graz Smart City</h3>
+                <span class="city-tag">Urban Sports Bar</span>
+              </div>
+              <span class="open-status">Heute geöffnet bis 23:30</span>
+            </div>
+            <div class="standort-body">
+              <p class="standort-address">
+                📍 Waagner-Biro-Straße 110, 8020 Graz<br>
+                🚊 Straßenbahn Linie 6 (Smart City Mitte)
+              </p>
+              <div class="standort-stats">
+                <div><strong>4</strong> High-Tech Käfige</div>
+                <div><strong>110</strong> Plätze Bar & Lounge</div>
+              </div>
+              <a href="#booking" class="btn btn-primary btn-block">In Graz Reservieren</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / ECHTE STIMMEN -->
+    <section class="reviews-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">KICKER-STIMMEN</span>
+          <h2 class="section-title">WAS DIE LEUTE ÜBER BOLZWERK SAGEN</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-box">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              „Wir waren zum Polterabend von Christoph dort. Erst 90 Minuten gnadenloser Wettstreit im Radar-Käfig, danach Burger und Bier. Niemand von uns spielt aktiv im Verein, aber der Ehrgeiz hat jeden sofort gepackt.“
+            </p>
+            <div class="review-author">
+              <strong>Stefan H.</strong> aus Mödling • Polter-Gruppe
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              „Endlich mal eine Weihnachtsfeier ohne peinliche Reden. Die Kolleginnen und Kollegen aus der IT und Buchhaltung standen nebeneinander und haben um den härtesten Schuss gewettet. Unkompliziert und leiwand organisiert.“
+            </p>
+            <div class="review-author">
+              <strong>Sabine M.</strong> aus Wien • Teamleitung
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              „Die Smash Burger schlagen so manche Spezialitäten-Burgerbude in Linz. Kicken macht extrem Laune, weil man dank des Kamerasystems sofort die Wiederholung sieht. Wir kommen fix wieder.“
+            </p>
+            <div class="review-author">
+              <strong>Markus W.</strong> aus Linz • Stammtisch-Runde
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="faq-section" id="preise">
+      <div class="container faq-container">
+        <div class="section-header text-center">
+          <span class="section-badge">HÄUFIG GESTELLTE FRAGEN</span>
+          <h2 class="section-title">ALLES, WAS DU VOR DEM ANPFIFF WISSEN MUSST</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Muss ich Fußballschuhe oder Sportgewand mitbringen?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Nein, überhaupt nicht! Der Kunstrasen in unseren Käfigen ist für ganz normale flache Straßenschuhe, Sneaker oder Hallenschuhe ausgelegt. Stollen- und Nockenschuhe sind verboten. Ihr könnt ganz entspannt in Jeans oder Freizeitkleidung antreten.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Was passiert, wenn jemand in der Gruppe noch nie Fußball gespielt hat?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Genau dafür ist Bolzwerk gebaut! Unsere Spielmodi passen sich per Knopfdruck an. Bei Zielscheiben und Spaß-Modi geht es um Geschicklichkeit und Lachen, nicht um Kondition oder Fußball-Talent. Jede und jeder trifft Punkte.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Wie funktioniert die Bezahlung und Stornierung?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ihr könnt bequem online vorab per Kreditkarte, EPS-Überweisung oder bar/mit Bankomatkarte direkt vor Ort zahlen. Bis 24 Stunden vor eurem gebuchten Termin könnt ihr kostenfrei stornieren oder verschieben.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Kann man auch nur zum Essen oder Bier trinken vorbeikommen?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Freilich! Unsere Bar und der Schanigarten sind öffentlich zugänglich. Wer nur die Live-Spiele auf den Großbildschirmen schauen will oder auf einen Burger und ein Krügerl vorbeikommt, ist jederzeit herzlich willkommen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="final-cta-section">
+      <div class="container text-center">
+        <h2>BEREIT FÜR DEN ANSTOß?</h2>
+        <p>Sichere dir deinen Wunschkäfig rechtzeitig — vor allem die Wochenenden in Wien und Linz sind schnell voll.</p>
+        <div class="final-cta-actions">
+          <a href="#booking" class="btn btn-primary btn-large">Käfig jetzt reservieren</a>
+          <a href="tel:+4318900744" class="btn btn-secondary btn-large">Fragen? Ruf uns an: 01 / 890 07 44</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">BOLZ<span class="accent-text">WERK</span></div>
+        <p class="footer-tagline">
+          Social Football & Craft Bar Österreich.<br>
+          Ein Projekt der AnonymCreator Showcase Series.
+        </p>
+        <p class="footer-location">
+          Standorte in Wien (1020), Linz (4020) und Graz (8020).
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#game-modes">Die Käfige</a></li>
+          <li><a href="#speis-trank">Speis & Trank</a></li>
+          <li><a href="#anlaesse">Firmen & Poltern</a></li>
+          <li><a href="#standorte">Standorte</a></li>
+          <li><a href="#preise">Preise</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Öffnungszeiten</h5>
+        <ul class="hours-list">
+          <li><span>Mo – Do:</span> 15:00 – 23:00</li>
+          <li><span>Fr – Sa:</span> 14:00 – 01:00</li>
+          <li><span>Sonntag:</span> 12:00 – 22:00</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Rechtliches (Österreich)</h5>
+        <ul>
+          <li><a href="#impressumModal" id="openImpressum">Impressum (§ 5 ECG)</a></li>
+          <li><a href="#datenschutzModal" id="openDatenschutz">Datenschutzerklärung</a></li>
+          <li><a href="#agbModal" id="openAgb">AGB & Hausordnung</a></li>
+        </ul>
+        <div class="agency-credit">
+          Design & Konzept: <a href="https://anonymcreator.online" target="_blank" rel="noopener">AnonymCreator Digitalstudio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container bottom-flex">
+        <span>© 2026 BOLZWERK Österreich GmbH. Alle Rechte vorbehalten.</span>
+        <span>Made with passion in Austria</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- IMPRESSUM MODAL (AUSTRIAN COMPLIANT) -->
+  <div class="modal-backdrop" id="legalModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle">Impressum & Offenlegung</h3>
+        <button class="modal-close" id="modalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <h4>Angaben gemäß § 5 ECG und § 25 Mediengesetz:</h4>
+        <p>
+          <strong>BOLZWERK Österreich Entertainment GmbH</strong><br>
+          Waldsteingartenstraße 135<br>
+          1020 Wien, Österreich
+        </p>
+        <p>
+          <strong>Firmenbuchnummer:</strong> FN 582194 x<br>
+          <strong>Firmenbuchgericht:</strong> Handelsgericht Wien<br>
+          <strong>UID-Nummer:</strong> ATU78923412<br>
+          <strong>Kammerzugehörigkeit:</strong> Wirtschaftskammer Wien, Fachgruppe Gastronomie & Freizeitbetriebe
+        </p>
+        <p>
+          <strong>Kontakt:</strong><br>
+          Telefon: +43 (0) 1 890 07 44<br>
+          E-Mail: servus@bolzwerk-club.at<br>
+          Web: https://anonymcreator.online/showcase/bolzwerk-club/
+        </p>
+        <p>
+          <strong>Showcase-Hinweis:</strong> Dies ist eine fiktive Showcase-Demonstrationsseite, entworfen vom Digitalstudio AnonymCreator zur Präsentation moderner Webtechnologien, UI/UX-Systeme und Buchungserlebnisse.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
