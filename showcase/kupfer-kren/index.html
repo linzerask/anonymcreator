@@ -3,769 +3,573 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KUPFER &amp; KREN | Alpine Tapas &amp; Sharing Bar Wien</title>
-  <meta name="description" content="Moderne österreichische Sharing-Bar in Wien. Steirische Tapas, Alpen-Schmankerl, Naturweine aus der Wachau und Signature Cocktails mit Zirbe &amp; Marille.">
+  <title>KUPFER &amp; KREN — Alpine Tapas &amp; Bar Wien</title>
+  <meta name="description" content="Kupfer &amp; Kren by AnonymCreator. Alpine Tapas, Steirischer Kren, Naturweine &amp; Bar im 7. Bezirk in Wien. Reverse-engineered from TÒPAS.">
 
-  <!-- Google Fonts: Archivo (Bold Grotesque Display) & Source Sans 3 (Editorial Sans) -->
+  <!-- Exact TÒPAS Typography: Archivo (Bold Grotesque Title) & Source Sans 3 (Clean Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,700;0,800;0,900;1,700;1,900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow+Condensed:wght@700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-topas">
 
-  <!-- TOPBAR NAVIGATION (TÒPAS SIGNATURE FLOATING BADGE & CLEAN BAR ACTIONS) -->
-  <header class="kk-topbar" id="topbar">
-    <div class="kk-topbar-inner">
-      <!-- Left: Live Kitchen Status + Ambient Sound Toggle -->
-      <div class="topbar-left">
-        <div class="status-indicator" id="statusBadge">
-          <span class="status-dot"></span>
-          <span class="status-text">HEUTE OFFEN AB 16:30 UHR</span>
-        </div>
-        <button type="button" class="btn-sound-minimal" id="soundToggle" aria-label="Hintergrund-Atmosphäre an- oder ausschalten">
-          <svg class="icon-svg" id="soundIconOn" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-          </svg>
-          <svg class="icon-svg" id="soundIconOff" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <line x1="23" y1="9" x2="17" y2="15"></line>
-            <line x1="17" y1="9" x2="23" y2="15"></line>
-          </svg>
-          <span class="sound-label">BAR-VINYL</span>
-        </button>
-      </div>
-
-      <!-- Center: Distinctive Wordmark -->
-      <a href="#hero" class="brand-link">
-        <span class="brand-title">KUPFER &amp; KREN</span>
-        <span class="brand-subtitle">ALPINE TAPAS &amp; BAR • WIEN</span>
+  <!-- TOPBAR (TÒPAS EXACT STICKY FLOATING TOPBAR) -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="#top" class="topbar__brand" aria-label="Kupfer &amp; Kren Startseite">
+        <span class="topbar__logo">K&amp;K</span>
       </a>
 
-      <!-- Right: Desktop Navigation + Primary Reservation CTA -->
-      <div class="topbar-right">
-        <nav class="nav-links">
-          <a href="#konzept" class="nav-item">Konzept</a>
-          <a href="#builder" class="nav-item">Schmankerl-Baukasten</a>
-          <a href="#speiskarte" class="nav-item">Speis &amp; Trank</a>
-          <a href="#schanigarten" class="nav-item">Schanigarten &amp; Bar</a>
-          <a href="#kontakt" class="nav-item">Öffnungszeiten</a>
-        </nav>
-        <button type="button" class="btn-copper btn-topbar-cta" id="btnOpenReserve">
-          Tisch Reservieren
-        </button>
-        <!-- Mobile Hamburger Trigger -->
-        <button type="button" class="btn-hamburger" id="hamburgerBtn" aria-label="Menü öffnen">
-          <span class="bar"></span>
-          <span class="bar"></span>
+      <div class="topbar__center">
+        <div class="topbar__status">
+          <span class="status-pulse"></span>
+          <span>HEUTE OFFEN AB 16:30 UHR · KÜCHE BIS 22:30</span>
+        </div>
+      </div>
+
+      <div class="topbar__actions">
+        <a href="#definition" class="topbar__link">Konzept</a>
+        <a href="#pincho" class="topbar__link">Anatomie</a>
+        <a href="#photos" class="topbar__link">Schmankerl</a>
+        <a href="#horaires" class="topbar__link">Zeiten</a>
+        <button type="button" class="btn btn--topbar" id="btnOpenReserve">Tisch Reservieren</button>
+        <button type="button" class="topbar__burger" id="burgerToggle" aria-label="Menü">
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- OFF-CANVAS MOBILE DRAWER -->
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div class="drawer-header">
-      <div class="drawer-brand">KUPFER &amp; KREN</div>
-      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Menü schließen">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer-menu" id="drawerMenu">
+    <div class="drawer-menu__head">
+      <span class="drawer-menu__title">KUPFER &amp; KREN</span>
+      <button type="button" class="drawer-menu__close" id="drawerClose">&times;</button>
     </div>
-    <nav class="drawer-nav-list">
-      <a href="#konzept" class="drawer-link">1. Das Alpine Tapas Konzept</a>
-      <a href="#builder" class="drawer-link">2. Schmankerl-Baukasten</a>
-      <a href="#speiskarte" class="drawer-link">3. Speis &amp; Trank (Kostproben)</a>
-      <a href="#schanigarten" class="drawer-link">4. Schanigarten &amp; Bar-Kultur</a>
-      <a href="#kontakt" class="drawer-link">5. Adresse &amp; Öffnungszeiten</a>
+    <nav class="drawer-menu__nav">
+      <a href="#top" class="drawer-item">01 Startseite</a>
+      <a href="#definition" class="drawer-item">02 Was ist Kupfer &amp; Kren?</a>
+      <a href="#pincho" class="drawer-item">03 Anatomie eines Schmankerls</a>
+      <a href="#photos" class="drawer-item">04 Die Kostproben</a>
+      <a href="#amigos" class="drawer-item">05 Amigos &amp; Spezis</a>
+      <a href="#horaires" class="drawer-item">06 Öffnungszeiten</a>
+      <a href="#acces" class="drawer-item">07 Anfahrt &amp; Adresse</a>
     </nav>
-    <div class="drawer-actions">
-      <button type="button" class="btn-copper btn-drawer-cta" id="btnDrawerReserve">
-        Tisch Anfragen &amp; Reservieren
-      </button>
-      <div class="drawer-phone">
-        Servus-Telefon: <a href="tel:+4315228834">+43 (0) 1 522 88 34</a>
-      </div>
+    <div class="drawer-menu__foot">
+      <button type="button" class="btn btn--primary btn--block" id="btnDrawerReserve">Tisch Reservieren</button>
+      <p class="drawer-menu__tel">Telefon: <a href="tel:+4315228834">+43 (0) 1 522 88 34</a></p>
     </div>
   </aside>
 
   <main>
-    <!-- SECTION 1: HERO (TÒPAS SIGNATURE BOLD ASYMMETRIC STAGGERED LAYOUT) -->
-    <section class="s-hero" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge-pill">
-            <span class="pill-dot"></span>
-            SCHMANKERL NEU GEDACHT • SAUERTEIG &amp; NATURAL WINE
-          </div>
-          <h1 class="hero-display-title">
-            <span class="line-1">EIN BISSCHEN ALPEN.</span>
-            <span class="line-2 text-copper">GANZ VIEL WIEN.</span>
-          </h1>
-          <p class="hero-lead">
-            Wo steirischer Kren auf zischende Kupferpfannen trifft. Bei uns teilt man keine großen Hauptgänge, sondern probiert sich kreuz und quer durch kleine, alpine Meisterstücke zum Naturwein und Signature Spritz.
-          </p>
-          <div class="hero-cta-group">
-            <a href="#speiskarte" class="btn-ghost-cream">Zur Speiskarte</a>
-            <button type="button" class="btn-copper" id="btnHeroReserve">Tisch Sichern &rarr;</button>
-          </div>
+    <!-- 1. SECTION: HERO (EXACT TÒPAS S-HERO) -->
+    <section class="s-hero" data-section="hero" id="top">
+      <p class="s-hero__kicker">
+        <span>Tapas &amp; Bar</span>
+        <span class="s-hero__by">by AnonymCreator</span>
+        <span>Wien · 7. Bezirk</span>
+      </p>
+
+      <div class="s-hero__title-box">
+        <h1 class="s-hero__title">
+          <span class="title-sub">ALPINE SHARING BAR</span>
+          <span class="title-main">KUPFER &amp; KREN</span>
+        </h1>
+      </div>
+
+      <!-- Hero Visual Frame -->
+      <div class="s-hero__media">
+        <div class="s-hero__img-wrap">
+          <img src="assets/hero_bar.jpg" alt="Kupfer &amp; Kren Bar Innenraum" class="s-hero__photo">
         </div>
 
-        <div class="hero-media-wrapper">
-          <div class="hero-image-frame">
-            <img src="assets/hero_bar.jpg" alt="Atmosphäre an der Kupfer-Bar" class="hero-img">
-            <!-- Signature Rotating Seal Badge (TÒPAS Architectural Cue) -->
-            <div class="rotating-badge-seal">
-              <svg viewBox="0 0 160 160" width="140" height="140" class="badge-text-svg">
-                <path id="circlePath" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="transparent" />
-                <text font-size="11.5" font-family="Archivo, sans-serif" font-weight="700" letter-spacing="2.2" fill="#F7F4EB">
-                  <textPath href="#circlePath" startOffset="0%">
-                    • KUPFER &amp; KREN • ALPINE TAPAS &amp; DRINKS •
-                  </textPath>
-                </text>
-              </svg>
-              <div class="badge-center-icon">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#C86432" stroke-width="2">
-                  <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"></path>
-                </svg>
-              </div>
-            </div>
+        <!-- TÒPAS Rotating Circular Stamp Badge -->
+        <div class="stamp s-hero__stamp">
+          <svg viewBox="0 0 160 160" width="150" height="150" class="stamp__svg">
+            <path id="heroStampPath" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="transparent" />
+            <text font-size="12" font-family="Archivo, sans-serif" font-weight="800" letter-spacing="2.8" fill="currentColor">
+              <textPath href="#heroStampPath" startOffset="0%">
+                • KUPFER &amp; KREN • ALPINE TAPAS &amp; BAR • ¡SERVUS! •
+              </textPath>
+            </text>
+          </svg>
+          <div class="stamp__center">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"></path>
+            </svg>
           </div>
         </div>
       </div>
 
-      <!-- WAVY TRANSITION TO MARQUEE / CONTENT (TÒPAS SIGNATURE) -->
-      <div class="edge-wave-svg edge-to-marquee">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,32 C240,75 480,10 720,45 C960,80 1200,20 1440,50 L1440,80 L0,80 Z" fill="#C86432"></path>
+      <!-- Hero Bottom Bar -->
+      <div class="s-hero__foot">
+        <div class="s-hero__foot-text">
+          Entdeckt die moderne österreichische Sharing-Küche. DI &amp; MI ab 16:30 · DO, FR &amp; SA ab 16:00
+        </div>
+        <div class="s-hero__foot-badge">
+          <span class="badge-dot"></span>
+          <span>Küche bis 22:30 Uhr</span>
+        </div>
+      </div>
+
+      <a href="#definition" class="s-hero__scroll" aria-label="Nach unten scrollen">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7"></path>
         </svg>
-      </div>
+      </a>
     </section>
 
-    <!-- SECTION 2: RUNNING TICKER MARQUEE -->
+    <!-- 2. SECTION: DUAL CROSSED MARQUEES (EXACT TÒPAS S-MARQUEE) -->
     <section class="s-marquee">
-      <div class="marquee-track">
-        <div class="marquee-item">
-          <span>FRISCH GERISSENER STEIRISCHER KREN</span>
-          <span class="marquee-separator">✦</span>
-          <span>SAIBLING AUS DEN SALZKAMMERGUT-SEEN</span>
-          <span class="marquee-separator">✦</span>
-          <span>SCHANIGARTEN BIS 23:00 UHR</span>
-          <span class="marquee-separator">✦</span>
-          <span>NATURWEINE AUS DER WACHAU</span>
-          <span class="marquee-separator">✦</span>
-          <span>ZIRBEN-SPRITZ &amp; FREISTÄDTER BIER VOM FASS</span>
-          <span class="marquee-separator">✦</span>
+      <!-- Marquee A (Tilted -3deg, Yellow, Giant Text) -->
+      <div class="marquee marquee--a">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span>Pinchos</span>
+            <span class="marquee__sep">✦</span>
+            <span>Schmankerl</span>
+            <span class="marquee__sep">✦</span>
+            <span>Naturwein</span>
+            <span class="marquee__sep">✦</span>
+            <span>Steirischer Kren</span>
+            <span class="marquee__sep">✦</span>
+            <span>¡Griaß eich!</span>
+            <span class="marquee__sep">✦</span>
+          </div>
+          <div class="marquee__group" aria-hidden="true">
+            <span>Pinchos</span>
+            <span class="marquee__sep">✦</span>
+            <span>Schmankerl</span>
+            <span class="marquee__sep">✦</span>
+            <span>Naturwein</span>
+            <span class="marquee__sep">✦</span>
+            <span>Steirischer Kren</span>
+            <span class="marquee__sep">✦</span>
+            <span>¡Griaß eich!</span>
+            <span class="marquee__sep">✦</span>
+          </div>
         </div>
-        <div class="marquee-item" aria-hidden="true">
-          <span>FRISCH GERISSENER STEIRISCHER KREN</span>
-          <span class="marquee-separator">✦</span>
-          <span>SAIBLING AUS DEN SALZKAMMERGUT-SEEN</span>
-          <span class="marquee-separator">✦</span>
-          <span>SCHANIGARTEN BIS 23:00 UHR</span>
-          <span class="marquee-separator">✦</span>
-          <span>NATURWEINE AUS DER WACHAU</span>
-          <span class="marquee-separator">✦</span>
-          <span>ZIRBEN-SPRITZ &amp; FREISTÄDTER BIER VOM FASS</span>
-          <span class="marquee-separator">✦</span>
+      </div>
+
+      <!-- Marquee B (Tilted +2deg, Cream, Slogan Text) -->
+      <div class="marquee marquee--b">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span>Ein bisschen Alpen</span>
+            <span class="marquee__dot">✱</span>
+            <span>Ganz viel Wien</span>
+            <span class="marquee__dot">✱</span>
+            <span>Noch a Seiterl und wir gehen</span>
+            <span class="marquee__dot">✱</span>
+            <span>Kein Wasabi, echter Kren</span>
+            <span class="marquee__dot">✱</span>
+          </div>
+          <div class="marquee__group" aria-hidden="true">
+            <span>Ein bisschen Alpen</span>
+            <span class="marquee__dot">✱</span>
+            <span>Ganz viel Wien</span>
+            <span class="marquee__dot">✱</span>
+            <span>Noch a Seiterl und wir gehen</span>
+            <span class="marquee__dot">✱</span>
+            <span>Kein Wasabi, echter Kren</span>
+            <span class="marquee__dot">✱</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: PHILOSOPHIE & DEFINITION ("WAS IST EIN ALPINE TAPA?") -->
-    <section class="s-concept bg-cream text-obsidian" id="konzept">
-      <div class="container">
-        <div class="concept-head">
-          <span class="eyebrow-tag">TRADITION TRIFFT SHARING-KULTUR</span>
-          <h2 class="section-giant-heading">
-            WAS IST EIN <span class="text-copper">ALPINE TAPA?</span>
+    <!-- 3. SECTION: DEFINITION (EXACT TÒPAS S-DEF WITH POSTAGE STAMP CARD) -->
+    <section class="s-def" data-section="definition" id="definition">
+      <!-- Floating Angled Photos -->
+      <figure class="s-def__photo s-def__photo--a">
+        <img src="assets/tapas_beef.jpg" alt="Rindfleisch Carpaccio mit Kren" class="def-img">
+      </figure>
+      <figure class="s-def__photo s-def__photo--b">
+        <img src="assets/tapas_board.jpg" alt="Pinchos und Alpen-Tapas Brett" class="def-img">
+      </figure>
+
+      <!-- Center Perforated Postage Stamp Card -->
+      <article class="stamp-card">
+        <header class="s-def__head">
+          <h2 class="s-def__word">Kupfer &amp; Kren</h2>
+          <p class="s-def__phon">
+            <span>[KUP-FER &amp; KREN]</span> substantiv • <em>echt österreichisch</em>
+          </p>
+        </header>
+        <div class="s-def__body">
+          <p>
+            Kleiner, feiner Treffpunkt im 7. Bezirk in Wien, an den man eigentlich nur kommt, um „schnell ein Glaserl Veltliner oder ein Seiterl zu trinken“, bevor man dann doch ein erstes Schmankerl bestellt, ein zweites teilt und bis weit nach Mitternacht hängenbleibt.
+          </p>
+        </div>
+        <footer class="s-def__foot">
+          <div class="s-def__tag">01. Treffpunkt</div>
+          <div class="s-def__tag">02. Alpen-Tapas</div>
+          <div class="s-def__tag">03. Gastgarten</div>
+        </footer>
+      </article>
+    </section>
+
+    <!-- 4. SECTION: PINCHO ANATOMY BUILDER (EXACT TÒPAS S-BUILD WITH EDGE-WAVE) -->
+    <section class="s-build edge-wave" data-section="build" id="pincho">
+      <div class="s-build__pin">
+        <div class="s-build__intro">
+          <p class="s-build__kicker">Pinchos · Schmankerl</p>
+          <h2 class="s-build__title">
+            Ein Schmankerl,<br>das ist simpel.
           </h2>
-          <p class="concept-lead-text">
-            Vergesst schwere Wirtshaus-Portionen, nach denen man nur noch schlafen will. Wir zerlegen klassische österreichische Geschmäcker in kleine, pointierte Portionen zum Teilen mit den Spezis am Tisch.
-          </p>
         </div>
 
-        <div class="concept-pillars-grid">
-          <div class="pillar-box">
-            <div class="pillar-num">01</div>
-            <h3>Steirischer Kren als Rückgrat</h3>
-            <p>
-              Bei uns kommt keine Tube auf den Tisch. Der Kren wird frisch am Gast gerissen – scharf, duftend und mit dem nötigen Respekt vor der Wurzel.
-            </p>
-          </div>
-          <div class="pillar-box">
-            <div class="pillar-num">02</div>
-            <h3>Gaberln statt Besteck-Zwang</h3>
-            <p>
-              Drei bis vier kleine Schalen in die Mitte, ein frisch gezapftes Krügerl oder ein Glas Veltliner dazu und gemeinsam durchkosten. Genau so gehört das.
-            </p>
-          </div>
-          <div class="pillar-box">
-            <div class="pillar-num">03</div>
-            <h3>Regionale Manufakturen</h3>
-            <p>
-              Vom Waldviertler Holzofenbrot über Saiblinge aus Altaussee bis hin zum Schafskäse aus dem Almenland: Wir kennen jeden Bauern persönlich beim Vornamen.
-            </p>
+        <ol class="s-build__steps">
+          <li class="s-build__step is-active" data-step="0">
+            <span class="s-build__num">01</span>
+            <span class="s-build__name">Das Brot</span>
+            <span class="s-build__desc">Waldviertler Sauerteigbrot, über Holzkohle knusprig geröstet.</span>
+          </li>
+          <li class="s-build__step" data-step="1">
+            <span class="s-build__num">02</span>
+            <span class="s-build__name">Der Belag</span>
+            <span class="s-build__desc">Zarter Saibling aus Altaussee oder 14-Std. Ochsenbrust.</span>
+          </li>
+          <li class="s-build__step" data-step="2">
+            <span class="s-build__num">03</span>
+            <span class="s-build__name">Der Käse</span>
+            <span class="s-build__desc">Würziger Almenland-Brie, der zart auf der Krume schmilzt.</span>
+          </li>
+          <li class="s-build__step" data-step="3">
+            <span class="s-build__num">04</span>
+            <span class="s-build__name">Der Kren</span>
+            <span class="s-build__desc">Steirischer Kren frisch von der Wurzel gerissen. Purer Duft.</span>
+          </li>
+          <li class="s-build__step" data-step="4">
+            <span class="s-build__num">05</span>
+            <span class="s-build__name">Der Pfiff</span>
+            <span class="s-build__desc">Kürbiskernöl g.g.A., Röstpesto und grobes Berg-Steinsalz.</span>
+          </li>
+        </ol>
+
+        <!-- Right Side Interactive Dish Composition Card -->
+        <div class="s-build__visual">
+          <div class="build-dish-preview">
+            <img src="assets/bruschetta.jpg" alt="Schmankerl aus der Pfanne" class="build-dish-img">
+            <div class="build-dish-badge">
+              <span>ALPEN-PINCHO #04</span>
+              <strong>5,40 €</strong>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- WAVY TRANSITION TO INTERACTIVE BUILDER -->
-      <div class="edge-wave-svg edge-to-builder">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,45 C320,10 640,75 960,30 C1200,65 1360,20 1440,40 L1440,80 L0,80 Z" fill="#2A5A44"></path>
-        </svg>
       </div>
     </section>
 
-    <!-- SECTION 4: INTERACTIVE SCHMANKERL-BAUKASTEN (TÒPAS "UN PINCHO, C'EST SIMPLE" RE-ENGINEERED) -->
-    <section class="s-builder bg-moss text-cream" id="builder">
-      <div class="container">
-        <div class="builder-intro text-center">
-          <span class="eyebrow-tag tag-copper">INTERAKTIVES HANDWERK</span>
-          <h2 class="section-giant-heading text-cream">
-            EIN SCHMANKERL.<br><span class="text-gold">DREI SCHRITTE. PERFEKTION.</span>
-          </h2>
-          <p class="builder-subtext">
-            Stell dir dein persönliches Lieblings-Schmankerl zusammen und schau, welcher Drink am besten dazu matcht.
-          </p>
-        </div>
-
-        <!-- 3-Step Component -->
-        <div class="builder-interactive-card">
-          <!-- Step Selector Tabs -->
-          <div class="builder-steps-header">
-            <button type="button" class="step-btn active" data-step="1">
-              <span class="step-idx">SCHRITT 1</span>
-              <span class="step-title">Die Unterlage</span>
-            </button>
-            <button type="button" class="step-btn" data-step="2">
-              <span class="step-idx">SCHRITT 2</span>
-              <span class="step-title">Der Belag</span>
-            </button>
-            <button type="button" class="step-btn" data-step="3">
-              <span class="step-idx">SCHRITT 3</span>
-              <span class="step-title">Der Pfiff</span>
-            </button>
+    <!-- 5. SECTION: GALLERY (EXACT TÒPAS S-GALLERY "MUCHO DÉLICIEUSE") -->
+    <section class="s-gallery" data-section="photos" id="photos">
+      <div class="s-gallery__pin">
+        <header class="s-gallery__head">
+          <p class="s-gallery__kicker">Die Schauküche von Kupfer &amp; Kren</p>
+          <h2 class="s-gallery__title">Einfach köstlich.</h2>
+          <div class="s-gallery__nav">
+            <button type="button" class="s-gallery__tab is-active" data-slide="0">01 Rindfleisch &amp; Kren</button>
+            <button type="button" class="s-gallery__tab" data-slide="1">02 Saibling-Brettl</button>
+            <button type="button" class="s-gallery__tab" data-slide="2">03 Pfannen-Bruschetta</button>
+            <button type="button" class="s-gallery__tab" data-slide="3">04 Mini-Kaiserschmarrn</button>
+            <button type="button" class="s-gallery__tab" data-slide="4">05 Zirben-Cocktail</button>
+            <button type="button" class="s-gallery__tab" data-slide="5">06 Natur-Veltliner</button>
           </div>
+        </header>
 
-          <!-- Step Options Grid (Dynamic) -->
-          <div class="builder-workspace">
-            <div class="options-column">
-              <!-- Panel 1: Unterlage -->
-              <div class="step-panel active" id="stepPanel1">
-                <h4 class="panel-label">Wähle dein Fundament:</h4>
-                <div class="options-radio-grid">
-                  <label class="option-card active">
-                    <input type="radio" name="base" value="sauerteig" checked>
-                    <span class="opt-name">Waldviertler Sauerteigbrot</span>
-                    <span class="opt-desc">Auf offener Flamme geröstet mit Knoblauchöl</span>
-                  </label>
-                  <label class="option-card">
-                    <input type="radio" name="base" value="roesti">
-                    <span class="opt-name">Knuspriger Erdäpfel-Rösti</span>
-                    <span class="opt-desc">Dünn ausgebacken mit Butterschmalz</span>
-                  </label>
-                  <label class="option-card">
-                    <input type="radio" name="base" value="polenta">
-                    <span class="opt-name">Kräuter-Polenta-Cracker</span>
-                    <span class="opt-desc">Glutenfrei mit Bergthymian und Meersalz</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Panel 2: Belag -->
-              <div class="step-panel" id="stepPanel2">
-                <h4 class="panel-label">Wähle deinen Hauptbelag:</h4>
-                <div class="options-radio-grid">
-                  <label class="option-card active">
-                    <input type="radio" name="topping" value="saibling" checked>
-                    <span class="opt-name">Gebeizter Altausseer Saibling</span>
-                    <span class="opt-desc">Zartes Filet mit Zitrone und Wildkräutern</span>
-                  </label>
-                  <label class="option-card">
-                    <input type="radio" name="topping" value="ochse">
-                    <span class="opt-name">14-Stunden Geschmorte Ochsenbrust</span>
-                    <span class="opt-desc">Butterzart gezupft mit Rotwein-Schmorsaft</span>
-                  </label>
-                  <label class="option-card">
-                    <input type="radio" name="topping" value="kuerbis">
-                    <span class="opt-name">Ofenkürbis &amp; Bio-Ziegenkäse</span>
-                    <span class="opt-desc">Mit Waldhonig karamellisiert (Vegetarisch)</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Panel 3: Pfiff -->
-              <div class="step-panel" id="stepPanel3">
-                <h4 class="panel-label">Wähle das Finish:</h4>
-                <div class="options-radio-grid">
-                  <label class="option-card active">
-                    <input type="radio" name="finish" value="kren" checked>
-                    <span class="opt-name">Frisch gerissener Steirischer Kren</span>
-                    <span class="opt-desc">Direkt von der Wurzel, pure frische Schärfe</span>
-                  </label>
-                  <label class="option-card">
-                    <input type="radio" name="finish" value="pesto">
-                    <span class="opt-name">Kürbiskernöl &amp; Röstpesto</span>
-                    <span class="opt-desc">Dunkles g.g.A. Kernöl mit gerösteten Kernen</span>
-                  </label>
-                  <label class="option-card">
-                    <input type="radio" name="finish" value="preiselbeer">
-                    <span class="opt-name">Preiselbeer-Chili-Lack</span>
-                    <span class="opt-desc">Fruchtig-herb mit feiner Schärfe im Abgang</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Preview & Pairing Result Box -->
-            <div class="preview-result-box">
-              <div class="preview-badge">DEINE KREATION</div>
-              <h3 class="preview-title" id="previewTitle">Der Steirische Saibling-Gupf</h3>
-              <p class="preview-breakdown" id="previewBreakdown">
-                Waldviertler Sauerteigbrot + Gebeizter Saibling + Frisch gerissener Kren
-              </p>
-
-              <div class="preview-pairing-block">
-                <div class="pairing-label">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M8 2h8l4 9H4l4-9z"></path>
-                    <path d="M12 11v9M8 20h8"></path>
-                  </svg>
-                  EMPFOHLENE BEGLEITUNG:
-                </div>
-                <div class="pairing-item" id="previewPairing">
-                  <strong>Grüner Veltliner Smaragd (Wachau)</strong> oder ein kühles <strong>Freistädter Bio-Zwickl</strong>
-                </div>
-              </div>
-
-              <div class="preview-footer">
-                <div class="preview-price-tag">
-                  <span class="price-amount" id="previewPrice">5,80 €</span>
-                  <span class="price-note">pro Stück</span>
-                </div>
-                <button type="button" class="btn-copper btn-add-taste" id="btnAddTaste">
-                  Auf Kostprobe-Liste Merken
-                </button>
-              </div>
+        <div class="s-gallery__display">
+          <div class="gallery-card">
+            <img src="assets/tapas_beef.jpg" alt="Alpenrind Carpaccio mit Kren" id="galleryMainImg" class="gallery-img">
+            <div class="gallery-caption">
+              <h3 id="galleryTitle">01 Alpenrind-Carpaccio &amp; Kren</h3>
+              <p id="galleryDesc">Hauchdünnes heimisches Weiderind, eingelegte Rote Rüben, steirischer Wurzelkren und Mohnöl.</p>
+              <span class="gallery-price" id="galleryPrice">6,80 €</span>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- WAVY TRANSITION TO MENU -->
-      <div class="edge-wave-svg edge-to-menu">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,50 C360,10 720,70 1080,25 C1260,55 1380,30 1440,40 L1440,80 L0,80 Z" fill="#F7F4EB"></path>
-        </svg>
+        <div class="s-gallery__foot">
+          <p class="s-gallery__cta-text">¡Komm vorbei und koste dich durch!</p>
+          <button type="button" class="btn btn--primary" id="btnGalleryReserve">Tisch Reservieren</button>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 5: SPEISKARTE (TÒPAS "SEIZE NOMS" SIGNATURE MENU SHOWCASE) -->
-    <section class="s-menu bg-cream text-obsidian" id="speiskarte">
-      <div class="container">
-        <div class="menu-header text-center">
-          <span class="eyebrow-tag">KLEINE TELLER • GROSSE GESCHMÄCKER</span>
-          <h2 class="section-giant-heading">
-            UNSERE <span class="text-copper">KOSTPROBEN</span>
-          </h2>
-          <p class="menu-subtext">
-            Wir empfehlen pro Person 3 bis 4 Schmankerl zum Teilen. Frisch aus der Schauküche, serviert auf handgetriebenem Kupfergeschirr.
-          </p>
+    <!-- 6. SECTION: NAMES / MULTI-ROW KINETIC MARQUEE (EXACT TÒPAS S-NAMES) -->
+    <section class="s-names">
+      <div class="s-names__intro">
+        <p class="s-names__k">Keine ellenlange Karte</p>
+        <h2 class="s-names__title">Sechzehn Namen, ein einziger Rat:</h2>
+      </div>
 
-          <!-- Category Filter Tabs -->
-          <div class="menu-filter-bar">
-            <button type="button" class="filter-tab active" data-filter="all">Alle Schmankerl</button>
-            <button type="button" class="filter-tab" data-filter="cold">Kalt &amp; Frisch</button>
-            <button type="button" class="filter-tab" data-filter="warm">Warm aus der Pfanne</button>
-            <button type="button" class="filter-tab" data-filter="sweet">Süßes &amp; Mehlspeis</button>
-            <button type="button" class="filter-tab" data-filter="drinks">Spritz &amp; Drinks</button>
+      <!-- Multiple Kinetic Marquee Rows Scrolling Horizontally -->
+      <div class="s-names__rows">
+        <div class="names-row names-row--left">
+          <div class="names-row__track">
+            <span>✦ ALPENRIND-CARPACCIO</span>
+            <span>✦ SAIBLING-GUPF</span>
+            <span>✦ KNUSPRIGER KASPRESS-SLIDER</span>
+            <span>✦ 14-STD. OCHSENBRUST</span>
+            <span>✦ KÜRBIS-ZIEGENKÄSE</span>
+            <span>✦ ALPENRIND-CARPACCIO</span>
+            <span>✦ SAIBLING-GUPF</span>
+            <span>✦ KNUSPRIGER KASPRESS-SLIDER</span>
           </div>
         </div>
 
-        <!-- Menu Cards Grid -->
-        <div class="menu-cards-grid" id="menuGrid">
-          <!-- Item 1: Beef Carpaccio -->
-          <div class="menu-card" data-category="cold">
-            <div class="card-img-wrap">
-              <img src="assets/tapas_beef.jpg" alt="Rindfleisch Carpaccio mit Kren" class="card-img">
-              <span class="card-pill">Bestseller</span>
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <h4 class="card-title">Alpenrind-Carpaccio &amp; Kren</h4>
-                <span class="card-price">6,80 €</span>
-              </div>
-              <p class="card-desc">
-                Hauchdünn geschnittenes heimisches Weiderind, eingelegte Rote Rüben, steirischer Wurzelkren und Waldviertler Mohnöl.
-              </p>
-              <div class="card-footer">
-                <span class="card-diet">Steiermark • Glutenarm</span>
-                <button type="button" class="btn-card-add" data-item="Alpenrind-Carpaccio" data-price="6.80">+ Auf Liste</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 2: Tapas Board -->
-          <div class="menu-card" data-category="cold">
-            <div class="card-img-wrap">
-              <img src="assets/tapas_board.jpg" alt="Alpen Pintxos Brettl" class="card-img">
-              <span class="card-pill">Zum Teilen</span>
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <h4 class="card-title">Schmankerl-Brettl (3er Mix)</h4>
-                <span class="card-price">12,50 €</span>
-              </div>
-              <p class="card-desc">
-                Drei saisonale Brote: Gebeizter Saibling, geräucherte Hirschbirne mit Speck und Almenland-Brie mit Honignüssen.
-              </p>
-              <div class="card-footer">
-                <span class="card-diet">Ideal zu zweit</span>
-                <button type="button" class="btn-card-add" data-item="Schmankerl-Brettl" data-price="12.50">+ Auf Liste</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 3: Bruschetta Alpine -->
-          <div class="menu-card" data-category="warm">
-            <div class="card-img-wrap">
-              <img src="assets/bruschetta.jpg" alt="Knuspriges Kräuterbrot aus der Pfanne" class="card-img">
-              <span class="card-pill">Vegetarisch</span>
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <h4 class="card-title">Kupfer-Bruschetta mit Kürbis</h4>
-                <span class="card-price">5,20 €</span>
-              </div>
-              <p class="card-desc">
-                In Butterschmalz geröstetes Sauerteigbrot mit mariniertem Hokkaidokürbis, Ziegenfrischkäse und frischem Bergsalbei.
-              </p>
-              <div class="card-footer">
-                <span class="card-diet">Vegetarisch • Bio</span>
-                <button type="button" class="btn-card-add" data-item="Kupfer-Bruschetta" data-price="5.20">+ Auf Liste</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 4: Kaiserschmarrn Mini -->
-          <div class="menu-card" data-category="sweet">
-            <div class="card-img-wrap">
-              <img src="assets/kaiserschmarrn.jpg" alt="Mini Kaiserschmarrn im Kupferpfandl" class="card-img">
-              <span class="card-pill">Frisch aus dem Ofen</span>
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <h4 class="card-title">Mini-Pfandl Kaiserschmarrn</h4>
-                <span class="card-price">6,40 €</span>
-              </div>
-              <p class="card-desc">
-                Karibisch karamellisiert mit hausgemachtem Zwetschkenröster und Bourbon-Vanille-Staub. Perfekt für 2 Personen zum Löffeln.
-              </p>
-              <div class="card-footer">
-                <span class="card-diet">Dauer: 15 Min. frisch</span>
-                <button type="button" class="btn-card-add" data-item="Mini-Kaiserschmarrn" data-price="6.40">+ Auf Liste</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 5: Wiener Spritzer & Naturwein -->
-          <div class="menu-card" data-category="drinks">
-            <div class="card-img-wrap">
-              <img src="assets/spritz_wein.jpg" alt="Wiener Heurigen Spritzer mit Thymian" class="card-img">
-              <span class="card-pill">Hausmarke</span>
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <h4 class="card-title">Kren-Spritzer &amp; Natur-Veltliner</h4>
-                <span class="card-price">4,90 €</span>
-              </div>
-              <p class="card-desc">
-                Grüner Veltliner unfiltriert aus der Wachau, prickelndes Soda, Holunderblüte und ein winziger Hauch frisch gerissener Kren.
-              </p>
-              <div class="card-footer">
-                <span class="card-diet">Erfrischend • 0,25l</span>
-                <button type="button" class="btn-card-add" data-item="Kren-Spritzer" data-price="4.90">+ Auf Liste</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 6: Craft Cocktails -->
-          <div class="menu-card" data-category="drinks">
-            <div class="card-img-wrap">
-              <img src="assets/cocktail_bar.jpg" alt="Signature Zirben-Negroni Cocktail" class="card-img">
-              <span class="card-pill">Signature Drink</span>
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <h4 class="card-title">Zirben-Mule im Kupferbecher</h4>
-                <span class="card-price">11,50 €</span>
-              </div>
-              <p class="card-desc">
-                Tiroler Zirbengeist, scharfes Ginger Beer, frischer Limettensaft und ein Rosmarinzweig, serviert im eisgekühlten Kupferbecher.
-              </p>
-              <div class="card-footer">
-                <span class="card-diet">Alkoholisch • Herb</span>
-                <button type="button" class="btn-card-add" data-item="Zirben-Mule" data-price="11.50">+ Auf Liste</button>
-              </div>
-            </div>
+        <div class="names-row names-row--right">
+          <div class="names-row__track">
+            <span>✦ KUPFER-PFANDL SCHMARRN</span>
+            <span>✦ STEIRISCHER KREN-MULE</span>
+            <span>✦ ZIRBEN-NEGRONI</span>
+            <span>✦ NATUR-VELTLINER UNFILTRIERT</span>
+            <span>✦ WACHAUER MARILLEN-BRIOCHE</span>
+            <span>✦ KUPFER-PFANDL SCHMARRN</span>
+            <span>✦ STEIRISCHER KREN-MULE</span>
           </div>
         </div>
 
-        <!-- Sticky Taste Counter Bar (Interactive Engagement) -->
-        <div class="taste-list-bar" id="tasteListBar">
-          <div class="taste-list-info">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            <span>Deine Kostprobe-Liste: <strong id="tasteCount">0 Schmankerl</strong> gemerkt (<span id="tasteTotal">0,00 €</span>)</span>
+        <div class="names-row names-row--left">
+          <div class="names-row__track">
+            <span>✦ KÄFERBOHNEN-HUMMUS</span>
+            <span>✦ FREISTÄDTER BIO-ZWICKL</span>
+            <span>✦ KAISERSPRITZER MIT HOLUNDER</span>
+            <span>✦ HIRSCHBIRNE &amp; SPECK</span>
+            <span>✦ KÄFERBOHNEN-HUMMUS</span>
+            <span>✦ FREISTÄDTER BIO-ZWICKL</span>
+            <span>✦ KAISERSPRITZER MIT HOLUNDER</span>
           </div>
-          <button type="button" class="btn-copper-small" id="btnTasteToReserve">Tisch für diese Runde Buchen &rarr;</button>
         </div>
       </div>
 
-      <!-- WAVY TRANSITION TO SCHANIGARTEN -->
-      <div class="edge-wave-svg edge-to-atmosphere">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,25 C300,70 600,10 900,55 C1200,90 1350,30 1440,60 L1440,80 L0,80 Z" fill="#12161A"></path>
-        </svg>
+      <div class="s-names__cta-wrap">
+        <p class="s-names__cta">Die ganze Speiskarte? Die wartet am Kupfertresen auf dich.</p>
+        <button type="button" class="btn btn--secondary" id="btnNamesReserve">Tisch für heute Abend reservieren &rarr;</button>
       </div>
     </section>
 
-    <!-- SECTION 6: SCHANIGARTEN, BAR & VINYL (TÒPAS "AMIGOS" & ATMOSPHERE) -->
-    <section class="s-atmosphere bg-obsidian text-cream" id="schanigarten">
-      <div class="container">
-        <div class="atmosphere-grid">
-          <div class="atmosphere-text">
-            <span class="eyebrow-tag tag-copper">TREFFPUNKT AM KUPFERTRESEN</span>
-            <h2 class="section-giant-heading text-cream">
-              VINYL, NATURWEIN &amp;<br><span class="text-copper">SCHANIGARTEN-VIBES</span>
-            </h2>
-            <p class="atmosphere-desc">
-              Kupfer &amp; Kren ist kein steifes Restaurant, bei dem man flüstern muss. Ab 17:00 Uhr drehen wir feinen Funk, Jazz und Downtempo-Beats von echten Schallplatten auf. An lauen Abenden sitzt man draußen im beleuchteten Gastgarten unter den Kastanienbäumen, an kühleren Tagen direkt an unserem langen Kupfertresen.
-            </p>
-            <div class="feature-bullets">
-              <div class="f-bullet">
-                <strong>Schanigarten mit 45 Plätzen:</strong> Geöffnet von April bis Oktober bis 23:00 Uhr.
-              </div>
-              <div class="f-bullet">
-                <strong>Freitags &amp; Samstags Vinyl-Sessions:</strong> Live von Wiener DJs kuratierte Sets ohne lautes Clubgewummer.
-              </div>
-              <div class="f-bullet">
-                <strong>Achterl &amp; Seiterl Kultur:</strong> Über 24 offene Weine und 4 Biere vom Fass.
-              </div>
-            </div>
-          </div>
+    <!-- 7. SECTION: AMIGOS & SPEZIS (EXACT TÒPAS S-AMIGOS WITH POLAROID & HOW-TO) -->
+    <section class="s-amigos edge-wave" data-section="amigos" id="amigos">
+      <header class="s-amigos__head">
+        <p class="s-amigos__k">Synonym: Eine Bande von Spezis</p>
+        <h2 class="s-amigos__title">
+          Ein bisschen von allem.<br>Ganz viel vom Guten.
+        </h2>
+      </header>
 
-          <div class="atmosphere-gallery">
-            <div class="atmo-img-box">
-              <img src="assets/bar_counter.jpg" alt="Cocktailzubereitung am Kupfertresen" class="atmo-img">
-            </div>
-          </div>
+      <!-- Duo Frame: Photo of Friends Sharing at the Bar -->
+      <div class="duo">
+        <div class="duo__frame">
+          <img src="assets/bar_counter.jpg" alt="Gesellige Runde an der Bar von Kupfer &amp; Kren" class="duo__photo">
         </div>
+        <p class="duo__caption">
+          <span>Kupfertresen &amp; Schanigarten</span>
+          <span>Erlebt bei Kupfer &amp; Kren</span>
+        </p>
       </div>
 
-      <!-- WAVY TRANSITION TO OPENING HOURS & VISIT -->
-      <div class="edge-wave-svg edge-to-hours">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,60 C400,20 800,80 1100,30 C1280,60 1380,25 1440,45 L1440,80 L0,80 Z" fill="#C86432"></path>
-        </svg>
+      <!-- Polaroid With Tape (TÒPAS Signature Pola) -->
+      <div class="s-amigos__pola-wrap">
+        <figure class="pola pola--a">
+          <img src="assets/spritz_wein.jpg" alt="Spritzer Gläser anstoßen">
+          <figcaption>¡Prost &amp; Mahlzeit!</figcaption>
+        </figure>
+      </div>
+
+      <!-- 3-Step Order Flow (TÒPAS S-AMIGOS__HOW) -->
+      <div class="s-amigos__how-grid">
+        <div class="how-step">
+          <span class="how-num">1</span>
+          <span class="how-text">Du kreuzt deine Gelüste auf dem Zettel an</span>
+        </div>
+        <div class="how-step">
+          <span class="how-num">2</span>
+          <span class="how-text">Du holst dir ein Krügerl oder Achterl an der Bar</span>
+        </div>
+        <div class="how-step">
+          <span class="how-num">3</span>
+          <span class="how-text">Du teilst mit deinen Freunden (oder isst alles selber)</span>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 7: ÖFFNUNGSZEITEN & ADRESSE (TÒPAS "HORAIRES" & "ACCÈS" RE-ENGINEERED) -->
-    <section class="s-hours bg-copper text-cream" id="kontakt">
-      <div class="container hours-grid">
-        <!-- Left: Timetable -->
-        <div class="hours-card">
-          <span class="hours-eyebrow">WIR FREUEN UNS AUF EUCH</span>
-          <h2 class="hours-title">ÖFFNUNGSZEITEN</h2>
-          <div class="hours-rows">
-            <div class="hours-row">
-              <span class="day">Dienstag – Donnerstag:</span>
-              <span class="time">16:30 – 00:00 Uhr (Küche bis 22:00)</span>
-            </div>
-            <div class="hours-row highlight-row">
-              <span class="day">Freitag &amp; Samstag:</span>
-              <span class="time">16:00 – 02:00 Uhr (Küche bis 23:00)</span>
-            </div>
-            <div class="hours-row">
-              <span class="day">Sonntag:</span>
-              <span class="time">15:00 – 22:30 Uhr (Frühschoppen &amp; Tapas)</span>
-            </div>
-            <div class="hours-row muted-row">
-              <span class="day">Montag:</span>
-              <span class="time">Ruhetag (Vorbereitung &amp; Einkauf)</span>
-            </div>
-          </div>
+    <!-- 8. SECTION: ÖFFNUNGSZEITEN (EXACT TÒPAS S-HOURS WITH ROTATING DISC) -->
+    <section class="s-hours edge-wave" data-section="hours" id="horaires">
+      <!-- Rotating Disc Graphic (TÒPAS Signature) -->
+      <div aria-hidden="true" class="s-hours__disc"></div>
+
+      <header class="s-hours__head">
+        <p class="s-hours__k">Die Küche ist warm</p>
+        <h2 class="s-hours__title">Öffnungszeiten</h2>
+      </header>
+
+      <dl class="hours-list">
+        <div class="hours-item">
+          <dt>Dienstag &amp; Mittwoch</dt>
+          <dd>16:30 → bis 00:00 Uhr <span class="tag-today">Küche bis 22:30</span></dd>
         </div>
+        <div class="hours-item is-highlight">
+          <dt>Donnerstag &amp; Freitag</dt>
+          <dd>16:00 → bis 01:30 Uhr <span class="tag-today">Vinyl-Sessions &amp; Bar</span></dd>
+        </div>
+        <div class="hours-item is-highlight">
+          <dt>Samstag</dt>
+          <dd>15:00 → bis 02:00 Uhr <span class="tag-today">Schanigarten &amp; Tapas</span></dd>
+        </div>
+        <div class="hours-item">
+          <dt>Sonntag</dt>
+          <dd>15:00 → bis 22:00 Uhr <span class="tag-today">Ausklang</span></dd>
+        </div>
+        <div class="hours-item is-muted">
+          <dt>Montag</dt>
+          <dd>Ruhetag (Frischeinkauf &amp; Einlegen)</dd>
+        </div>
+      </dl>
 
-        <!-- Right: Location & Reservation Trigger -->
-        <div class="visit-card">
-          <span class="hours-eyebrow">HIER FINDET IHR UNS</span>
-          <h3 class="visit-title">KUPFER &amp; KREN WIEN</h3>
-          <p class="visit-address">
-            Neubaugasse 42 / Ecke Westbahnstraße<br>
-            1070 Wien (7. Bezirk)
-          </p>
-          <div class="transit-info">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="4" y="3" width="16" height="16" rx="2"></rect>
-              <path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3"></path>
-            </svg>
-            <span>Öffis: U3 Neubaugasse (5 Min.) oder Bim Linie 49</span>
-          </div>
+      <p class="s-hours__sign">Die Freude am echten Geschmack.</p>
+    </section>
 
-          <div class="visit-cta-wrap">
-            <button type="button" class="btn-cream-heavy" id="btnVisitReserve">
-              Jetzt Tisch Reservieren
-            </button>
-            <a href="tel:+4315228834" class="phone-link">+43 (0) 1 522 88 34</a>
+    <!-- 9. SECTION: VISIT / LOCATION (EXACT TÒPAS S-VISIT WITH ROTATED OUTLINE MARQUEE) -->
+    <section class="s-visit edge-wave" data-section="visit" id="acces">
+      <!-- Giant Rotated Outline Marquee -->
+      <div aria-hidden="true" class="s-visit__marquee">
+        <div class="s-visit__marquee-track">
+          <span>Wien · Neubaugasse · 7. Bezirk · <em>¡Hier!</em> · </span>
+          <span>Wien · Neubaugasse · 7. Bezirk · <em>¡Hier!</em> · </span>
+          <span>Wien · Neubaugasse · 7. Bezirk · <em>¡Hier!</em> · </span>
+        </div>
+      </div>
+
+      <div class="s-visit__grid">
+        <div class="s-visit__col">
+          <header class="s-visit__head">
+            <p class="s-visit__k">Kupfer &amp; Kren ist in der</p>
+            <h2 class="s-visit__title">Neubaugasse 42<br>1070 Wien</h2>
+          </header>
+
+          <address class="s-visit__address">
+            Ecke Westbahnstraße, 1070 Wien<br>
+            Öffis: U3 Neubaugasse (4 Min. Fußweg) oder Straßenbahn Linie 49
+          </address>
+
+          <div class="s-visit__actions">
+            <button type="button" class="btn btn--primary" id="btnVisitReserve">Tisch Reservieren</button>
+            <a href="tel:+4315228834" class="btn btn--secondary">Tel: +43 1 522 88 34</a>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--secondary">Route in Maps</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (CLEAN & AUSTRIAN LEGAL CONFORMITY) -->
-  <footer class="s-footer bg-obsidian text-cream">
-    <div class="container footer-layout">
-      <div class="footer-left">
-        <div class="footer-brand">KUPFER &amp; KREN</div>
-        <p class="footer-tagline">
-          Alpine Tapas, Steirischer Kren und kalte Naturweine im Herzen des 7. Bezirks in Wien.
-        </p>
-        <p class="footer-copy">
-          &copy; 2026 Kupfer &amp; Kren Gastronomie GmbH. Alle Rechte vorbehalten.<br>
-          Konzept &amp; Showcase-Design von <a href="https://anonymcreator.online" target="_blank" rel="noopener">AnonymCreator Digital Agency</a>.
-        </p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <strong>KUPFER &amp; KREN</strong>
+        <p>Alpine Tapas, Steirischer Kren &amp; Naturweine im 7. Bezirk in Wien.</p>
       </div>
-
-      <div class="footer-right">
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <a href="#konzept">Das Konzept</a>
-          <a href="#builder">Schmankerl-Baukasten</a>
-          <a href="#speiskarte">Speis &amp; Trank</a>
-          <a href="#schanigarten">Schanigarten &amp; Bar</a>
-          <a href="#kontakt">Öffnungszeiten</a>
-        </div>
-        <div class="footer-col">
-          <h5>Rechtliches (AT)</h5>
-          <a href="#" id="linkImpressum">Impressum (§ 5 ECG)</a>
-          <a href="#" id="linkDatenschutz">Datenschutz (DSGVO)</a>
-          <a href="#" id="linkAllergene">Allergen-Kennzeichnung</a>
-        </div>
+      <div class="footer__links">
+        <a href="#definition">Konzept</a>
+        <a href="#pincho">Anatomie</a>
+        <a href="#photos">Schmankerl</a>
+        <a href="#horaires">Öffnungszeiten</a>
+        <a href="#" id="linkImpressum">Impressum (§ 5 ECG)</a>
+        <a href="#" id="linkDatenschutz">Datenschutz</a>
+      </div>
+      <div class="footer__copy">
+        &copy; 2026 Kupfer &amp; Kren Wien. Showcase by <a href="https://anonymcreator.online" target="_blank" rel="noopener">AnonymCreator Digital Agency</a>.
       </div>
     </div>
   </footer>
 
-  <!-- INTERACTIVE RESERVATION MODAL -->
-  <div class="modal-layer" id="reserveModal" aria-hidden="true">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-dialog">
-      <button type="button" class="modal-close" id="modalClose" aria-label="Schließen">&times;</button>
-      <div class="modal-body">
-        <span class="modal-eyebrow">TISCH-RESERVIERUNG</span>
-        <h3 class="modal-title">PLATZ BEI KUPFER &amp; KREN</h3>
-        <p class="modal-desc">
-          Reserviert unkompliziert euren Tisch für den Abend. Für Gruppen ab 8 Personen stellen wir gerne ein individuelles Tapas-Sharing-Menü zusammen.
-        </p>
+  <!-- RESERVATION MODAL -->
+  <div class="modal" id="reserveModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__card">
+      <button type="button" class="modal__close" id="modalClose">&times;</button>
+      <div class="modal__content">
+        <span class="modal__tag">TISCH-RESERVIERUNG</span>
+        <h3 class="modal__title">PLATZ BEI KUPFER &amp; KREN</h3>
+        <p class="modal__sub">Reserviere deinen Tisch für den Abend. Für Gruppen ab 8 Personen stellen wir gerne ein Sharing-Menü zusammen.</p>
 
-        <form id="reserveForm" class="reserve-form" onsubmit="return false;">
-          <div class="form-row-2">
-            <div class="form-group">
+        <form id="reserveForm" class="modal__form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-field">
               <label for="resDate">Datum</label>
-              <input type="date" id="resDate" class="modal-input" required>
+              <input type="date" id="resDate" required>
             </div>
-            <div class="form-group">
+            <div class="form-field">
               <label for="resTime">Uhrzeit</label>
-              <select id="resTime" class="modal-input" required>
-                <option value="17:00">17:00 Uhr (Frühabend / Aperitif)</option>
+              <select id="resTime" required>
+                <option value="17:00">17:00 Uhr (Aperitif &amp; Frühtapas)</option>
                 <option value="18:30">18:30 Uhr</option>
                 <option value="19:30" selected>19:30 Uhr (Hauptrunde)</option>
                 <option value="20:30">20:30 Uhr</option>
-                <option value="21:30">21:30 Uhr (Spättapas &amp; Drinks)</option>
+                <option value="21:30">21:30 Uhr (Spättapas &amp; Bar)</option>
               </select>
             </div>
           </div>
 
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="resGuests">Gäste-Anzahl</label>
-              <select id="resGuests" class="modal-input" required>
-                <option value="2">2 Personen (Bar oder Ecktisch)</option>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="resGuests">Personen</label>
+              <select id="resGuests" required>
+                <option value="2">2 Personen (Kupfertresen)</option>
                 <option value="3">3 Personen</option>
-                <option value="4" selected>4 Personen (Kupfertisch)</option>
-                <option value="6">6 Personen (Große Runde)</option>
+                <option value="4" selected>4 Personen (Tisch)</option>
+                <option value="6">6 Personen</option>
                 <option value="8">8+ Personen (Stammtisch)</option>
               </select>
             </div>
-            <div class="form-group">
+            <div class="form-field">
               <label for="resArea">Bereich</label>
-              <select id="resArea" class="modal-input" required>
-                <option value="stube">Kupfer-Stube (Innenraum, gemütlich)</option>
-                <option value="bar">Direkt am Kupfertresen (High-Top)</option>
-                <option value="schanigarten">Schanigarten (Draußen unter Kastanien)</option>
+              <select id="resArea" required>
+                <option value="stube">Stube (gemütlich drinnen)</option>
+                <option value="bar">Am Kupfertresen</option>
+                <option value="schanigarten">Schanigarten (Gastgarten)</option>
               </select>
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-field">
             <label for="resName">Name</label>
-            <input type="text" id="resName" class="modal-input" placeholder="z.B. Lukas Berger" required>
+            <input type="text" id="resName" placeholder="z.B. Florian Huber" required>
           </div>
 
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="resPhone">Telefonnummer (für Rückfragen)</label>
-              <input type="tel" id="resPhone" class="modal-input" placeholder="+43 664 ..." required>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="resPhone">Telefon</label>
+              <input type="tel" id="resPhone" placeholder="+43 664 ..." required>
             </div>
-            <div class="form-group">
-              <label for="resEmail">E-Mail Adresse</label>
-              <input type="email" id="resEmail" class="modal-input" placeholder="lukas@beispiel.at" required>
+            <div class="form-field">
+              <label for="resEmail">E-Mail</label>
+              <input type="email" id="resEmail" placeholder="florian@beispiel.at" required>
             </div>
           </div>
 
-          <button type="submit" class="btn-copper btn-modal-submit" id="btnSubmitReservation">
-            Reservierung Bestätigen &rarr;
-          </button>
+          <button type="submit" class="btn btn--primary btn--block">Tisch Bestätigen &rarr;</button>
         </form>
 
-        <div class="modal-success-state" id="modalSuccess" style="display:none;">
-          <div class="success-icon">
-            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#2A5A44" stroke-width="2.5">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-          </div>
-          <h4>Servus! Deine Reservierung ist vorgemerkt.</h4>
-          <p id="successSummaryText">
-            Wir haben deinen Tisch für 4 Personen am ausgewählten Tag reserviert. Eine Bestätigung samt Kalendereintrag wurde versendet.
-          </p>
-          <button type="button" class="btn-copper-small" id="btnSuccessClose">Schließen</button>
+        <div class="modal__success" id="modalSuccess" style="display:none;">
+          <h4>Servus! Deine Reservierung ist fixiert.</h4>
+          <p id="successSummary">Wir halten deinen Tisch 15 Minuten lang frei. Bis bald im 7. Bezirk!</p>
+          <button type="button" class="btn btn--primary" id="btnSuccessOk">Alles klar</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- AUSTRIAN LEGAL NOTICE MODAL (IMPRESSUM / DATENSCHUTZ) -->
-  <div class="modal-layer" id="legalModal" aria-hidden="true">
-    <div class="modal-backdrop" id="legalBackdrop"></div>
-    <div class="modal-dialog">
-      <button type="button" class="modal-close" id="legalClose" aria-label="Schließen">&times;</button>
-      <div class="modal-body" id="legalBody">
-        <!-- Injected via JavaScript -->
-      </div>
+  <!-- LEGAL MODAL -->
+  <div class="modal" id="legalModal" aria-hidden="true">
+    <div class="modal__backdrop" id="legalBackdrop"></div>
+    <div class="modal__card">
+      <button type="button" class="modal__close" id="legalClose">&times;</button>
+      <div class="modal__content" id="legalContent"></div>
     </div>
   </div>
 
