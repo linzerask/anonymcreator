@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture & Docs · TITANX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/favicon.ico">
+<link rel="icon" href="/img/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<main class="wrap prose">
+  <div class="bar" style="margin-top:26px"><h2>How TITANX Works</h2></div>
+  <p>STONKZ launches coins on StonkFun. Every coin is paired with a tokenized stock, SOL or any other token StonkFun
+    supports, and the creator fees from every trade are paid to the people holding the coin. A coin can pay its holders in
+    SOL, or in up to ten stocks chosen at launch.</p>
+
+  <h2>Launching</h2>
+  <div class="steps">
+    <div class="step"><span class="no flaplbl">1</span><div><h4>Pick the pair</h4>
+      <p>The coin trades against this token on its own LaunchLab curve. Any pair StonkFun launches against can be used.</p></div></div>
+    <div class="step"><span class="no flaplbl">2</span><div><h4>Pick what the holders are paid in</h4>
+      <p>SOL by default, or one to ten of the tokens StonkFun supports. This list is fixed at launch.</p></div></div>
+    <div class="step"><span class="no flaplbl">3</span><div><h4>Set the dev buy and sign one payment</h4>
+      <p>Between 0.1 and 10 SOL. The pool is created and your coin is bought in the same transaction, straight into your
+        wallet. On top of the dev buy you pay the rent for the accounts the launch creates and the network fees.</p></div></div>
+  </div>
+  <p>The coin is launched from the STONKZ launch wallet with StonkFun's platform configuration, so StonkFun lists it like
+    any other coin. If anything fails after you have paid, the payment is sent back in the same call.</p>
+
+  <h2>Fees</h2>
+  <p>Every trade on the curve pays a creator fee in the pair token. Each STONKZ coin has its own creator account, derived
+    from the coin's mint, so every fee can be traced to exactly one coin. Every five minutes the operator's desk sweeps
+    the creator accounts into the treasury and swaps the fees to SOL. Part of every fee covers the platform's costs; the rest
+    belongs to the holders. Every sweep is listed on the coin page with its transaction.</p>
+
+  <h2>Payouts to the holders</h2>
+  <p>Each coin gets a payout round every five minutes, right after its fees are collected, as long as at least 0.01 SOL
+    has built up for its holders. The holders are read from the chain at that moment: every ordinary wallet holding at
+    least <strong>0.1 percent of the supply</strong> counts, pool vaults and the platform's own accounts do not. Each
+    holder gets a share by how much of the coin they hold. Shares below 0.0001 SOL are dropped and redistributed.</p>
+  <p>If the coin pays in SOL, the shares are sent as SOL. If the coin has a list of stocks, <strong>each round is paid in
+    one of them</strong>: the first round buys the first stock on the list and sends it to the holders, the next round the
+    second, and so on through the list and back to the start. A coin with ten stocks has paid in all ten after
+    ten rounds. The stock is bought with the holders' share through Jupiter from the treasury, and each holder's part is
+    sent to their token account. If a holder does not have a token account for that stock yet, one is created and the rent
+    is taken from that holder's share, so nobody else pays for it.</p>
+  <p>Nobody claims anything and nobody signs anything. Being paid only requires holding the coin at the time of the round.</p>
+
+  <h2>What is fixed and what is not</h2>
+  <ul>
+    <li>The pair, the payout list, the name, the ticker and the image are permanent.</li>
+    <li>The holders change with every trade. Each round pays whoever holds the coin at that moment.</li>
+  </ul>
+</main>
+
+<script src="/app.js"></script>
+<script>chrome('/how');</script>
+</body>
+</html>

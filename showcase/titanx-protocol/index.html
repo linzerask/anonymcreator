@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TITANX · One Index Coin, Powered by Ten Titans</title>
+<meta name="description" content="Deploy automated dividend index coins on Solana. Every trade buys tokenized titan equities and streams them directly to holders.">
+<meta name="theme-color" content="#050c10">
+<meta property="og:title" content="TITANX · Next-Gen Equity Yield Indexes">
+<meta property="og:description" content="One TITAN coin, powered by up to ten world giants.">
+<meta property="og:image" content="https://usestonkz.xyz/img/og.jpg">
+<meta name="twitter:image" content="https://usestonkz.xyz/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@UseStonkz">
+<link rel="icon" href="/img/favicon.ico" sizes="any">
+<link rel="icon" href="/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="/"><img src="/img/mark-128.png" alt="" width="30" height="30"><span>TITANX</span></a>
+    <nav class="links">
+      <a href="#pair">Basket</a><a href="#how">Architecture</a><a href="#stocks">Equities</a><a href="#coins">Live Indexes</a><a href="/community">Governance</a>
+    </nav>
+    <div class="top-r">
+      <a class="xlink" href="https://x.com/UseStonkz" target="_blank" rel="noopener" aria-label="STONKZ on X" title="STONKZ on X"><img src="/assets/x.svg" alt="" width="15" height="15"></a>
+      <button class="ca" id="ca" title="Copy the contract address" hidden><span class="k">CA</span><span class="v" id="cav"></span></button>
+      <a class="btn sm" href="#pair">Deploy Index</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ------------------------------------------------------------ the ring -->
+  <section class="hero">
+    <div class="ring" id="ring"><canvas id="rc"></canvas></div>
+    <div class="wrap hero-txt">
+      <h1>One TITAN coin,<br>powered by up to <em>ten giants</em>.</h1>
+      <p class="hero-n" id="heron">0 of 10 titan equities chosen</p>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ pairing sheet -->
+  <section class="sect" id="pair">
+    <div class="wrap">
+      <div class="sheet">
+        <div class="pick">
+          <div class="pick-head">
+            <div><p class="lbl">Titan Equities</p><p class="sub">Select up to ten equities. Tap any titan on the orbital ring or directory.</p></div>
+            <div class="pick-r"><span class="count" id="count">0 / 10</span>
+              <input class="search" id="q" placeholder="Search" autocomplete="off" spellcheck="false"></div>
+          </div>
+          <div class="cats" id="pcats"></div>
+          <div class="sgrid" id="sgrid"></div>
+        </div>
+
+        <aside class="slip" id="slip">
+          <div class="slip-coin">
+            <div class="coin"><img src="/img/mark-128.png" alt=""></div>
+            <div><p class="lbl">The coin</p><b>A TITAN Index Coin</b></div>
+          </div>
+          <p class="sentence" id="sentence">No equities selected yet. Tap your first titan above.</p>
+          <div class="bar" id="bar" aria-hidden="true"></div>
+          <ul class="legs" id="legs"></ul>
+          <a class="btn wide" id="go" href="/create">Proceed to Deployment</a>
+          <p class="fine">Basket assets are cryptographically sealed on-chain at deployment.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ how -->
+  <section class="sect how" id="how">
+    <div class="wrap">
+      <div class="head"><h2>How TITANX Works</h2></div>
+      <div class="flow"><svg id="flow" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet"></svg></div>
+      <div class="caps">
+        <div><b>1. Architect</b><p>Configure your titan basket of up to 10 blue-chip or pre-IPO equities and liquidity pair. Sign one atomic transaction to launch the decentralized index.</p></div>
+        <div><b>2. Accrue & Swap</b><p>Every swap on the bonding curve captures volume fees into an autonomous, non-custodial yield vault dedicated specifically to your index.</p></div>
+        <div><b>3. Streamed Dividends</b><p>Accumulated fees automatically acquire the underlying shares and stream them proportionally into holders' wallets with zero manual claims.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ stocks -->
+  <section class="sect" id="stocks">
+    <div class="wrap">
+      <div class="head row-head">
+        <div><h2>Verified Global Equities & Index Assets</h2><p id="scount"></p></div>
+        <input class="search" id="sq" placeholder="Search stocks">
+      </div>
+      <div class="cats" id="scats"></div>
+      <div class="stable" id="stable"></div>
+      <div class="more"><button class="btn sm" id="smore" hidden>Show more</button></div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ coins -->
+  <section class="sect" id="coins">
+    <div class="wrap">
+      <div class="head row-head">
+        <div><h2>Live TITAN Indexes</h2></div>
+      </div>
+      <div class="dep" id="dep"><div class="empty">Loading coins</div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="/"><img src="/img/mark-128.png" alt="" width="30" height="30"><span>TITANX</span></a>
+      <nav><a href="#pair">Pair</a><a href="#how">How it works</a><a href="#stocks">Stocks</a><a href="#coins">Coins</a></nav>
+    </div>
+    <p class="disclaim">Coins launch on Solana DexLab. The stocks a coin is paired with are set at launch and cannot be
+      changed. The fees are paid to whoever holds the coin at the time of each payout.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="/site.js"></script>
+<script src="/ring.js"></script>
+</body>
+</html>

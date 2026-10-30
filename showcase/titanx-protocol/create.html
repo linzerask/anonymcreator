@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deploy Index · TITANX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/favicon.ico">
+<link rel="icon" href="/img/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="bar" style="margin-top:26px">
+    <h2>Deploy a Titan Index</h2>
+    <span class="hero-note" id="mode-note"></span>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="panel">
+        <h3>Index Identity</h3>
+        <p class="hint">Name, ticker and image are permanent. The image is cropped square and stored at 512 pixels.</p>
+        <div class="idrow">
+          <div>
+            <label class="drop" id="drop" for="img" title="PNG, JPG or WEBP">
+              <input type="file" id="img" accept="image/png,image/jpeg,image/webp" hidden>
+              <img id="preview" alt="" hidden>
+              <span class="hintbox" id="drophint"><b>Add an image</b>
+                <small>Drop it here, paste it, or click</small></span>
+              <span class="swap">Replace</span>
+            </label>
+            <div class="imgnote" id="imgnote"></div>
+          </div>
+          <div class="idfields">
+            <div class="two">
+              <div class="field"><label for="name">Name</label><input type="text" id="name" placeholder="Night Shift" maxlength="32"></div>
+              <div class="field"><label for="ticker">Ticker</label><input type="text" id="ticker" placeholder="NIGHT" maxlength="12"></div>
+            </div>
+            <div class="field" style="margin-bottom:0"><label for="tw">X link for the coin (optional)</label>
+              <input type="text" id="tw" placeholder="https://x.com/..."></div>
+          </div>
+        </div>
+        <div class="field" style="margin-top:16px"><label for="desc">Description</label>
+          <textarea id="desc" placeholder="What the coin is about."></textarea></div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>The pair</h3>
+        <p class="hint" id="quotehint">The coin trades against this token on its curve, and the fees
+           come in as that token. They are turned into SOL before they are paid out.</p>
+        <div class="picker">
+          <div class="picker-head">
+            <input class="search" id="msearch" placeholder="Search pair" style="width:180px;height:32px">
+            <div class="chips" id="mcats"></div>
+          </div>
+          <div class="picker-list" id="mlist"></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Paid out in</h3>
+        <p class="hint">Pick up to ten stocks. The holders' share of the fees buys these stocks and they are sent to
+           every holder by how much of the coin each one holds. Pick none and the holders are paid in SOL.</p>
+        <div class="chips" id="bchosen" style="margin-bottom:10px"></div>
+        <div class="picker" id="bpicker">
+          <div class="picker-head">
+            <input class="search" id="bsearch" placeholder="Search stocks" style="width:200px;height:32px">
+            <div class="chips" id="bcats"></div>
+          </div>
+          <div class="picker-list" id="basket"></div>
+        </div>
+        <p class="hint" id="baskethint" style="margin:10px 0 0"></p>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Dev buy</h3>
+        <div class="field" style="margin-bottom:0">
+          <div class="lev-head">
+            <span class="lev-val" id="amountval">0.5</span>
+            <span class="lev-cap" id="amountcap">SOL of your own coin</span>
+          </div>
+          <div class="lev-wrap">
+            <input class="lev" type="range" id="amount" min="0.1" max="10" step="0.1" value="0.5">
+            <div class="ticks" id="amountticks"></div>
+          </div>
+          <p class="hint" id="amounthint" style="margin:10px 0 0"></p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel" style="position:sticky;top:78px">
+        <h3>Summary</h3>
+        <p class="hint" id="prev-sub">Fees are collected from the curve every couple of minutes.</p>
+        <div id="prev"></div>
+        <div class="err" id="err"></div>
+        <button class="btn lg" id="go" style="width:100%;justify-content:center">Pay and launch</button>
+        <p class="hint" style="margin:12px 0 0;text-align:center">The coin is launched from the STONKZ
+          wallet, and the tokens from your dev buy are sent to your wallet right after the launch.</p>
+        <p class="hint" style="margin:8px 0 0;text-align:center">A launch usually takes 5 to 20 seconds
+          from the moment you sign. Keep the page open until the coin is live.</p>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/app.js"></script>
+<script>
+chrome('/create');
+
+const CATS = [['all', 'All'], ['xstock', 'xStocks'], ['prestock', 'PreStocks'], ['tessera', 'Tessera'],
+              ['backpack', 'Sunrise'], ['currency', 'Currency'], ['leverage', 'Leverage'],
+              ['collectible', 'Collectibles'], ['solana', 'SOL'], ['custom', 'Custom']];
+let pairs = [], config = null, overhead = 0.025, platformPct = 10;
+let bcat = 'all', bq = '';
+let STOCKS = [];                       // /assets/stocks/_list.json: de 120 aksjene STONKZ betaler ut i
+const stockOf = (mint) => STOCKS.find((s) => s.mint === mint);
+const BCATS = [['all', 'All'], ['xstock', 'xStocks'], ['prestock', 'PreStocks'], ['backpack', 'Sunrise'], ['tessera', 'Tessera']];
+let f = { cat: 'all', q: '', image: '', quote: SOL_MINT, quoteSymbol: 'SOL', amount: 0.5, payout: [] };
+let MAX_BASKET = 10;
+
+/* ------------------------------------------------------------- parliste */
+function drawPairs() {
+  const host = document.getElementById('mlist');
+  const term = f.q.trim().toLowerCase();
+  const rows = pairs.filter((m) => (f.cat === 'all' || m.category === f.cat)
+    && (!term || (m.symbol + ' ' + m.name).toLowerCase().includes(term))).slice(0, 250);
+  host.innerHTML = '';
+  rows.forEach((m) => {
+    const row = el(`<div class="mrow ${f.quote === m.mint ? 'on' : ''}">
+      <span class="sym">${esc(m.symbol)}</span>
+      <span class="px" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.name)}</span>
+      <span class="lev">${esc(m.categoryLabel)}</span>
+    </div>`);
+    row.onclick = () => { f.quote = m.mint; f.quoteSymbol = m.symbol; drawPairs(); preview(); };
+    host.append(row);
+  });
+  if (!rows.length) host.append(el('<div class="mrow"><span class="px">No pair by that name</span></div>'));
+}
+
+/* ------------------------------------------------------------- utbetalingen: SOL, eller opptil femten aksjer */
+function drawBasket() {
+  const chosen = document.getElementById('bchosen');
+  chosen.innerHTML = '';
+  const solc = el(`<button class="chip ${f.payout.length ? '' : 'on'}">SOL</button>`);
+  solc.onclick = () => { f.payout = []; drawBasket(); preview(); };
+  chosen.append(solc);
+  f.payout.forEach((mint) => {
+    const m = pairs.find((x) => x.mint === mint) || { symbol: '?' };
+    const b = el(`<button class="chip stock on" title="Remove">${esc(m.symbol)} ×</button>`);
+    b.onclick = () => { f.payout = f.payout.filter((x) => x !== mint); drawBasket(); preview(); };
+    chosen.append(b);
+  });
+  const cats = document.getElementById('bcats');
+  cats.innerHTML = '';
+  BCATS.forEach(([id, label]) => {
+    const b = el(`<button class="chip ${id === bcat && !bq ? 'on' : ''}">${label}</button>`);
+    b.onclick = () => { bcat = id; bq = ''; document.getElementById('bsearch').value = ''; drawBasket(); };
+    cats.append(b);
+  });
+  const host = document.getElementById('basket');
+  host.innerHTML = '';
+  const term = bq.trim().toLowerCase();
+  const rows = pairs.filter((m) => stockOf(m.mint) && (term
+    ? (m.symbol + ' ' + m.name + ' ' + stockOf(m.mint).name).toLowerCase().includes(term) : (bcat === 'all' || m.category === bcat))).slice(0, 250);
+  rows.forEach((m) => {
+    const on = f.payout.includes(m.mint);
+    const full = !on && f.payout.length >= MAX_BASKET;
+    const row = el(`<div class="mrow ${on ? 'on' : ''}" ${full ? 'style="opacity:.45"' : ''}>
+      <span class="tick">${on ? '✓' : ''}</span>
+      <span class="sym">${esc(m.symbol)}</span>
+      <span class="px" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(stockOf(m.mint).name)}</span>
+      <span class="lev">${esc(stockOf(m.mint).label)}</span></div>`);
+    row.onclick = () => {
+      if (on) f.payout = f.payout.filter((x) => x !== m.mint);
+      else if (!full) f.payout = [...f.payout, m.mint];
+      drawBasket(); preview();
+    };
+    host.append(row);
+  });
+  if (!rows.length) host.append(el('<div class="mrow"><span class="px">Nothing by that name</span></div>'));
+  const n = f.payout.length;
+  document.getElementById('baskethint').textContent = n
+    ? n + ' of ' + MAX_BASKET + ' stocks. The holders are paid in these, bought with the fees at every payout.'
+    : 'The payout is sent as SOL.';
+}
+document.getElementById('bsearch').oninput = (e) => { bq = e.target.value; drawBasket(); };
+const payoutSymbols = () => f.payout.map((mint) => (pairs.find((m) => m.mint === mint) || {}).symbol || '?');
+
+/* ------------------------------------------------------------- oppsummering */
+function preview() {
+  const host = document.getElementById('prev');
+  const rest = 100 - platformPct;
+  host.innerHTML = `
+    <div class="flow">
+      <div><span class="lbl">Pair</span><span class="amt" style="font-size:12.5px">${esc(f.quoteSymbol)}</span></div>
+      <div><span class="lbl">Paid out as</span><span class="amt" style="font-size:12.5px;max-width:60%;line-height:1.6">${f.payout.length ? payoutSymbols().map(esc).join(' · ') : 'SOL'}</span></div>
+    </div>
+    <p class="hint" style="margin:12px 0 0">Paid to everyone holding the coin, by how much each one holds, from the first fee on.</p>`;
+}
+
+/* ------------------------------------------------------------- lansering */
+document.getElementById('go').onclick = async () => {
+  const err = document.getElementById('err');
+  const out = document.getElementById('result');
+  const btn = document.getElementById('go');
+  err.textContent = ''; out.innerHTML = '';
+  if (!f.image) { err.textContent = 'The coin needs an image.'; return; }
+  btn.disabled = true;
+  const say = (t) => { out.innerHTML = `<p class="hint" style="margin:12px 0 0">${esc(t)}</p>`; };
+  try {
+    say('Waiting for the wallet');
+    const buyer = await Wallet.ensure();
+    say('Setting up the launch');
+    const order = await api('/api/order/create', {
+      name: document.getElementById('name').value,
+      ticker: document.getElementById('ticker').value,
+      description: document.getElementById('desc').value,
+      twitter: document.getElementById('tw').value,
+      quote: f.quote, route: { kind: 'holders' },
+      image: f.image, wallet: buyer, amount: f.amount, payout: f.payout
+    });
+    say('Sign the payment: ' + order.amount + ' SOL to the launch wallet.');
+    const signed = await Wallet.sign(order.transaction);
+    say('Paying, then launching. Usually 5 to 20 seconds. Do not close the page.');
+    const done = await api('/api/order/pay', { orderId: order.orderId, signedTransaction: signed });
+    out.innerHTML = `<div class="banner good" style="margin-bottom:0"><div>
+      <b>${esc(order.plan.name)} is live.</b> The holders are paid in ${esc(order.label)}.
+      ${done.tokens ? Math.round(done.tokens).toLocaleString('en-US') + ' tokens went straight to your wallet.' : ''}
+      <a href="/coin?mint=${encodeURIComponent(done.mint)}" style="color:var(--accent)">Open the coin page</a></div></div>`;
+    setTimeout(() => { location.href = '/coin?mint=' + encodeURIComponent(done.mint); }, 3500);
+  } catch (e) {
+    err.textContent = e.message;
+    out.innerHTML = '';
+  }
+  btn.disabled = false;
+};
+
+/* ------------------------------------------------------------- dev-kjoep */
+function syncAmount() {
+  const slider = document.getElementById('amount');
+  f.amount = Math.round(parseFloat(slider.value) * 10) / 10;
+  slider.style.setProperty('--pct', ((f.amount - 0.1) / 9.9 * 100) + '%');
+  document.getElementById('amountval').textContent = f.amount.toFixed(1);
+  const cost = Number.isFinite(overhead) ? overhead : 0.025;
+  const total = f.amount + cost;
+  document.getElementById('amounthint').textContent =
+    'You pay ' + total.toFixed(3) + ' SOL. ' + f.amount.toFixed(1) + ' of it buys your coin on its own '
+    + 'curve in the same transaction as the launch, and those tokens go straight to your wallet. The '
+    + 'other ' + cost.toFixed(3) + ' covers rent for the accounts the launch creates and the network fees.';
+  const ticks = document.getElementById('amountticks');
+  ticks.innerHTML = '';
+  [0.1, 1, 2, 5, 10].forEach((n) => {
+    ticks.append(el('<span class="' + (Math.abs(n - f.amount) < 0.05 ? 'on' : '') + '">' + n + '</span>'));
+  });
+}
+document.getElementById('amount').oninput = syncAmount;
+
+/* ------------------------------------------------------------- bildet */
+const MAX_PX = 512;
+const drop = document.getElementById('drop');
+const thumb = document.getElementById('preview');
+const note = document.getElementById('imgnote');
+const kb = (n) => (n < 1024 ? n + ' B' : n < 1024 * 1024 ? (n / 1024).toFixed(0) + ' KB' : (n / 1024 / 1024).toFixed(1) + ' MB');
+function clearImage() {
+  f.image = '';
+  thumb.hidden = true;
+  thumb.removeAttribute('src');
+  drop.classList.remove('filled');
+  document.getElementById('drophint').hidden = false;
+  note.textContent = '';
+}
+async function takeImage(file) {
+  if (!file || !/^image\//.test(file.type)) { note.textContent = 'That file is not an image.'; return; }
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((ok, no) => {
+      const i = new Image();
+      i.onload = () => ok(i); i.onerror = () => no(new Error('could not read that image'));
+      i.src = url;
+    });
+    const side = Math.min(img.naturalWidth, img.naturalHeight);
+    const size = Math.min(MAX_PX, side);
+    const c = document.createElement('canvas');
+    c.width = c.height = size;
+    c.getContext('2d').drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2, side, side, 0, 0, size, size);
+    f.image = c.toDataURL('image/png');
+    thumb.src = f.image;
+    thumb.hidden = false;
+    drop.classList.add('filled');
+    document.getElementById('drophint').hidden = true;
+    const bytes = Math.round((f.image.length - f.image.indexOf(',') - 1) * 3 / 4);
+    note.innerHTML = `${size}×${size} · ${esc(kb(bytes))}`;
+    const rm = el('<button type="button">Remove</button>');
+    rm.onclick = (e) => { e.preventDefault(); document.getElementById('img').value = ''; clearImage(); };
+    note.append(rm);
+  } catch (e) {
+    note.textContent = e.message;
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+document.getElementById('img').onchange = (e) => takeImage(e.target.files[0]);
+['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', (e) => takeImage((e.dataTransfer.files || [])[0]));
+addEventListener('paste', (e) => {
+  if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+  const item = [...(e.clipboardData?.items || [])].find((i) => i.type.startsWith('image/'));
+  if (item) takeImage(item.getAsFile());
+});
+
+/* ------------------------------------------------------------- oppsett */
+document.getElementById('msearch').oninput = (e) => { f.q = e.target.value; drawPairs(); };
+const mcats = document.getElementById('mcats');
+CATS.forEach(([id, label]) => {
+  const b = el(`<button class="chip ${id === 'all' ? 'on' : ''}">${label}</button>`);
+  b.onclick = () => {
+    f.cat = id;
+    mcats.querySelectorAll('.chip').forEach((x) => x.classList.toggle('on', x === b));
+    drawPairs();
+  };
+  mcats.append(b);
+});
+
+/* Forsiden sender med valget sitt: ?quote=<mint>&payout=<mint,mint,...> */
+const PRE = new URLSearchParams(location.search);
+
+async function boot() {
+  const [c, p, st] = await Promise.allSettled([api('/api/config'), api('/api/pairs?limit=1000'),
+    fetch('/assets/stocks/_list.json').then((r) => r.json())]);
+  if (st.status === 'fulfilled') STOCKS = st.value;
+  if (c.status === 'fulfilled') {
+    config = c.value.config;
+    MAX_BASKET = config.maxPayoutAssets || 10;
+  }
+  if (p.status === 'fulfilled') {
+    const data = p.value;
+    if (Number.isFinite(data.launchCost)) overhead = data.launchCost;
+    pairs = data.pairs || [];
+    const pre = pairs.find((m) => m.mint === PRE.get('quote'));
+    if (pre) { f.quote = pre.mint; f.quoteSymbol = pre.symbol; }
+    const want = (PRE.get('payout') || '').split(',').filter(Boolean).slice(0, MAX_BASKET);
+    f.payout = want.map((v) => (pairs.find((m) => m.mint === v) || pairs.find((m) => m.symbol === v) || {}).mint).filter((m) => m && stockOf(m));
+    drawPairs(); drawBasket();
+    const on = document.querySelector('#mlist .mrow.on');
+    if (on) on.scrollIntoView({ block: 'nearest' });
+    document.getElementById('mode-note').textContent = data.open
+      ? 'Launching signs one payment in your own wallet. Nothing else is asked for.'
+      : 'Launching is closed right now: this server has no launch wallet.';
+  } else {
+    document.getElementById('mlist').innerHTML =
+      `<div class="mrow"><span class="px">Pairs are unavailable: ${esc(p.reason.message)}</span></div>`;
+  }
+  syncAmount(); preview();
+}
+syncAmount(); preview();
+boot().catch((e) => { document.getElementById('err').textContent = e.message; });
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Index Dashboard · TITANX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/favicon.ico">
+<link rel="icon" href="/img/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<main class="wrap" id="main">
+  <div class="empty" style="margin-top:26px">Loading</div>
+</main>
+
+<script src="/app.js"></script>
+<script>
+chrome('/');
+
+const mint = new URLSearchParams(location.search).get('mint') || '';
+const tx = (sig) => sig ? `<a href="https://solscan.io/tx/${esc(sig)}" target="_blank" rel="noopener"
+  style="color:var(--accent)">${esc(sig.slice(0, 8))}…</a>` : '-';
+const when = (t) => new Date(t * 1000).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
+let pairsByMint = {};
+
+function stockChip(a) {
+  const p = pairsByMint[a.mint];
+  const logo = p ? (p.category === 'xstock' ? '/assets/xstocks/' + p.symbol + '.png' : p.logo) : '';
+  return `<span>${logo ? `<img src="${esc(logo)}" alt="" onerror="this.remove()">` : ''}${esc(a.symbol)}</span>`;
+}
+
+function render(c) {
+  document.title = c.name + ' (' + c.ticker + ') · STONKZ';
+  const claims = (c.claims || []).slice().reverse();
+  const payouts = (c.payouts || []).slice().reverse();
+  const stocks = c.payout || [];
+  document.getElementById('main').innerHTML = `
+  <div class="bar" style="margin-top:26px;align-items:center">
+    ${coinImg(c, 52)}
+    <div><h2 style="font-size:24px">${esc(c.name)}</h2>
+      <div class="card-sub">${esc(c.ticker)} · ${esc(c.quoteSymbol || 'SOL')} pair · launched ${ago(c.createdAt)} ago</div></div>
+    <div class="spacer"></div>
+    <a class="btn" href="https://www.stonkfun.xyz/token/${encodeURIComponent(c.mint)}" target="_blank" rel="noopener">Trade Index Token</a>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="panel">
+        <div class="bar" style="margin:0 0 6px"><span class="flaplbl">DIVIDEND BASKET</span><span class="tag ok">Paid automatically</span></div>
+        <div class="stocks">${stocks.length ? stocks.map(stockChip).join('') : '<span><img src="/assets/sol.png" alt="">SOL</span>'}</div>
+        <p class="hint" style="margin:14px 0 0">Everyone holding ${esc(c.ticker)} is paid by how much they hold, from the fees the coin
+          earns on its curve. ${stocks.length ? 'The holders’ share buys the stocks above.' : 'The holders are paid in SOL.'}
+          Nobody claims anything.</p>
+        <div class="book">
+          <div><p class="k" style="margin:0">Fees collected</p><p class="v" style="margin:0">${sol(c.feesSol)}</p></div>
+          <div><p class="k" style="margin:0">To the holders</p><p class="v" style="margin:0">${sol(c.earnedSol)}</p></div>
+          <div><p class="k" style="margin:0">Paid out</p><p class="v" style="margin:0">${sol(c.paidSol)}</p></div>
+          <div><p class="k" style="margin:0">Waiting for the next round</p><p class="v" style="margin:0">${sol(c.owedSol)}</p></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Continuous Yield Distributions</h3>
+        <p class="hint">Every round, with its transaction.</p>
+        ${payouts.length ? `<table class="tbl"><tr><th>When</th><th>Paid as</th><th class="num">SOL</th><th>Tx</th></tr>
+          ${payouts.map((p) => `<tr><td>${when(p.t)}</td><td>${esc(p.note || p.symbol || 'SOL')}</td><td class="num">${Number(p.sol).toFixed(6)}</td><td>${tx(p.signature)}</td></tr>`).join('')}</table>`
+          : '<div class="empty">No payout yet. The first one comes once at least 0.01 SOL of fees has built up.</div>'}
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <h3>About the coin</h3>
+        <p class="hint" style="margin-bottom:10px">${esc(c.description || 'No description.')}</p>
+        <div class="book" style="grid-template-columns:1fr 1fr;margin-top:0">
+          <div><p class="k" style="margin:0">Pair</p><p class="v" style="margin:0">${esc(c.quoteSymbol || 'SOL')}</p></div>
+          <div><p class="k" style="margin:0">Dev buy</p><p class="v" style="margin:0">${sol(c.devBuySol, 2)}</p></div>
+          <div style="grid-column:1/-1"><p class="k" style="margin:0">Mint</p><p class="v" style="margin:0;font-size:12px;word-break:break-all">${esc(c.mint)}</p></div>
+          <div style="grid-column:1/-1"><p class="k" style="margin:0">Creator account</p><p class="v" style="margin:0;font-size:12px;word-break:break-all">${esc(c.creator || '')}</p></div>
+        </div>
+        ${c.twitter ? `<p class="hint" style="margin:12px 0 0"><a href="${esc(c.twitter)}" target="_blank" rel="noopener" style="color:var(--accent)">${esc(c.twitter)}</a></p>` : ''}
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h3>Fees collected</h3>
+        <p class="hint">Each sweep from the coin's creator account, turned into SOL.</p>
+        ${claims.length ? `<table class="tbl"><tr><th>When</th><th class="num">SOL</th><th>Tx</th></tr>
+          ${claims.map((k) => `<tr><td>${when(k.t)}</td><td class="num">${Number(k.sol).toFixed(6)}</td><td>${tx(k.signature)}</td></tr>`).join('')}</table>`
+          : '<div class="empty">Nothing collected yet.</div>'}
+      </div>
+    </div>
+  </div>`;
+}
+
+(async () => {
+  try {
+    const [c, p] = await Promise.all([api('/api/coin?mint=' + encodeURIComponent(mint)), api('/api/pairs?limit=1000').catch(() => ({ pairs: [] }))]);
+    (p.pairs || []).forEach((x) => { pairsByMint[x.mint] = x; });
+    render(c.coin);
+  } catch (e) {
+    document.getElementById('main').innerHTML = `<div class="empty" style="margin-top:26px">${esc(e.message)}</div>`;
+  }
+})();
+</script>
+</body>
+</html>

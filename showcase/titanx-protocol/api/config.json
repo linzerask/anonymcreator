@@ -1,0 +1,1 @@
+{"ok": true, "config": {"ca": "", "platformBps": null, "dry": true, "minPayoutSol": 0.01, "maxPayoutAssets": 10, "minSol": 0.1, "maxSol": 10.0, "launchCost": 0.025, "open": true}}

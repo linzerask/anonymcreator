@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Governance · TITANX</title>
+<meta name="description" content="Sign in with your Solana wallet, submit index proposals, and vote on what TITANX should implement next, and vote. The wishes with the most votes sit at the top.">
+<meta name="theme-color" content="#050c10">
+<meta property="og:title" content="Community · STONKZ">
+<meta property="og:image" content="https://usestonkz.xyz/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@UseStonkz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/favicon.ico">
+<link rel="icon" href="/img/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="com-head">
+    <h1>TITANX Governance & Wishlist</h1>
+    <p>Sign in with your wallet, post what you want STONKZ to build next, and vote on what others posted. The wishes with
+      the most votes sit at the top, and every count is a real wallet.</p>
+  </div>
+  <div class="com-grid">
+    <div class="panel com-form">
+      <h3>Post a wish</h3>
+      <p class="hint" id="wishWho">Sign in with your wallet to post and vote.</p>
+      <form id="wishForm" novalidate>
+        <div class="field"><label for="wTitle">Title</label><input type="text" id="wTitle" name="title" maxlength="80" autocomplete="off"></div>
+        <div class="field"><label for="wText">Why <em>optional</em></label><textarea id="wText" name="text" maxlength="280" rows="3"></textarea></div>
+        <p class="err" id="wishError"></p>
+        <div class="com-actions">
+          <button class="btn" type="submit" id="wishSubmit" hidden>Post the wish</button>
+          <button class="btn" type="button" id="wishSignIn">Sign in to post</button>
+          <button class="btn ghost" type="button" id="wishSignOut" hidden>Sign out</button>
+        </div>
+      </form>
+    </div>
+    <div class="com-list">
+      <div class="com-tools"><span class="hero-note" id="wishCount"></span></div>
+      <ol class="wishes" id="wishes"></ol>
+      <p class="empty" id="wishesEmpty" hidden>No wish yet. The first one goes straight to the top.</p>
+    </div>
+  </div>
+</main>
+<script src="/app.js"></script>
+<script>chrome('/community');</script>
+<script src="/community.js"></script>
+</body>
+</html>

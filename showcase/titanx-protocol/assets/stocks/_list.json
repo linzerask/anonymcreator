@@ -1,0 +1,962 @@
+[
+ {
+  "symbol": "SPYX",
+  "name": "SP500",
+  "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W.png"
+ },
+ {
+  "symbol": "NVDAX",
+  "name": "NVIDIA",
+  "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh.png"
+ },
+ {
+  "symbol": "GOOGLX",
+  "name": "Alphabet",
+  "mint": "XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN.png"
+ },
+ {
+  "symbol": "QQQX",
+  "name": "Nasdaq",
+  "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ.png"
+ },
+ {
+  "symbol": "TSLAX",
+  "name": "Tesla",
+  "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB.png"
+ },
+ {
+  "symbol": "CRCLX",
+  "name": "Circle",
+  "mint": "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1.png"
+ },
+ {
+  "symbol": "COINX",
+  "name": "Coinbase",
+  "mint": "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu.png"
+ },
+ {
+  "symbol": "MSTRX",
+  "name": "MicroStrategy",
+  "mint": "XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ.png"
+ },
+ {
+  "symbol": "AMZNX",
+  "name": "Amazon",
+  "mint": "Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg.png"
+ },
+ {
+  "symbol": "HOODX",
+  "name": "Robinhood",
+  "mint": "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg.png"
+ },
+ {
+  "symbol": "SPCXX",
+  "name": "SpaceX",
+  "mint": "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8.png"
+ },
+ {
+  "symbol": "APPLX",
+  "name": "Apple",
+  "mint": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp.png"
+ },
+ {
+  "symbol": "GLDX",
+  "name": "Gold",
+  "mint": "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re.png"
+ },
+ {
+  "symbol": "METAX",
+  "name": "Meta",
+  "mint": "Xsa62P5mvPszXL1krVUnU5ar38bBSVcWAB6fmPCo5Zu",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xsa62P5mvPszXL1krVUnU5ar38bBSVcWAB6fmPCo5Zu.png"
+ },
+ {
+  "symbol": "PLTRX",
+  "name": "Palantir",
+  "mint": "XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4.png"
+ },
+ {
+  "symbol": "MSFTX",
+  "name": "Microsoft",
+  "mint": "XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX.png"
+ },
+ {
+  "symbol": "GMEX",
+  "name": "Gamestop",
+  "mint": "Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc.png"
+ },
+ {
+  "symbol": "STRCX",
+  "name": "Strategy PP Variable",
+  "mint": "Xs78JED6PFZxWc2wCEPspZW9kL3Se5J7L5TChKgsidH",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs78JED6PFZxWc2wCEPspZW9kL3Se5J7L5TChKgsidH.png"
+ },
+ {
+  "symbol": "MCDX",
+  "name": "McDonald's",
+  "mint": "XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2.png"
+ },
+ {
+  "symbol": "BRKX",
+  "name": "Berkshire Hathaway",
+  "mint": "Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x.png"
+ },
+ {
+  "symbol": "KOX",
+  "name": "Coca-Cola",
+  "mint": "XsaBXg8dU5cPM6ehmVctMkVqoiRG2ZjMo1cyBJ3AykQ",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsaBXg8dU5cPM6ehmVctMkVqoiRG2ZjMo1cyBJ3AykQ.png"
+ },
+ {
+  "symbol": "INTCX",
+  "name": "Intel",
+  "mint": "XshPgPdXFRWB8tP1j82rebb2Q9rPgGX37RuqzohmArM",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XshPgPdXFRWB8tP1j82rebb2Q9rPgGX37RuqzohmArM.png"
+ },
+ {
+  "symbol": "VIDAX",
+  "name": "Vida Global",
+  "mint": "XsfCC9VL4DamVGNgdJpfLXB3sBVa158Gbx8sh7NzmTk",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/XsfCC9VL4DamVGNgdJpfLXB3sBVa158Gbx8sh7NzmTk.png"
+ },
+ {
+  "symbol": "DFDV",
+  "name": "DFDV",
+  "mint": "Xs2yquAgsHByNzx68WJC55WHjHBvG9JsMB7CWjTLyPy",
+  "cat": "xstock",
+  "label": "xStock",
+  "logo": "/assets/stocks/Xs2yquAgsHByNzx68WJC55WHjHBvG9JsMB7CWjTLyPy.png"
+ },
+ {
+  "symbol": "ANTHROPIC",
+  "name": "Anthropic",
+  "mint": "Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw.png"
+ },
+ {
+  "symbol": "ANDURIL",
+  "name": "Anduril",
+  "mint": "PresTj4Yc2bAR197Er7wz4UUKSfqt6FryBEdAriBoQB",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/PresTj4Yc2bAR197Er7wz4UUKSfqt6FryBEdAriBoQB.png"
+ },
+ {
+  "symbol": "POLYMARKET",
+  "name": "Polymarket",
+  "mint": "Pre8AREmFPtoJFT8mQSXQLh56cwJmM7CFDRuoGBZiUP",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/Pre8AREmFPtoJFT8mQSXQLh56cwJmM7CFDRuoGBZiUP.png"
+ },
+ {
+  "symbol": "KALSHI",
+  "name": "Kalshi",
+  "mint": "PreLWGkkeqG1s4HEfFZSy9moCrJ7btsHuUtfcCeoRua",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/PreLWGkkeqG1s4HEfFZSy9moCrJ7btsHuUtfcCeoRua.png"
+ },
+ {
+  "symbol": "NEURALINK",
+  "name": "Neuralink",
+  "mint": "PrekqLJvJ3qVdXmBGDiexvwUTF4rLFDa6HWS4HJbw9S",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/PrekqLJvJ3qVdXmBGDiexvwUTF4rLFDa6HWS4HJbw9S.png"
+ },
+ {
+  "symbol": "OPENAI",
+  "name": "OpenAI",
+  "mint": "PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF.png"
+ },
+ {
+  "symbol": "FIGUREAI",
+  "name": "Figure AI",
+  "mint": "PreZad18qfPtbxNpMtMuAuX2zVpvkEU8DnJx56faCWd",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/PreZad18qfPtbxNpMtMuAuX2zVpvkEU8DnJx56faCWd.png"
+ },
+ {
+  "symbol": "OURA",
+  "name": "Oura",
+  "mint": "Pre9atBqkocK1QngFy7Q7zvyQictEFpXdLi6bZ2qnYy",
+  "cat": "prestock",
+  "label": "PreStock",
+  "logo": "/assets/stocks/Pre9atBqkocK1QngFy7Q7zvyQictEFpXdLi6bZ2qnYy.png"
+ },
+ {
+  "symbol": "MU",
+  "name": "Micron Technology",
+  "mint": "MUxEsUKSMACyw5fZf68wxf5FLnZVhtU9CwH8uNNGay1",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/MUxEsUKSMACyw5fZf68wxf5FLnZVhtU9CwH8uNNGay1.png"
+ },
+ {
+  "symbol": "ROBOSTRATEGY",
+  "name": "RoboStrategy",
+  "mint": "BoTx8y9ynfdxf5ZjWtCoBVkff52qKA82ysaLU8ZM6d8T",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BoTx8y9ynfdxf5ZjWtCoBVkff52qKA82ysaLU8ZM6d8T.png"
+ },
+ {
+  "symbol": "SKHY",
+  "name": "SK Hynix",
+  "mint": "SKHYhSjuRWHgikq8eRKbtBbpABgJSkd7ytQV14i9EQ3",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SKHYhSjuRWHgikq8eRKbtBbpABgJSkd7ytQV14i9EQ3.png"
+ },
+ {
+  "symbol": "SNDK",
+  "name": "Sandisk",
+  "mint": "SNDKbwMUQvZhnLnxLduradgLHG5KrPuKwpnrkkGRhfH",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SNDKbwMUQvZhnLnxLduradgLHG5KrPuKwpnrkkGRhfH.png"
+ },
+ {
+  "symbol": "DRAM",
+  "name": "Roundhill Memory ETF",
+  "mint": "DRAMjSWR7HRfJKjRkvQWYL2bcaejaVhuxEcjf4pAY4Cw",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/DRAMjSWR7HRfJKjRkvQWYL2bcaejaVhuxEcjf4pAY4Cw.png"
+ },
+ {
+  "symbol": "TTWO",
+  "name": "Take-Two Interactive Software",
+  "mint": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo.png"
+ },
+ {
+  "symbol": "NBIS",
+  "name": "Nebius Group N.V.",
+  "mint": "NBiSF3UaVUFtRzHwAfxyHsBCAZWGEKnMpewAE4oh7BG",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/NBiSF3UaVUFtRzHwAfxyHsBCAZWGEKnMpewAE4oh7BG.png"
+ },
+ {
+  "symbol": "MRNA",
+  "name": "Moderna",
+  "mint": "MRNAzXzhNcaEXJPibHEn8cd4vyekCDiivTyEwswLUCT",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/MRNAzXzhNcaEXJPibHEn8cd4vyekCDiivTyEwswLUCT.png"
+ },
+ {
+  "symbol": "LLY",
+  "name": "Eli Lilly and Company",
+  "mint": "LLYuwZ33keFihgwoxXsBawy31AiRFLFSva32TYq5TvD",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/LLYuwZ33keFihgwoxXsBawy31AiRFLFSva32TYq5TvD.png"
+ },
+ {
+  "symbol": "MRVL",
+  "name": "Marvell Technology",
+  "mint": "MRVLSjkR2ceUBukujaD3xCyHP1H3B2SzpsNTZF546jo",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/MRVLSjkR2ceUBukujaD3xCyHP1H3B2SzpsNTZF546jo.png"
+ },
+ {
+  "symbol": "GPRO",
+  "name": "GoPro",
+  "mint": "GPRR2u6NS5yBQHWGauoJ9HXgjrTH8dDsrBfTV5zAYvDH",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/GPRR2u6NS5yBQHWGauoJ9HXgjrTH8dDsrBfTV5zAYvDH.png"
+ },
+ {
+  "symbol": "AMC",
+  "name": "AMC Entertainment",
+  "mint": "AMC1qwR9KhiyrQBRPrxnfo4JfMeMZqEBvt5tgTytNNoc",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/AMC1qwR9KhiyrQBRPrxnfo4JfMeMZqEBvt5tgTytNNoc.png"
+ },
+ {
+  "symbol": "NIKE",
+  "name": "Nike",
+  "mint": "NKEda5nHhNGgjrE9nDdMvaEmkmJ96qqxzBVZEcKmjSg",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/NKEda5nHhNGgjrE9nDdMvaEmkmJ96qqxzBVZEcKmjSg.png"
+ },
+ {
+  "symbol": "SPHR",
+  "name": "Sphere Entertainment Co.",
+  "mint": "SPHRp8cZaSQBTp1KMNP4V1X821SXhXWt4Q2yLdyHzju",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SPHRp8cZaSQBTp1KMNP4V1X821SXhXWt4Q2yLdyHzju.png"
+ },
+ {
+  "symbol": "HTZ",
+  "name": "Hertz Global Holdings, Inc",
+  "mint": "HTZsLG4zqaNvWMwXSLHH3GG5KyJpKwpBRsKVdMG6hvzP",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/HTZsLG4zqaNvWMwXSLHH3GG5KyJpKwpBRsKVdMG6hvzP.png"
+ },
+ {
+  "symbol": "RDDT",
+  "name": "Reddit",
+  "mint": "RDDTGbhHwVXfyCvQMXzzowKjf5qrYBZAnehoXW83ooh",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RDDTGbhHwVXfyCvQMXzzowKjf5qrYBZAnehoXW83ooh.png"
+ },
+ {
+  "symbol": "COST",
+  "name": "Costco Wholesale",
+  "mint": "CZEB3WNZuF2Yz1z2H81RcCk8T7fsw82KB33zqamASVsg",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CZEB3WNZuF2Yz1z2H81RcCk8T7fsw82KB33zqamASVsg.png"
+ },
+ {
+  "symbol": "DELL",
+  "name": "Dell Technologies",
+  "mint": "DELL2aRKQz7DMq5DrKLtkn47ZCnbxXPZXrSGbkmd13wy",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/DELL2aRKQz7DMq5DrKLtkn47ZCnbxXPZXrSGbkmd13wy.png"
+ },
+ {
+  "symbol": "DJT",
+  "name": "Trump Media & Technology Group Corp.",
+  "mint": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF.png"
+ },
+ {
+  "symbol": "IBM",
+  "name": "International Business Machines",
+  "mint": "BMKdM4yUxX12moFqVk195k7coMbaybd4RUKCUdm7D1Sk",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BMKdM4yUxX12moFqVk195k7coMbaybd4RUKCUdm7D1Sk.png"
+ },
+ {
+  "symbol": "LMT",
+  "name": "Lockheed Martin",
+  "mint": "LMT3i1BHgixFqPUgcyteJhnEz2dpy9i3cYy4pi9BoeV",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/LMT3i1BHgixFqPUgcyteJhnEz2dpy9i3cYy4pi9BoeV.png"
+ },
+ {
+  "symbol": "QUBT",
+  "name": "Quantum Computing",
+  "mint": "QUBTAD8C9bMU9LvmMNgKPhrmBGbHvxpu6vfWQtThxxw",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/QUBTAD8C9bMU9LvmMNgKPhrmBGbHvxpu6vfWQtThxxw.png"
+ },
+ {
+  "symbol": "RBLX",
+  "name": "Roblox",
+  "mint": "RBLXDGRD64AtRamHMFVcjqne3Ar7NLWtFtYNtsrf1cE",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RBLXDGRD64AtRamHMFVcjqne3Ar7NLWtFtYNtsrf1cE.png"
+ },
+ {
+  "symbol": "HIMS",
+  "name": "Hims & Hers Health",
+  "mint": "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx.png"
+ },
+ {
+  "symbol": "LULU",
+  "name": "lululemon athletica inc.",
+  "mint": "LULUmT9VMttkfAJE236LXJcYJ2tTP7nunrSWR5G1BdS",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/LULUmT9VMttkfAJE236LXJcYJ2tTP7nunrSWR5G1BdS.png"
+ },
+ {
+  "symbol": "PFIZER",
+  "name": "Pfizer",
+  "mint": "PFER6ENqP8r8NF3CqVt4mFowxsin3V5MLidBNQFCC3x",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/PFER6ENqP8r8NF3CqVt4mFowxsin3V5MLidBNQFCC3x.png"
+ },
+ {
+  "symbol": "RIVN",
+  "name": "Rivian Automotive",
+  "mint": "RcZmt84VMJv9bDhKqmw1uWDahYrUT468VwAChTnfD8p",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RcZmt84VMJv9bDhKqmw1uWDahYrUT468VwAChTnfD8p.png"
+ },
+ {
+  "symbol": "SHOP",
+  "name": "Shopify",
+  "mint": "SH55hfaipFAbwT42nQYhRoM5o5t61QpkmJ6p62vXB3m",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SH55hfaipFAbwT42nQYhRoM5o5t61QpkmJ6p62vXB3m.png"
+ },
+ {
+  "symbol": "SNAP",
+  "name": "Snap",
+  "mint": "SNAPcESrvnH8yUdgeMF6xm1hym9b6hW6s8YeqeHdZFz",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SNAPcESrvnH8yUdgeMF6xm1hym9b6hW6s8YeqeHdZFz.png"
+ },
+ {
+  "symbol": "UPS",
+  "name": "United Parcel Service",
+  "mint": "UPSqUeMHcWbkdg784XuBUEF9DtySSnW9ur5LAVdcuB9",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/UPSqUeMHcWbkdg784XuBUEF9DtySSnW9ur5LAVdcuB9.png"
+ },
+ {
+  "symbol": "PENG",
+  "name": "Penguin Solutions",
+  "mint": "PENGTDQeQSXEjKcYw3CTQi9qznxcTHXAA7LMfUNrxLV",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/PENGTDQeQSXEjKcYw3CTQi9qznxcTHXAA7LMfUNrxLV.png"
+ },
+ {
+  "symbol": "BOEING",
+  "name": "The Boeing Company",
+  "mint": "BArimz1PcKZr8PcPh3tcZ2dg4S7FJLk3cw6R5F8GsHKg",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BArimz1PcKZr8PcPh3tcZ2dg4S7FJLk3cw6R5F8GsHKg.png"
+ },
+ {
+  "symbol": "AMBA",
+  "name": "Ambarella, Inc.",
+  "mint": "AMBAHqGPjjtJaHPPSuvPu2mPCJdkGZpmhHQa5pkXbxrM",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/AMBAHqGPjjtJaHPPSuvPu2mPCJdkGZpmhHQa5pkXbxrM.png"
+ },
+ {
+  "symbol": "WEBULL",
+  "name": "Webull Corporation",
+  "mint": "BULL151gUXcFV5wXEUqu9Am2L7Qt4bTJRLRuAUjkcspC",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BULL151gUXcFV5wXEUqu9Am2L7Qt4bTJRLRuAUjkcspC.png"
+ },
+ {
+  "symbol": "JNJ",
+  "name": "Johnson & Johnson",
+  "mint": "JNJg1znKdF712Phe7L7z52AATAvEjEytBdN2w8Lnh1Y",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/JNJg1znKdF712Phe7L7z52AATAvEjEytBdN2w8Lnh1Y.png"
+ },
+ {
+  "symbol": "BABA",
+  "name": "Alibaba Group Holding",
+  "mint": "BABANGA4JE7Kkam4nTrALAwAVgsNJUuFJnnkF7S16BZp",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BABANGA4JE7Kkam4nTrALAwAVgsNJUuFJnnkF7S16BZp.png"
+ },
+ {
+  "symbol": "GRND",
+  "name": "Grindr",
+  "mint": "GRNDYDpqwpCm6jVxpbh4xT5AM4r3p391qYsKTHqgaET2",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/GRNDYDpqwpCm6jVxpbh4xT5AM4r3p391qYsKTHqgaET2.png"
+ },
+ {
+  "symbol": "MGM",
+  "name": "MGM Resorts International",
+  "mint": "MGMuubtUEirmkhfEQdmGUh4pr7HuUdMWcZXFtpPbVJD",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/MGMuubtUEirmkhfEQdmGUh4pr7HuUdMWcZXFtpPbVJD.png"
+ },
+ {
+  "symbol": "DNUT",
+  "name": "Krispy Kreme, Inc.",
+  "mint": "DNUTsCvKbKwu2RM72cUuW3TD9YpzArzACcqYQssjPLSk",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/DNUTsCvKbKwu2RM72cUuW3TD9YpzArzACcqYQssjPLSk.png"
+ },
+ {
+  "symbol": "WEN",
+  "name": "The Wendy's Company",
+  "mint": "WENAZ2WyPbmgvUcKfQ8hyMDfBQP9bZ65hsZ5KTFrRGZ",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/WENAZ2WyPbmgvUcKfQ8hyMDfBQP9bZ65hsZ5KTFrRGZ.png"
+ },
+ {
+  "symbol": "DKNG",
+  "name": "DraftKings",
+  "mint": "DKNGQFNGQmoBdXSRGKJ8tTu7uPDasw5JDcfMmWniNfow",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/DKNGQFNGQmoBdXSRGKJ8tTu7uPDasw5JDcfMmWniNfow.png"
+ },
+ {
+  "symbol": "FLWS",
+  "name": "1-800-FLOWERS.COM",
+  "mint": "FLWSojG1gB5VStYR3Sb4nQFRt43UBYkqih1j2CpVLqgd",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/FLWSojG1gB5VStYR3Sb4nQFRt43UBYkqih1j2CpVLqgd.png"
+ },
+ {
+  "symbol": "SCHH",
+  "name": "Schwab U.S. REIT ETF",
+  "mint": "SCHHJ3jRdSjeFEVAaLrnYdx3Brphn92Ys7z1qkiCtPX",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SCHHJ3jRdSjeFEVAaLrnYdx3Brphn92Ys7z1qkiCtPX.png"
+ },
+ {
+  "symbol": "PTN",
+  "name": "Palatin Technologies, Inc.",
+  "mint": "PTNzAfFAB4LvoUQEUUGrFMyUoRLExMYjH6CcfyQfsVP",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/PTNzAfFAB4LvoUQEUUGrFMyUoRLExMYjH6CcfyQfsVP.png"
+ },
+ {
+  "symbol": "FLY",
+  "name": "Firefly Aerospace",
+  "mint": "FLYRq3en8r2Z69gN3KyAnDrvnitEJNkwPYY7favinHeD",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/FLYRq3en8r2Z69gN3KyAnDrvnitEJNkwPYY7favinHeD.png"
+ },
+ {
+  "symbol": "BROS",
+  "name": "Dutch Bros",
+  "mint": "BRVaZKg6J9iF2BEsdpsxJ9NyvN9PPxPZuoQUX2v8qqkk",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BRVaZKg6J9iF2BEsdpsxJ9NyvN9PPxPZuoQUX2v8qqkk.png"
+ },
+ {
+  "symbol": "AMD",
+  "name": "Advanced Micro Devices",
+  "mint": "AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/AMD8XwJXgQ9WV45Wyj9yFLejxzf2J6VM1PJY8bJEjeES.png"
+ },
+ {
+  "symbol": "FWDI",
+  "name": "Forward Industries, Inc.",
+  "mint": "FWDtiB5fXHdVAewPqvHPL2dh4aBC1C6GacQbePoQXKjz",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/FWDtiB5fXHdVAewPqvHPL2dh4aBC1C6GacQbePoQXKjz.png"
+ },
+ {
+  "symbol": "LUV",
+  "name": "Southwest Airlines Co.",
+  "mint": "LUV9GB51PNZNRyzzyYK3rtqFfvDvWtRiXZ34wVq2HrX",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/LUV9GB51PNZNRyzzyYK3rtqFfvDvWtRiXZ34wVq2HrX.png"
+ },
+ {
+  "symbol": "WULF",
+  "name": "TeraWulf",
+  "mint": "WULFeyfrj1VJKD9HhRTcW8R4g5HefUA11HDEdBv2WxD",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/WULFeyfrj1VJKD9HhRTcW8R4g5HefUA11HDEdBv2WxD.png"
+ },
+ {
+  "symbol": "RUM",
+  "name": "RUM Group Inc.",
+  "mint": "RUMsPfFZFnN1ZmGANwP7FNMJMjKH4m9RiMePrtVtLe7",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RUMsPfFZFnN1ZmGANwP7FNMJMjKH4m9RiMePrtVtLe7.png"
+ },
+ {
+  "symbol": "USO",
+  "name": "United States Oil Fund, LP",
+  "mint": "USNv3NkKA27Dh4nsHJDPhW4VoEcTQmjoZyJt2dqdwFu",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/USNv3NkKA27Dh4nsHJDPhW4VoEcTQmjoZyJt2dqdwFu.png"
+ },
+ {
+  "symbol": "CYPH",
+  "name": "Cypherpunk Technologies",
+  "mint": "CYPHuMmCL1GxJWa2tsPhLKykC7GrHJTCHwbXD4g5uawK",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CYPHuMmCL1GxJWa2tsPhLKykC7GrHJTCHwbXD4g5uawK.png"
+ },
+ {
+  "symbol": "BB",
+  "name": "BlackBerry",
+  "mint": "BBosJLw8ZzoATiEyywiifx7AgmrD2Cm3XjFWbhbRhChy",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BBosJLw8ZzoATiEyywiifx7AgmrD2Cm3XjFWbhbRhChy.png"
+ },
+ {
+  "symbol": "URA",
+  "name": "Global X Uranium ETF",
+  "mint": "URARfsinxCRw4JpvQhuT4CxavdZXZEMjv9ZwWmWpwag",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/URARfsinxCRw4JpvQhuT4CxavdZXZEMjv9ZwWmWpwag.png"
+ },
+ {
+  "symbol": "COPX",
+  "name": "Global X Copper Miners ETF",
+  "mint": "CzLTZppPdZtTjyq3WGpHLstoc3GLhu7zH5Zg6xUa6Gv5",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CzLTZppPdZtTjyq3WGpHLstoc3GLhu7zH5Zg6xUa6Gv5.png"
+ },
+ {
+  "symbol": "IONQ",
+  "name": "IonQ",
+  "mint": "NQ5hSuXQZrbnrwcDVk2qN73njjd3E3v3badYHnj5thF",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/NQ5hSuXQZrbnrwcDVk2qN73njjd3E3v3badYHnj5thF.png"
+ },
+ {
+  "symbol": "ARM",
+  "name": "Arm Holdings",
+  "mint": "ARMbSB1MBRQrY6PNMao1HdQ431VafC6JRJCsGZ2Yv3iJ",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/ARMbSB1MBRQrY6PNMao1HdQ431VafC6JRJCsGZ2Yv3iJ.png"
+ },
+ {
+  "symbol": "CRWV",
+  "name": "CoreWeave",
+  "mint": "CRWVJeR2yEZuDUKYfGuKCHvLz8ywn4LGvovHfy5WiFmi",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CRWVJeR2yEZuDUKYfGuKCHvLz8ywn4LGvovHfy5WiFmi.png"
+ },
+ {
+  "symbol": "IREN",
+  "name": "IREN",
+  "mint": "RENzhrJQgmAnfcLhU1U5XwAMc6TC15UA6jCbPBaasnj",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RENzhrJQgmAnfcLhU1U5XwAMc6TC15UA6jCbPBaasnj.png"
+ },
+ {
+  "symbol": "SQQQ",
+  "name": "ProShares UltraPro Short QQQ",
+  "mint": "SQQQAa3gUxgnqcEsdjPA4RQNQBgB97TnG2hJhk2WaGE",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/SQQQAa3gUxgnqcEsdjPA4RQNQBgB97TnG2hJhk2WaGE.png"
+ },
+ {
+  "symbol": "EWY",
+  "name": "iShares MSCI South Korea ETF",
+  "mint": "EWY4owSJYMpwN33qGDu5gGxpkQkpMJu8ZUsQJaNZG5dv",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/EWY4owSJYMpwN33qGDu5gGxpkQkpMJu8ZUsQJaNZG5dv.png"
+ },
+ {
+  "symbol": "NOK",
+  "name": "Nokia Oyj",
+  "mint": "N7Q5fYX7YRnDQksfdBKnoUb3awm92n7QNAD35X3Rq1X",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/N7Q5fYX7YRnDQksfdBKnoUb3awm92n7QNAD35X3Rq1X.png"
+ },
+ {
+  "symbol": "RKLB",
+  "name": "Rocket Lab",
+  "mint": "RKLBnAXGqv31iZomqsuAWkQm1aqC7JwwvbCfzGdqAhz",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RKLBnAXGqv31iZomqsuAWkQm1aqC7JwwvbCfzGdqAhz.png"
+ },
+ {
+  "symbol": "NFLX",
+  "name": "Netflix",
+  "mint": "NFLX7qV57zuVxCoHy3s1jiGZyALraLNwttbxdvmYJLJ",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/NFLX7qV57zuVxCoHy3s1jiGZyALraLNwttbxdvmYJLJ.png"
+ },
+ {
+  "symbol": "BE",
+  "name": "Bloom Energy",
+  "mint": "BEBVfXZ8uCxRBuunEbW9wcq9r7W9ySNo14oJBJkDgpZx",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BEBVfXZ8uCxRBuunEbW9wcq9r7W9ySNo14oJBJkDgpZx.png"
+ },
+ {
+  "symbol": "PUSA",
+  "name": "Powerus Corporation",
+  "mint": "PUSAG1stksTcAoK9MjinEHUwAYRJsbovywYCk37m6hy",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/PUSAG1stksTcAoK9MjinEHUwAYRJsbovywYCk37m6hy.png"
+ },
+ {
+  "symbol": "BLK",
+  "name": "BlackRock",
+  "mint": "BLKKYfF41c6xRPrtX1rdYbxLE1xxEdZUnxQsB5hcZ8Nf",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/BLKKYfF41c6xRPrtX1rdYbxLE1xxEdZUnxQsB5hcZ8Nf.png"
+ },
+ {
+  "symbol": "EWZ",
+  "name": "iShares MSCI Brazil ETF",
+  "mint": "EWZzCki1igp2y73UyUM4RCG4QUVMQAtnrQUVNaDHzDxJ",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/EWZzCki1igp2y73UyUM4RCG4QUVMQAtnrQUVNaDHzDxJ.png"
+ },
+ {
+  "symbol": "CBRS",
+  "name": "Cerebras Systems",
+  "mint": "CBRSFBbQPpp77NpMcwbTN6fhBHmZM94oFLJvruytw4Fi",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CBRSFBbQPpp77NpMcwbTN6fhBHmZM94oFLJvruytw4Fi.png"
+ },
+ {
+  "symbol": "RACE",
+  "name": "Ferrari",
+  "mint": "RACEyWiM2ztEZcJx2AHXU2eWjhxU57x3vXn92b39dLD",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RACEyWiM2ztEZcJx2AHXU2eWjhxU57x3vXn92b39dLD.png"
+ },
+ {
+  "symbol": "RIOT",
+  "name": "Riot Platforms",
+  "mint": "RUKx7nBgm94pwRPbVm99xYVdcTDTUyGs8Cw3VSYQXHf",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/RUKx7nBgm94pwRPbVm99xYVdcTDTUyGs8Cw3VSYQXHf.png"
+ },
+ {
+  "symbol": "CMG",
+  "name": "Chipotle Mexican Grill",
+  "mint": "CMGi497VQA9RiHVWpQi5B847vN8RLaEwcMhB5kEUhkAQ",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CMGi497VQA9RiHVWpQi5B847vN8RLaEwcMhB5kEUhkAQ.png"
+ },
+ {
+  "symbol": "TSM",
+  "name": "Taiwan Semiconductor Manufacturing Company",
+  "mint": "TSM2Hiuf7Z9REcwZFQvsBEekBYCYziWBABfFnj6V6gQ",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/TSM2Hiuf7Z9REcwZFQvsBEekBYCYziWBABfFnj6V6gQ.png"
+ },
+ {
+  "symbol": "AVGO",
+  "name": "Broadcom",
+  "mint": "AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/AVGoo4BQGsEfAmu4HU2deZTaTmLoqB3q3EzKXqAANGYD.png"
+ },
+ {
+  "symbol": "UVXY",
+  "name": "ProShares Ultra VIX Short-Term Futures ETF",
+  "mint": "UVXY4ojmAMTaPwUmrRmcuxWHjMHCbz3BxX2RBMzjYKx",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/UVXY4ojmAMTaPwUmrRmcuxWHjMHCbz3BxX2RBMzjYKx.png"
+ },
+ {
+  "symbol": "CHWY",
+  "name": "Chewy",
+  "mint": "CHWYHz2zfKajomqPV9it26n7vu7AgZZfqGHXCWtGWuJg",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CHWYHz2zfKajomqPV9it26n7vu7AgZZfqGHXCWtGWuJg.png"
+ },
+ {
+  "symbol": "ABNB",
+  "name": "Airbnb",
+  "mint": "ABNB56TteaTZG1S3DY2W8VMncQmHMvNCGaZgAba49CLP",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/ABNB56TteaTZG1S3DY2W8VMncQmHMvNCGaZgAba49CLP.png"
+ },
+ {
+  "symbol": "TSLA",
+  "name": "Tesla",
+  "mint": "TSLAqBbv4CNCnzWFeB7LmydAyEiNMJtve7DYKLpdK4S",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/TSLAqBbv4CNCnzWFeB7LmydAyEiNMJtve7DYKLpdK4S.png"
+ },
+ {
+  "symbol": "META",
+  "name": "Meta Platforms",
+  "mint": "METAaH6MMZZgy2CTEJq3QdNi7AFVTV3NxHFBfFgLEDd",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/METAaH6MMZZgy2CTEJq3QdNi7AFVTV3NxHFBfFgLEDd.png"
+ },
+ {
+  "symbol": "AMZN",
+  "name": "Amazon",
+  "mint": "AMZNw7cwU9L9c7ewZXxTws2PwQYxBGm2Rxg3FLDBJz9B",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/AMZNw7cwU9L9c7ewZXxTws2PwQYxBGm2Rxg3FLDBJz9B.png"
+ },
+ {
+  "symbol": "NVDA",
+  "name": "Nvidia",
+  "mint": "NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv.png"
+ },
+ {
+  "symbol": "AAPL",
+  "name": "Apple",
+  "mint": "AAPLEDt8RpzPgXyhvFzkMBofvFSQw9gpeMCoUdPdLnB8",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/AAPLEDt8RpzPgXyhvFzkMBofvFSQw9gpeMCoUdPdLnB8.png"
+ },
+ {
+  "symbol": "GOOGL",
+  "name": "Alphabet",
+  "mint": "GooGLMvZtJZXHdNZy95RUrAMCCKxV6ghK3qE5ddBgVm5",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/GooGLMvZtJZXHdNZy95RUrAMCCKxV6ghK3qE5ddBgVm5.png"
+ },
+ {
+  "symbol": "MSFT",
+  "name": "Microsoft",
+  "mint": "MSFThX899B1DddH5jkyMpdArWXzP85VXLYDrbGGcRJM",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/MSFThX899B1DddH5jkyMpdArWXzP85VXLYDrbGGcRJM.png"
+ },
+ {
+  "symbol": "CAKE",
+  "name": "Cheesecake Factory (The)",
+  "mint": "CAKEcebDN4vqwAHBgj4ApzBvYCXsLWdsqCfFHNfW6Rui",
+  "cat": "backpack",
+  "label": "Sunrise",
+  "logo": "/assets/stocks/CAKEcebDN4vqwAHBgj4ApzBvYCXsLWdsqCfFHNfW6Rui.png"
+ },
+ {
+  "symbol": "OPENAI",
+  "name": "OpenAI",
+  "mint": "oPAiAikWTaFj9RYoRFD35ccfwhnMcB3ThgBZRHSkjTZ",
+  "cat": "tessera",
+  "label": "Tessera",
+  "logo": "/assets/stocks/oPAiAikWTaFj9RYoRFD35ccfwhnMcB3ThgBZRHSkjTZ.png"
+ },
+ {
+  "symbol": "KALSHI",
+  "name": "Kalshi",
+  "mint": "TKLSidmLVt3cqGaaodG8tyRzoANfQwoh67AccjmubeZ",
+  "cat": "tessera",
+  "label": "Tessera",
+  "logo": "/assets/stocks/TKLSidmLVt3cqGaaodG8tyRzoANfQwoh67AccjmubeZ.png"
+ }
+]
