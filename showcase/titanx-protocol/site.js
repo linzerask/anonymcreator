@@ -185,7 +185,7 @@ async function loadCoins() {
   const dep = $('dep');
   const ago = (ts) => { const x = Math.max(0, Date.now() / 1000 - ts); return x < 3600 ? Math.floor(x / 60) + 'm' : x < 86400 ? Math.floor(x / 3600) + 'h' : Math.floor(x / 86400) + 'd'; };
   try {
-    const res = await fetch('api/coins.json').catch(() => fetch('./api/coins.json'));
+    const res = await fetch('./api/coins.json');
     const data = await res.json();
     if (!data.ok || !data.coins || !data.coins.length) throw new Error('none');
     dep.innerHTML = '<div class="hdr"><span>Coin</span><span>Pays holders in</span><span>Fees</span><span>Age</span></div>';
@@ -227,7 +227,16 @@ async function loadCA() {
 
 /* ------------------------------------------------------------- start */
 (async () => {
-  STOCKS = await fetch('./assets/stocks/_list.json').then((r) => r.json());
+  try {
+    STOCKS = await fetch('./assets/stocks/list.json').then((r) => r.json());
+  } catch(e) {
+    try {
+      STOCKS = await fetch('./assets/stocks/_list.json').then((r) => r.json());
+    } catch(err) {
+      console.error('Failed to load stock list:', err);
+      STOCKS = [];
+    }
+  }
   sel = sel.filter(byMint);
   $('q').oninput = (e) => { q = e.target.value; render(); };
   $('sq').oninput = (e) => { sq = e.target.value; drawTable(); };
