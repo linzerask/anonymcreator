@@ -55,7 +55,7 @@
     $('#wishCount').textContent = wishes.length ? `${wishes.length} wish${wishes.length === 1 ? '' : 'es'}, sorted by votes` : '';
   }
   async function load() {
-    const d = await call('/api/wishes?limit=60');
+    const d = await call('./api/wishes.json');
     if (!d.ok) return;
     if (token && !d.me) dropToken(); else if (d.me && !me) setMe(d.me);
     const sig = JSON.stringify(d.wishes);

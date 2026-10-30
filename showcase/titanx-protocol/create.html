@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="/img/favicon.ico">
-<link rel="icon" href="/img/favicon-64.png" type="image/png">
-<link rel="stylesheet" href="/app.css">
+<link rel="icon" href="./img/favicon.ico">
+<link rel="icon" href="./img/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="./app.css">
 </head>
 <body>
 <main class="wrap">
@@ -108,7 +108,7 @@
   </div>
 </main>
 
-<script src="/app.js"></script>
+<script src="./app.js"></script>
 <script>
 chrome('/create');
 
@@ -231,7 +231,7 @@ document.getElementById('go').onclick = async () => {
     out.innerHTML = `<div class="banner good" style="margin-bottom:0"><div>
       <b>${esc(order.plan.name)} is live.</b> The holders are paid in ${esc(order.label)}.
       ${done.tokens ? Math.round(done.tokens).toLocaleString('en-US') + ' tokens went straight to your wallet.' : ''}
-      <a href="/coin?mint=${encodeURIComponent(done.mint)}" style="color:var(--accent)">Open the coin page</a></div></div>`;
+      <a href="./coin.html?mint=${encodeURIComponent(done.mint)}" style="color:var(--accent)">Open the coin page</a></div></div>`;
     setTimeout(() => { location.href = '/coin?mint=' + encodeURIComponent(done.mint); }, 3500);
   } catch (e) {
     err.textContent = e.message;

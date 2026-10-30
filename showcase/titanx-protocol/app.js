@@ -142,16 +142,16 @@ let CA = '';
 function chrome(active) {
   const links = [['/#pair', 'Basket'], ['/#stocks', 'Equities'], ['/#coins', 'Live Indexes'], ['/community', 'Governance'], ['/how', 'Docs']];
   document.body.prepend(el(`<header class="nav"><div class="wrap nav-in">
-      <a class="brand" href="/"><img class="mark" src="/img/mark-128.png" alt=""><span>TITANX</span></a>
+      <a class="brand" href="/"><img class="mark" src="./img/mark-128.png" alt=""><span>TITANX</span></a>
       <nav class="nav-links">${links.map(([h, t]) =>
         `<a href="${h}" class="${h === active ? 'on' : ''}">${t}</a>`).join('')}</nav>
-      <div class="nav-right"><a class="xlink" href="https://x.com/StonkzTech" target="_blank" rel="noopener" aria-label="STONKZ on X" title="STONKZ on X"><img src="/assets/x.svg" alt="" width="16" height="16"></a><button class="ca" id="cabtn" title="Copy the contract address" hidden>
+      <div class="nav-right"><a class="xlink" href="https://x.com/StonkzTech" target="_blank" rel="noopener" aria-label="STONKZ on X" title="STONKZ on X"><img src="./assets/x.svg" alt="" width="16" height="16"></a><button class="ca" id="cabtn" title="Copy the contract address" hidden>
           <span class="k">CA</span><span class="v"></span></button>
         <button class="btn ghost" id="walletbtn">Connect wallet</button>
-        <a class="btn" href="/create">Deploy Index</a></div>
+        <a class="btn" href="./create.html">Deploy Index</a></div>
     </div></header>`));
   document.body.append(el(`<footer class="wrap foot">
-      <span>TITANX</span><a href="/#coins">Coins</a><a href="/#pairs">Pairs</a><a href="/create">Launch</a><a href="/how">Docs</a>
+      <span>TITANX</span><a href="/#coins">Coins</a><a href="/#pairs">Pairs</a><a href="./create.html">Launch</a><a href="./how.html">Docs</a>
       <p class="disclaim">Coins launch on StonkFun's LaunchLab curve. The pair and the payout stocks are set at launch and
       cannot be changed. The fees are paid to whoever holds the coin at the time of each payout.</p>
     </footer>`));
@@ -172,7 +172,7 @@ function chrome(active) {
   };
   const run = async () => {
     try {
-      const v = ((await (await fetch('/api/ca', { cache: 'no-store' })).json()).ca || '').trim();
+      const v = ((await (await fetch('./api/ca.json', { cache: 'no-store' })).json()).ca || '').trim();
       if (v && v !== CA) { CA = v; ca.querySelector('.v').textContent = CA.slice(0, 4) + '…' + CA.slice(-5); ca.hidden = false; }
       if (!v && CA) { CA = ''; ca.hidden = true; }
     } catch (e) { /* proever igjen */ }

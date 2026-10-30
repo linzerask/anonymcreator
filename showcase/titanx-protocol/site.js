@@ -3,7 +3,7 @@
    Valget er mint-adresser, fordi samme ticker kan finnes hos flere utstedere (OPENAI, KALSHI).
    Ringen oeverst er ring.js og lytter paa 'stonkz:change'. */
 
-const LAUNCH = '/create';
+const LAUNCH = './create.html';
 const MAX = 10;
 let CA = '';
 
@@ -21,7 +21,7 @@ function toast(msg) {
 /* ------------------------------------------------------------- aksjene */
 let STOCKS = [];
 const byMint = (m) => STOCKS.find((x) => x.mint === m);
-const logo = (s) => s.logo;
+const logo = (s) => (s && s.logo ? s.logo.replace(/^\//, './') : '');
 const nice = (s) => String(s.name || s.symbol).replace(/^SP500$/, 'the S&P 500').replace(/^Nasdaq$/, 'the Nasdaq 100');
 const CATS = [['all', 'All'], ['xstock', 'xStock'], ['prestock', 'PreStock'], ['backpack', 'Sunrise'], ['tessera', 'Tessera']];
 const inCat = (s, c) => c === 'all' || s.cat === c;
@@ -185,7 +185,7 @@ async function loadCoins() {
   const dep = $('dep');
   const ago = (ts) => { const x = Math.max(0, Date.now() / 1000 - ts); return x < 3600 ? Math.floor(x / 60) + 'm' : x < 86400 ? Math.floor(x / 3600) + 'h' : Math.floor(x / 86400) + 'd'; };
   try {
-    const res = await fetch('api/coins.json').catch(() => fetch('/api/coins?sort=newest'));
+    const res = await fetch('api/coins.json').catch(() => fetch('./api/coins.json'));
     const data = await res.json();
     if (!data.ok || !data.coins || !data.coins.length) throw new Error('none');
     dep.innerHTML = '<div class="hdr"><span>Coin</span><span>Pays holders in</span><span>Fees</span><span>Age</span></div>';
@@ -205,13 +205,13 @@ async function loadCA() {
   // Foerst Upstash via /api/ca; svarer den ikke (ingen noekler paa Vercel), brukes /ca.json fra siste deploy.
   let got = false;
   try {
-    const res = await fetch('ca.json').catch(() => fetch('/api/ca'));
+    const res = await fetch('ca.json').catch(() => fetch('./api/ca.json'));
     const data = await res.json();
     if (data.ok) { CA = data.ca || ''; got = true; }
   } catch (e) { /* faller tilbake */ }
   if (!got || !CA) {
     try {
-      const data = await fetch('/ca.json', { cache: 'no-store' }).then((r) => r.json());
+      const data = await fetch('./ca.json', { cache: 'no-store' }).then((r) => r.json());
       if (data.ca) CA = data.ca;
     } catch (e) { /* proev igjen om litt */ }
   }
@@ -227,7 +227,7 @@ async function loadCA() {
 
 /* ------------------------------------------------------------- start */
 (async () => {
-  STOCKS = await fetch('/assets/stocks/_list.json').then((r) => r.json());
+  STOCKS = await fetch('./assets/stocks/_list.json').then((r) => r.json());
   sel = sel.filter(byMint);
   $('q').oninput = (e) => { q = e.target.value; render(); };
   $('sq').oninput = (e) => { sq = e.target.value; drawTable(); };

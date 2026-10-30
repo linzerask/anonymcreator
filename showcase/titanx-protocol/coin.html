@@ -7,16 +7,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="/img/favicon.ico">
-<link rel="icon" href="/img/favicon-64.png" type="image/png">
-<link rel="stylesheet" href="/app.css">
+<link rel="icon" href="./img/favicon.ico">
+<link rel="icon" href="./img/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="./app.css">
 </head>
 <body>
 <main class="wrap" id="main">
   <div class="empty" style="margin-top:26px">Loading</div>
 </main>
 
-<script src="/app.js"></script>
+<script src="./app.js"></script>
 <script>
 chrome('/');
 
@@ -50,7 +50,7 @@ function render(c) {
     <div>
       <div class="panel">
         <div class="bar" style="margin:0 0 6px"><span class="flaplbl">DIVIDEND BASKET</span><span class="tag ok">Paid automatically</span></div>
-        <div class="stocks">${stocks.length ? stocks.map(stockChip).join('') : '<span><img src="/assets/sol.png" alt="">SOL</span>'}</div>
+        <div class="stocks">${stocks.length ? stocks.map(stockChip).join('') : '<span><img src="./assets/sol.png" alt="">SOL</span>'}</div>
         <p class="hint" style="margin:14px 0 0">Everyone holding ${esc(c.ticker)} is paid by how much they hold, from the fees the coin
           earns on its curve. ${stocks.length ? 'The holders’ share buys the stocks above.' : 'The holders are paid in SOL.'}
           Nobody claims anything.</p>

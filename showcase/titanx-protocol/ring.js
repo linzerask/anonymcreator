@@ -11,7 +11,7 @@
   let stocks = [], sel = [], nodes = [], hover = null;
   const img = {};
   const mark = new Image();
-  mark.src = '/img/mark.png';
+  mark.src = './img/mark.png';
 
   function size() {
     W = host.clientWidth; H = host.clientHeight;
@@ -21,7 +21,7 @@
   window.addEventListener('resize', size);
   size();
 
-  function load(s) { if (!img[s.mint]) { const im = new Image(); im.src = s.logo; img[s.mint] = im; } }
+  function load(s) { if (!img[s.mint]) { const im = new Image(); im.src = (s.logo || '').replace(/^\//, './'); img[s.mint] = im; } }
 
   function setup(list, chosen) {
     stocks = list;
